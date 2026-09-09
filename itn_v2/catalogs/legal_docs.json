@@ -1,0 +1,16 @@
+{
+  "_comment": "Ký hiệu văn bản pháp quy. Cách đọc chuẩn hoá về chuỗi liền không dấu cách trước khi tra.",
+  "entries": [
+    {"canonical": "NĐ-CP",   "spoken": ["nờ đê cê pê", "nờ đê xê pê", "nờ đê cê bê", "nờ đê xê bê", "nghị định chính phủ"]},
+    {"canonical": "QĐ-TTg",  "spoken": ["quy đê tê tê giê", "quy đê thủ tướng"]},
+    {"canonical": "QĐ",      "spoken": ["quy đê"]},
+    {"canonical": "NQ",      "spoken": ["en quy", "nờ quy"]},
+    {"canonical": "CT",      "spoken": ["xê tê", "cê tê"]},
+    {"canonical": "CP",      "spoken": ["xê pê", "cê pê", "xê bê", "cê bê"]},
+    {"canonical": "TT",      "spoken": ["tê tê"]},
+    {"canonical": "TT-BTC",  "spoken": ["tê tê bê tê xê", "tê tê bê tê cê"]},
+    {"canonical": "TT-BQP",  "spoken": ["tê tê bê quy pê"]},
+    {"canonical": "TB",      "spoken": ["tê bê"]},
+    {"canonical": "KH",      "spoken": ["ka hát", "ca hát"]}
+  ]
+}

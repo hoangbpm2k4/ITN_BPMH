@@ -1,0 +1,799 @@
+{
+  "_comment": "Tên riêng nước ngoài. Chỉ thêm alias ĐÃ QUAN SÁT trong dữ liệu hoặc confusion log của ASR — alias tự suy đoán làm tăng false accept (spec §14, v2.txt §22).",
+  "entries": [
+    {
+      "canonical": "Drone",
+      "spoken": [
+        "đờ rôn"
+      ]
+    },
+    {
+      "canonical": "Patriot",
+      "spoken": [
+        "pa tri ốt",
+        "pat ri ốt",
+        "ba tri ốt",
+        "patriot"
+      ]
+    },
+    {
+      "canonical": "Tomahawk",
+      "spoken": [
+        "tô ma hốc",
+        "tô ma hoóc"
+      ]
+    },
+    {
+      "canonical": "Himars",
+      "spoken": [
+        "hi mác",
+        "hi mars"
+      ]
+    },
+    {
+      "canonical": "Bayraktar",
+      "spoken": [
+        "bai rắc ta",
+        "bay rắc ta"
+      ]
+    },
+    {
+      "canonical": "Javelin",
+      "spoken": [
+        "gia vê lin",
+        "ja vê lin"
+      ]
+    },
+    {
+      "canonical": "Leopard",
+      "spoken": [
+        "lê ô pát",
+        "leo ô pát"
+      ]
+    },
+    {
+      "canonical": "Harpoon",
+      "spoken": [
+        "hạc pun",
+        "ha pun",
+        "ha bun"
+      ]
+    },
+    {
+      "canonical": "Starlink",
+      "spoken": [
+        "sờ ta linh",
+        "star link"
+      ]
+    },
+    {
+      "canonical": "Facebook",
+      "spoken": [
+        "phây búc",
+        "phây bút"
+      ]
+    },
+    {
+      "canonical": "Google Meet",
+      "spoken": [
+        "gu gồ mít",
+        "gúc gồ mít"
+      ]
+    },
+    {
+      "canonical": "Microsoft Teams",
+      "spoken": [
+        "mai cờ rô sốp tim",
+        "mai cờ rô sóp tim"
+      ]
+    },
+    {
+      "canonical": "Livestream",
+      "spoken": [
+        "lai sờ trim"
+      ]
+    },
+    {
+      "canonical": "Podcast",
+      "spoken": [
+        "pót cát",
+        "bót cát"
+      ]
+    },
+    {
+      "canonical": "Workshop",
+      "spoken": [
+        "quốc sóp",
+        "guốc sóp"
+      ]
+    },
+    {
+      "canonical": "Seminar",
+      "spoken": [
+        "sê mi na",
+        "xê mi na"
+      ]
+    },
+    {
+      "canonical": "Washington",
+      "spoken": [
+        "oa sinh tơn",
+        "qua sinh tơn"
+      ]
+    },
+    {
+      "canonical": "Moscow",
+      "spoken": [
+        "mát cơ va",
+        "mát xcơ va"
+      ]
+    },
+    {
+      "canonical": "Singapore",
+      "spoken": [
+        "xinh ga po",
+        "xinh ga bo",
+        "sing ga po",
+        "xin ga po"
+      ]
+    },
+    {
+      "canonical": "Ukraine",
+      "spoken": [
+        "u crai na",
+        "u cờ rai na",
+        "ukraine"
+      ]
+    },
+    {
+      "canonical": "Philippines",
+      "spoken": [
+        "phi líp pin",
+        "phi líp bin"
+      ]
+    },
+    {
+      "canonical": "Indonesia",
+      "spoken": [
+        "in đô nê xi a",
+        "in đô nê si a"
+      ]
+    },
+    {
+      "canonical": "Malaysia",
+      "spoken": [
+        "ma lai xi a",
+        "ma lay xi a"
+      ]
+    },
+    {
+      "canonical": "Campuchia",
+      "spoken": [
+        "cam pu chia",
+        "căm pu chia"
+      ]
+    },
+    {
+      "canonical": "Seoul",
+      "spoken": [
+        "xơ un",
+        "sơ un",
+        "xê un"
+      ]
+    },
+    {
+      "canonical": "Tokyo",
+      "spoken": [
+        "tô ki ô",
+        "tô ky ô"
+      ]
+    },
+    {
+      "canonical": "Israel",
+      "spoken": [
+        "ít xra en",
+        "i sa ren",
+        "israel"
+      ]
+    },
+    {
+      "canonical": "Palestine",
+      "spoken": [
+        "pa le xtin",
+        "ba le xtin"
+      ]
+    },
+    {
+      "canonical": "Brazil",
+      "spoken": [
+        "bờ ra din",
+        "bra din",
+        "brazil"
+      ]
+    },
+    {
+      "canonical": "Argentina",
+      "spoken": [
+        "ác hen ti na",
+        "át gen ti na",
+        "argentina"
+      ]
+    },
+    {
+      "canonical": "Thái Lan",
+      "spoken": [
+        "thái lan"
+      ]
+    },
+    {
+      "canonical": "Lào",
+      "spoken": [
+        "lào"
+      ]
+    },
+    {
+      "canonical": "Nhật Bản",
+      "spoken": [
+        "nhật bản"
+      ]
+    },
+    {
+      "canonical": "Hàn Quốc",
+      "spoken": [
+        "hàn quốc"
+      ]
+    },
+    {
+      "canonical": "Ấn Độ",
+      "spoken": [
+        "ấn độ"
+      ]
+    },
+    {
+      "canonical": "Hoa Kỳ",
+      "spoken": [
+        "hoa kỳ"
+      ]
+    },
+    {
+      "canonical": "Pháp",
+      "spoken": [
+        "pháp"
+      ]
+    },
+    {
+      "canonical": "Đức",
+      "spoken": [
+        "đức"
+      ]
+    },
+    {
+      "canonical": "Trung Quốc",
+      "spoken": [
+        "trung quốc"
+      ]
+    },
+    {
+      "canonical": "Nga",
+      "spoken": [
+        "nga"
+      ]
+    },
+    {
+      "canonical": "Ý",
+      "spoken": [
+        "ý"
+      ]
+    },
+    {
+      "canonical": "Tây Ban Nha",
+      "spoken": [
+        "tây ban nha"
+      ]
+    },
+    {
+      "canonical": "Bồ Đào Nha",
+      "spoken": [
+        "bồ đào nha"
+      ]
+    },
+    {
+      "canonical": "Hà Lan",
+      "spoken": [
+        "hà lan"
+      ]
+    },
+    {
+      "canonical": "Bỉ",
+      "spoken": [
+        "bỉ"
+      ]
+    },
+    {
+      "canonical": "Thụy Sĩ",
+      "spoken": [
+        "thụy sĩ"
+      ]
+    },
+    {
+      "canonical": "Thụy Điển",
+      "spoken": [
+        "thụy điển"
+      ]
+    },
+    {
+      "canonical": "Na Uy",
+      "spoken": [
+        "na uy"
+      ]
+    },
+    {
+      "canonical": "Phần Lan",
+      "spoken": [
+        "phần lan"
+      ]
+    },
+    {
+      "canonical": "Đan Mạch",
+      "spoken": [
+        "đan mạch"
+      ]
+    },
+    {
+      "canonical": "Ba Lan",
+      "spoken": [
+        "ba lan"
+      ]
+    },
+    {
+      "canonical": "Hy Lạp",
+      "spoken": [
+        "hy lạp"
+      ]
+    },
+    {
+      "canonical": "Thổ Nhĩ Kỳ",
+      "spoken": [
+        "thổ nhĩ kỳ"
+      ]
+    },
+    {
+      "canonical": "Ai Cập",
+      "spoken": [
+        "ai cập"
+      ]
+    },
+    {
+      "canonical": "Nam Phi",
+      "spoken": [
+        "nam phi"
+      ]
+    },
+    {
+      "canonical": "Kenya",
+      "spoken": [
+        "kenya"
+      ]
+    },
+    {
+      "canonical": "Tanzania",
+      "spoken": [
+        "tanzania"
+      ]
+    },
+    {
+      "canonical": "Algeria",
+      "spoken": [
+        "algeria"
+      ]
+    },
+    {
+      "canonical": "Maroc",
+      "spoken": [
+        "maroc"
+      ]
+    },
+    {
+      "canonical": "Tunisia",
+      "spoken": [
+        "tunisia"
+      ]
+    },
+    {
+      "canonical": "Libya",
+      "spoken": [
+        "libya"
+      ]
+    },
+    {
+      "canonical": "Sudan",
+      "spoken": [
+        "sudan"
+      ]
+    },
+    {
+      "canonical": "Ethiopia",
+      "spoken": [
+        "ethiopia"
+      ]
+    },
+    {
+      "canonical": "Somalia",
+      "spoken": [
+        "somalia"
+      ]
+    },
+    {
+      "canonical": "Nigeria",
+      "spoken": [
+        "nigeria"
+      ]
+    },
+    {
+      "canonical": "Ghana",
+      "spoken": [
+        "ghana"
+      ]
+    },
+    {
+      "canonical": "Senegal",
+      "spoken": [
+        "senegal"
+      ]
+    },
+    {
+      "canonical": "Angola",
+      "spoken": [
+        "angola"
+      ]
+    },
+    {
+      "canonical": "Mozambique",
+      "spoken": [
+        "mozambique"
+      ]
+    },
+    {
+      "canonical": "Zimbabwe",
+      "spoken": [
+        "zimbabwe"
+      ]
+    },
+    {
+      "canonical": "Zambia",
+      "spoken": [
+        "zambia"
+      ]
+    },
+    {
+      "canonical": "Cuba",
+      "spoken": [
+        "cuba"
+      ]
+    },
+    {
+      "canonical": "Mexico",
+      "spoken": [
+        "mexico"
+      ]
+    },
+    {
+      "canonical": "Chile",
+      "spoken": [
+        "chile"
+      ]
+    },
+    {
+      "canonical": "Peru",
+      "spoken": [
+        "peru"
+      ]
+    },
+    {
+      "canonical": "Colombia",
+      "spoken": [
+        "colombia"
+      ]
+    },
+    {
+      "canonical": "Venezuela",
+      "spoken": [
+        "venezuela"
+      ]
+    },
+    {
+      "canonical": "Bolivia",
+      "spoken": [
+        "bolivia"
+      ]
+    },
+    {
+      "canonical": "Paraguay",
+      "spoken": [
+        "paraguay"
+      ]
+    },
+    {
+      "canonical": "Uruguay",
+      "spoken": [
+        "uruguay"
+      ]
+    },
+    {
+      "canonical": "Ecuador",
+      "spoken": [
+        "ecuador"
+      ]
+    },
+    {
+      "canonical": "Panama",
+      "spoken": [
+        "panama"
+      ]
+    },
+    {
+      "canonical": "Costa Rica",
+      "spoken": [
+        "costa rica"
+      ]
+    },
+    {
+      "canonical": "Honduras",
+      "spoken": [
+        "honduras"
+      ]
+    },
+    {
+      "canonical": "Nicaragua",
+      "spoken": [
+        "nicaragua"
+      ]
+    },
+    {
+      "canonical": "Guatemala",
+      "spoken": [
+        "guatemala"
+      ]
+    },
+    {
+      "canonical": "Jamaica",
+      "spoken": [
+        "jamaica"
+      ]
+    },
+    {
+      "canonical": "Haiti",
+      "spoken": [
+        "haiti"
+      ]
+    },
+    {
+      "canonical": "Iran",
+      "spoken": [
+        "iran"
+      ]
+    },
+    {
+      "canonical": "Iraq",
+      "spoken": [
+        "iraq"
+      ]
+    },
+    {
+      "canonical": "Syria",
+      "spoken": [
+        "syria"
+      ]
+    },
+    {
+      "canonical": "Jordan",
+      "spoken": [
+        "jordan"
+      ]
+    },
+    {
+      "canonical": "Qatar",
+      "spoken": [
+        "qatar"
+      ]
+    },
+    {
+      "canonical": "Oman",
+      "spoken": [
+        "oman"
+      ]
+    },
+    {
+      "canonical": "Yemen",
+      "spoken": [
+        "yemen"
+      ]
+    },
+    {
+      "canonical": "Nepal",
+      "spoken": [
+        "nepal"
+      ]
+    },
+    {
+      "canonical": "Bhutan",
+      "spoken": [
+        "bhutan"
+      ]
+    },
+    {
+      "canonical": "Bangladesh",
+      "spoken": [
+        "bangladesh"
+      ]
+    },
+    {
+      "canonical": "Sri Lanka",
+      "spoken": [
+        "sri lanka"
+      ]
+    },
+    {
+      "canonical": "Mông Cổ",
+      "spoken": [
+        "mông cổ"
+      ]
+    },
+    {
+      "canonical": "New Zealand",
+      "spoken": [
+        "new zealand"
+      ]
+    },
+    {
+      "canonical": "Fiji",
+      "spoken": [
+        "fiji"
+      ]
+    },
+    {
+      "canonical": "Romania",
+      "spoken": [
+        "romania"
+      ]
+    },
+    {
+      "canonical": "Bulgaria",
+      "spoken": [
+        "bulgaria"
+      ]
+    },
+    {
+      "canonical": "Hungary",
+      "spoken": [
+        "hungary"
+      ]
+    },
+    {
+      "canonical": "Áo",
+      "spoken": [
+        "áo"
+      ]
+    },
+    {
+      "canonical": "Cộng hòa Séc",
+      "spoken": [
+        "cộng hòa séc"
+      ]
+    },
+    {
+      "canonical": "Slovakia",
+      "spoken": [
+        "slovakia"
+      ]
+    },
+    {
+      "canonical": "Slovenia",
+      "spoken": [
+        "slovenia"
+      ]
+    },
+    {
+      "canonical": "Croatia",
+      "spoken": [
+        "croatia"
+      ]
+    },
+    {
+      "canonical": "Serbia",
+      "spoken": [
+        "serbia"
+      ]
+    },
+    {
+      "canonical": "Albania",
+      "spoken": [
+        "albania"
+      ]
+    },
+    {
+      "canonical": "Iceland",
+      "spoken": [
+        "iceland"
+      ]
+    },
+    {
+      "canonical": "Ireland",
+      "spoken": [
+        "ireland"
+      ]
+    },
+    {
+      "canonical": "Luxembourg",
+      "spoken": [
+        "luxembourg"
+      ]
+    },
+    {
+      "canonical": "Malta",
+      "spoken": [
+        "malta"
+      ]
+    },
+    {
+      "canonical": "Síp",
+      "spoken": [
+        "síp"
+      ]
+    },
+    {
+      "canonical": "Estonia",
+      "spoken": [
+        "estonia"
+      ]
+    },
+    {
+      "canonical": "Latvia",
+      "spoken": [
+        "latvia"
+      ]
+    },
+    {
+      "canonical": "Litva",
+      "spoken": [
+        "litva"
+      ]
+    },
+    {
+      "canonical": "Myanmar",
+      "spoken": [
+        "mi an ma"
+      ]
+    },
+    {
+      "canonical": "Australia",
+      "spoken": [
+        "ô xtrây li a"
+      ]
+    },
+    {
+      "canonical": "Canada",
+      "spoken": [
+        "ca na đa"
+      ]
+    },
+    {
+      "canonical": "Pakistan",
+      "spoken": [
+        "pa ki xtan"
+      ]
+    },
+    {
+      "canonical": "Afghanistan",
+      "spoken": [
+        "áp ga ni xtan"
+      ]
+    },
+    {
+      "canonical": "Kazakhstan",
+      "spoken": [
+        "ca dắc xtan"
+      ]
+    }
+  ]
+}

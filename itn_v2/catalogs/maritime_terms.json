@@ -1,0 +1,656 @@
+{
+  "_comment": "Lệnh điều động, tín hiệu và thuật ngữ hàng hải chuẩn.",
+  "entries": [
+    {
+      "canonical": "MAYDAY",
+      "spoken": [
+        "mê đây",
+        "mây đây",
+        "mê day"
+      ]
+    },
+    {
+      "canonical": "PAN-PAN",
+      "spoken": [
+        "pan pan",
+        "pang pang"
+      ]
+    },
+    {
+      "canonical": "SECURITE",
+      "spoken": [
+        "sê cu ri tê",
+        "xê cu ri tê"
+      ]
+    },
+    {
+      "canonical": "Dead slow ahead",
+      "spoken": [
+        "đét xờ lâu a hét",
+        "đét slâu a hét",
+        "đét sờ lô a hét"
+      ]
+    },
+    {
+      "canonical": "Slow ahead",
+      "spoken": [
+        "xờ lâu a hét",
+        "slâu a hét",
+        "sờ lô a hét"
+      ]
+    },
+    {
+      "canonical": "Half ahead",
+      "spoken": [
+        "háp a hét"
+      ]
+    },
+    {
+      "canonical": "Full ahead",
+      "spoken": [
+        "phun a hét",
+        "full a hét"
+      ]
+    },
+    {
+      "canonical": "Full astern",
+      "spoken": [
+        "phun át tơn",
+        "full át tơn",
+        "phun a xtơn"
+      ]
+    },
+    {
+      "canonical": "Slow astern",
+      "spoken": [
+        "xờ lâu át tơn",
+        "sờ lô a xtơn"
+      ]
+    },
+    {
+      "canonical": "Stop engine",
+      "spoken": [
+        "xtốp en gin",
+        "stop en gin",
+        "xtóp en gin"
+      ]
+    },
+    {
+      "canonical": "Hard to starboard",
+      "spoken": [
+        "hát tu xtát bo"
+      ]
+    },
+    {
+      "canonical": "Hard to port",
+      "spoken": [
+        "hát tu po"
+      ]
+    },
+    {
+      "canonical": "Starboard",
+      "spoken": [
+        "xtát bo",
+        "stát bo"
+      ]
+    },
+    {
+      "canonical": "Port",
+      "spoken": [
+        "po"
+      ]
+    },
+    {
+      "canonical": "Midships",
+      "spoken": [
+        "mít síp"
+      ]
+    },
+    {
+      "canonical": "Steady as she goes",
+      "spoken": [
+        "xtê đi át si gâu"
+      ]
+    },
+    {
+      "canonical": "Safe speed",
+      "spoken": [
+        "xây phờ xpít",
+        "sếp xpit",
+        "xâyp spít"
+      ]
+    },
+    {
+      "canonical": "Alter course",
+      "spoken": [
+        "on tơ cót",
+        "an tơ cót",
+        "on tờ coóc"
+      ]
+    },
+    {
+      "canonical": "Wheel amidships",
+      "spoken": [
+        "quil a mít síp"
+      ]
+    },
+    {
+      "canonical": "Half astern",
+      "spoken": [
+        "háp a xtơn"
+      ]
+    },
+    {
+      "canonical": "Dead slow astern",
+      "spoken": [
+        "đét sờ lô a xtơn"
+      ]
+    },
+    {
+      "canonical": "Stop engines",
+      "spoken": [
+        "xtóp en gin s"
+      ]
+    },
+    {
+      "canonical": "Stand by engine",
+      "spoken": [
+        "xten bai en gin"
+      ]
+    },
+    {
+      "canonical": "Hard a port",
+      "spoken": [
+        "hát a poóc"
+      ]
+    },
+    {
+      "canonical": "Hard a starboard",
+      "spoken": [
+        "hát a xta bọt"
+      ]
+    },
+    {
+      "canonical": "Port ten",
+      "spoken": [
+        "poóc ten"
+      ]
+    },
+    {
+      "canonical": "Starboard ten",
+      "spoken": [
+        "xta bọt ten"
+      ]
+    },
+    {
+      "canonical": "Steady",
+      "spoken": [
+        "xtê đi"
+      ]
+    },
+    {
+      "canonical": "Keep course",
+      "spoken": [
+        "kíp coóc"
+      ]
+    },
+    {
+      "canonical": "Course over ground",
+      "spoken": [
+        "coóc ô vờ grao"
+      ]
+    },
+    {
+      "canonical": "Speed over ground",
+      "spoken": [
+        "spít ô vờ grao"
+      ]
+    },
+    {
+      "canonical": "Under way",
+      "spoken": [
+        "ân đờ uây"
+      ]
+    },
+    {
+      "canonical": "Not under command",
+      "spoken": [
+        "nót ân đờ cờ man"
+      ]
+    },
+    {
+      "canonical": "Restricted visibility",
+      "spoken": [
+        "ri xtrích tịt vi zi bi li ti"
+      ]
+    },
+    {
+      "canonical": "Traffic separation scheme",
+      "spoken": [
+        "tra phích se pơ rây sần xkim"
+      ]
+    },
+    {
+      "canonical": "Vessel traffic service",
+      "spoken": [
+        "ve xồ tra phích sơ vít"
+      ]
+    },
+    {
+      "canonical": "Pilot station",
+      "spoken": [
+        "pai lợt xtây sần"
+      ]
+    },
+    {
+      "canonical": "Boarding point",
+      "spoken": [
+        "bo đinh poi"
+      ]
+    },
+    {
+      "canonical": "Anchorage",
+      "spoken": [
+        "an cơ rịt"
+      ]
+    },
+    {
+      "canonical": "Fairway",
+      "spoken": [
+        "phe uây"
+      ]
+    },
+    {
+      "canonical": "Channel",
+      "spoken": [
+        "chen nồ"
+      ]
+    },
+    {
+      "canonical": "Berth",
+      "spoken": [
+        "bớt"
+      ]
+    },
+    {
+      "canonical": "Port side",
+      "spoken": [
+        "poóc sai"
+      ]
+    },
+    {
+      "canonical": "Starboard side",
+      "spoken": [
+        "xta bọt sai"
+      ]
+    },
+    {
+      "canonical": "Bow",
+      "spoken": [
+        "bao"
+      ]
+    },
+    {
+      "canonical": "Stern",
+      "spoken": [
+        "xtơn"
+      ]
+    },
+    {
+      "canonical": "Forward",
+      "spoken": [
+        "pho quợt"
+      ]
+    },
+    {
+      "canonical": "Aft",
+      "spoken": [
+        "áp"
+      ]
+    },
+    {
+      "canonical": "Amidships",
+      "spoken": [
+        "a mít síp"
+      ]
+    },
+    {
+      "canonical": "Bridge",
+      "spoken": [
+        "brít"
+      ]
+    },
+    {
+      "canonical": "Engine room",
+      "spoken": [
+        "en gin rum"
+      ]
+    },
+    {
+      "canonical": "Main engine",
+      "spoken": [
+        "mên en gin"
+      ]
+    },
+    {
+      "canonical": "Auxiliary engine",
+      "spoken": [
+        "óc zi li a ri en gin"
+      ]
+    },
+    {
+      "canonical": "Rudder",
+      "spoken": [
+        "rơ đờ"
+      ]
+    },
+    {
+      "canonical": "Propeller",
+      "spoken": [
+        "pờ rô pe lờ"
+      ]
+    },
+    {
+      "canonical": "Anchor",
+      "spoken": [
+        "an cơ"
+      ]
+    },
+    {
+      "canonical": "Let go anchor",
+      "spoken": [
+        "lét gâu an cơ"
+      ]
+    },
+    {
+      "canonical": "Heave up anchor",
+      "spoken": [
+        "hi vấp an cơ"
+      ]
+    },
+    {
+      "canonical": "Anchor aweigh",
+      "spoken": [
+        "an cơ a uây"
+      ]
+    },
+    {
+      "canonical": "Make fast",
+      "spoken": [
+        "mâyk phát"
+      ]
+    },
+    {
+      "canonical": "Cast off",
+      "spoken": [
+        "cát óp"
+      ]
+    },
+    {
+      "canonical": "Mooring line",
+      "spoken": [
+        "mu rinh lai"
+      ]
+    },
+    {
+      "canonical": "Tug boat",
+      "spoken": [
+        "tắc bốt"
+      ]
+    },
+    {
+      "canonical": "Pilot boat",
+      "spoken": [
+        "pai lợt bốt"
+      ]
+    },
+    {
+      "canonical": "Lifeboat",
+      "spoken": [
+        "lai bốt"
+      ]
+    },
+    {
+      "canonical": "Rescue boat",
+      "spoken": [
+        "rét kiu bốt"
+      ]
+    },
+    {
+      "canonical": "Distress alert",
+      "spoken": [
+        "đi xtret a lớt"
+      ]
+    },
+    {
+      "canonical": "Mayday",
+      "spoken": []
+    },
+    {
+      "canonical": "Pan-Pan",
+      "spoken": []
+    },
+    {
+      "canonical": "Securite",
+      "spoken": [
+        "sê kiu ri tê"
+      ]
+    },
+    {
+      "canonical": "Man overboard",
+      "spoken": [
+        "man ô vờ bo"
+      ]
+    },
+    {
+      "canonical": "Abandon ship",
+      "spoken": [
+        "a ban đơn síp"
+      ]
+    },
+    {
+      "canonical": "Fire on board",
+      "spoken": [
+        "phai on bo"
+      ]
+    },
+    {
+      "canonical": "Collision risk",
+      "spoken": [
+        "cờ li dần rít"
+      ]
+    },
+    {
+      "canonical": "Closest point of approach",
+      "spoken": [
+        "clô sít poi ơv a prôch"
+      ]
+    },
+    {
+      "canonical": "Time to closest point of approach",
+      "spoken": [
+        "taim tu clô sít poi ơv a prôch"
+      ]
+    },
+    {
+      "canonical": "Give-way vessel",
+      "spoken": [
+        "ghíp uây ve xồ"
+      ]
+    },
+    {
+      "canonical": "Stand-on vessel",
+      "spoken": [
+        "xten on ve xồ"
+      ]
+    },
+    {
+      "canonical": "Overtaking vessel",
+      "spoken": [
+        "ô vờ tâyk king ve xồ"
+      ]
+    },
+    {
+      "canonical": "Crossing vessel",
+      "spoken": [
+        "cro xinh ve xồ"
+      ]
+    },
+    {
+      "canonical": "Head-on situation",
+      "spoken": [
+        "hét on sit chu ây sần"
+      ]
+    },
+    {
+      "canonical": "Emergency steering",
+      "spoken": [
+        "i mơ giên xi xtia rinh"
+      ]
+    },
+    {
+      "canonical": "Steering gear",
+      "spoken": [
+        "xtia rinh ghia"
+      ]
+    },
+    {
+      "canonical": "Echo sounder",
+      "spoken": [
+        "e cô xao đờ"
+      ]
+    },
+    {
+      "canonical": "Radar",
+      "spoken": [
+        "rây đa"
+      ]
+    },
+    {
+      "canonical": "Sonar",
+      "spoken": [
+        "xô na"
+      ]
+    },
+    {
+      "canonical": "Safe water mark",
+      "spoken": [
+        "xâyp wo tờ mac"
+      ]
+    },
+    {
+      "canonical": "Isolated danger mark",
+      "spoken": [
+        "ai sô lâyt tịt đen giơ mac"
+      ]
+    },
+    {
+      "canonical": "Cardinal mark",
+      "spoken": [
+        "ca đi nồ mac"
+      ]
+    },
+    {
+      "canonical": "Lateral mark",
+      "spoken": [
+        "la tơ rồ mac"
+      ]
+    },
+    {
+      "canonical": "Port hand buoy",
+      "spoken": [
+        "poóc hen boi"
+      ]
+    },
+    {
+      "canonical": "Starboard hand buoy",
+      "spoken": [
+        "xta bọt hen boi"
+      ]
+    },
+    {
+      "canonical": "Under keel clearance",
+      "spoken": [
+        "ân đờ kin cli rần"
+      ]
+    },
+    {
+      "canonical": "Deep water route",
+      "spoken": [
+        "đíp wo tờ rút"
+      ]
+    },
+    {
+      "canonical": "Recommended track",
+      "spoken": [
+        "re co men địt trác"
+      ]
+    },
+    {
+      "canonical": "Reporting point",
+      "spoken": [
+        "ri po ting poi"
+      ]
+    },
+    {
+      "canonical": "Waypoint",
+      "spoken": [
+        "uây poi"
+      ]
+    },
+    {
+      "canonical": "Freeboard",
+      "spoken": [
+        "phri bo"
+      ]
+    },
+    {
+      "canonical": "Air draft",
+      "spoken": [
+        "e đờ ráp"
+      ]
+    },
+    {
+      "canonical": "Dredging operations",
+      "spoken": [
+        "đrét ching ô pơ rây sần"
+      ]
+    },
+    {
+      "canonical": "Restricted area",
+      "spoken": [
+        "ri xtrích tịt e ri a"
+      ]
+    },
+    {
+      "canonical": "No anchoring",
+      "spoken": [
+        "nô an cơ rinh"
+      ]
+    },
+    {
+      "canonical": "Search and rescue",
+      "spoken": [
+        "sớt en rét kiu"
+      ]
+    },
+    {
+      "canonical": "General alarm",
+      "spoken": [
+        "gen nơ rồ a lam"
+      ]
+    },
+    {
+      "canonical": "Abandon ship alarm",
+      "spoken": [
+        "a ban đơn síp a lam"
+      ]
+    },
+    {
+      "canonical": "Emergency towing",
+      "spoken": [
+        "i mơ giên xi tô uinh"
+      ]
+    }
+  ]
+}

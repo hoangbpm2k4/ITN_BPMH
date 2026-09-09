@@ -1,0 +1,91 @@
+{
+  "_comment": "Mã cảng UN/LOCODE và mã quốc gia đọc từng chữ cái.",
+  "letters": {
+    "a": "A",
+    "bê": "B",
+    "xê": "C",
+    "cê": "C",
+    "đê": "D",
+    "e": "E",
+    "ép": "F",
+    "giê": "G",
+    "hát": "H",
+    "i": "I",
+    "gi": "J",
+    "ka": "K",
+    "ca": "K",
+    "e lờ": "L",
+    "em": "M",
+    "en": "N",
+    "ô": "O",
+    "pê": "P",
+    "quy": "Q",
+    "rờ": "R",
+    "ét": "S",
+    "tê": "T",
+    "u": "U",
+    "vê": "V",
+    "vê kép": "W",
+    "ích": "X",
+    "i cờ rét": "Y",
+    "dét": "Z",
+    "e rờ": "R",
+    "gờ": "G",
+    "nờ": "N",
+    "mờ": "M",
+    "lờ": "L",
+    "sờ": "S",
+    "pờ": "P",
+    "o": "O",
+    "dê": "D",
+    "y": "Y",
+    "i dài": "Y",
+    "e mờ": "M",
+    "e nờ": "N",
+    "e phờ": "F"
+  },
+  "entries": [
+    {
+      "canonical": "VNHPH",
+      "spoken": [
+        "vê en hát pê hát"
+      ],
+      "note": "Hải Phòng"
+    },
+    {
+      "canonical": "VNSGN",
+      "spoken": [
+        "vê en ét giê en"
+      ],
+      "note": "TP Hồ Chí Minh"
+    },
+    {
+      "canonical": "VNDAD",
+      "spoken": [
+        "vê en đê a đê"
+      ],
+      "note": "Đà Nẵng"
+    },
+    {
+      "canonical": "VNCLI",
+      "spoken": [
+        "vê en xê e lờ i"
+      ],
+      "note": "Cái Lân"
+    },
+    {
+      "canonical": "SGSIN",
+      "spoken": [
+        "ét giê ét i en"
+      ],
+      "note": "Singapore"
+    },
+    {
+      "canonical": "CNSHA",
+      "spoken": [
+        "xê en ét hát a"
+      ],
+      "note": "Thượng Hải"
+    }
+  ]
+}

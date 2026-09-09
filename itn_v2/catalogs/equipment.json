@@ -1,0 +1,1420 @@
+{
+  "_comment": "Tiền tố khí tài: cách đọc -> dạng chuẩn, GIỮ NGUYÊN hoa-thường (spec §13).",
+  "prefixes": {
+    "a ka": "AK",
+    "a ca": "AK",
+    "ak": "AK",
+    "su": "Su",
+    "xu": "Su",
+    "míc": "MiG",
+    "mích": "MiG",
+    "mic": "MiG",
+    "mi": "Mi",
+    "ka": "Ka",
+    "ca": "Ka",
+    "ka hát": "Kh",
+    "ca hát": "Kh",
+    "kha": "Kh",
+    "tê": "T",
+    "tê u": "Tu",
+    "bê": "B",
+    "ép": "F",
+    "ep": "F",
+    "em": "M",
+    "mờ": "M",
+    "em u": "MU",
+    "mờ u": "MU",
+    "em ca": "MK",
+    "mờ ca": "MK",
+    "em ka": "MK",
+    "ét": "S",
+    "át": "S",
+    "ét e tê": "SET",
+    "pê": "P",
+    "ích": "X",
+    "hát": "H",
+    "vê": "V",
+    "quy": "Q",
+    "xê": "C",
+    "en": "N",
+    "đê": "D",
+    "rờ pê giê": "RPG",
+    "rê pê giê": "RPG",
+    "e xê": "S",
+    "u a vê": "UAV"
+  },
+  "models": [
+    {
+      "canonical": "AK-47",
+      "spoken": [
+        "a ka bốn bảy",
+        "a ka bốn mươi bảy",
+        "a ca bốn bảy",
+        "a ca bốn mươi bảy"
+      ]
+    },
+    {
+      "canonical": "AK-630",
+      "spoken": [
+        "a ka sáu trăm ba mươi",
+        "a ka sáu ba không"
+      ]
+    },
+    {
+      "canonical": "F-16",
+      "spoken": [
+        "ép mười sáu",
+        "ep mười sáu"
+      ]
+    },
+    {
+      "canonical": "B-52",
+      "spoken": [
+        "bê năm hai",
+        "bê năm mươi hai"
+      ]
+    },
+    {
+      "canonical": "M16",
+      "spoken": [
+        "em mười sáu",
+        "mờ mười sáu"
+      ]
+    },
+    {
+      "canonical": "M4A1",
+      "spoken": [
+        "em bốn a một",
+        "mờ bốn a một"
+      ]
+    },
+    {
+      "canonical": "RPG-7",
+      "spoken": [
+        "rờ pê giê bảy",
+        "rê pê giê bảy"
+      ]
+    },
+    {
+      "canonical": "Mi-17",
+      "spoken": [
+        "mi mười bảy"
+      ]
+    },
+    {
+      "canonical": "T-90",
+      "spoken": [
+        "tê chín mươi",
+        "tê chín không"
+      ]
+    },
+    {
+      "canonical": "Su-22",
+      "spoken": [
+        "su hai hai",
+        "xu hai hai",
+        "su hai mươi hai"
+      ]
+    },
+    {
+      "canonical": "Su-27",
+      "spoken": [
+        "su hai bảy",
+        "xu hai bảy",
+        "su hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "Su-30",
+      "spoken": [
+        "su ba mươi",
+        "xu ba mươi"
+      ]
+    },
+    {
+      "canonical": "Su-30MK2",
+      "spoken": [
+        "su ba mươi em ka hai",
+        "su ba mươi em ca hai",
+        "su ba mươi mờ ca hai"
+      ]
+    },
+    {
+      "canonical": "Su-34",
+      "spoken": [
+        "su ba tư",
+        "xu ba tư",
+        "su ba mươi tư",
+        "su ba mươi bốn"
+      ]
+    },
+    {
+      "canonical": "Su-35",
+      "spoken": [
+        "su ba lăm",
+        "xu ba lăm",
+        "su ba mươi lăm",
+        "xu ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "Su-57",
+      "spoken": [
+        "su năm bảy",
+        "xu năm bảy",
+        "su năm mươi bảy"
+      ]
+    },
+    {
+      "canonical": "MiG-21",
+      "spoken": [
+        "míc hai mốt",
+        "míc hai mươi mốt",
+        "mích hai mốt",
+        "mích hai mươi mốt"
+      ]
+    },
+    {
+      "canonical": "MiG-29",
+      "spoken": [
+        "míc hai chín",
+        "míc hai mươi chín",
+        "mích hai mươi chín"
+      ]
+    },
+    {
+      "canonical": "Ka-28",
+      "spoken": [
+        "ka hai tám",
+        "ca hai tám",
+        "ka hai mươi tám"
+      ]
+    },
+    {
+      "canonical": "Kh-35",
+      "spoken": [
+        "ka hát ba lăm",
+        "ca hát ba lăm",
+        "ka hát ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "P-800",
+      "spoken": [
+        "pê tám trăm",
+        "pê tám không không"
+      ]
+    },
+    {
+      "canonical": "MU90",
+      "spoken": [
+        "em u chín mươi",
+        "mờ u chín mươi"
+      ]
+    },
+    {
+      "canonical": "MK 46",
+      "spoken": [
+        "em ca bốn sáu",
+        "mờ ca bốn sáu",
+        "em ca bốn mươi sáu"
+      ]
+    },
+    {
+      "canonical": "SET-65",
+      "spoken": [
+        "ét e tê sáu lăm",
+        "ét e tê sáu mươi lăm"
+      ]
+    },
+    {
+      "canonical": "53-65KE",
+      "spoken": [
+        "năm ba sáu lăm ka e",
+        "năm mươi ba sáu mươi lăm ka e"
+      ]
+    },
+    {
+      "canonical": "T-54",
+      "spoken": [
+        "tê năm mươi bốn"
+      ]
+    },
+    {
+      "canonical": "T-55",
+      "spoken": [
+        "tê năm mươi lăm"
+      ]
+    },
+    {
+      "canonical": "T-62",
+      "spoken": [
+        "tê sáu mươi hai"
+      ]
+    },
+    {
+      "canonical": "T-64",
+      "spoken": [
+        "tê sáu mươi bốn"
+      ]
+    },
+    {
+      "canonical": "T-72",
+      "spoken": [
+        "tê bảy mươi hai"
+      ]
+    },
+    {
+      "canonical": "T-80",
+      "spoken": [
+        "tê tám mươi"
+      ]
+    },
+    {
+      "canonical": "T-84",
+      "spoken": [
+        "tê tám mươi bốn"
+      ]
+    },
+    {
+      "canonical": "BTR-60",
+      "spoken": [
+        "bê tê e rờ sáu mươi"
+      ]
+    },
+    {
+      "canonical": "BTR-70",
+      "spoken": [
+        "bê tê e rờ bảy mươi"
+      ]
+    },
+    {
+      "canonical": "BTR-80",
+      "spoken": [
+        "bê tê e rờ tám mươi"
+      ]
+    },
+    {
+      "canonical": "BTR-82",
+      "spoken": [
+        "bê tê e rờ tám mươi hai"
+      ]
+    },
+    {
+      "canonical": "BMP-1",
+      "spoken": [
+        "bê em pê một"
+      ]
+    },
+    {
+      "canonical": "BMP-2",
+      "spoken": [
+        "bê em pê hai"
+      ]
+    },
+    {
+      "canonical": "BMP-3",
+      "spoken": [
+        "bê em pê ba"
+      ]
+    },
+    {
+      "canonical": "MiG-17",
+      "spoken": [
+        "mích mười bảy"
+      ]
+    },
+    {
+      "canonical": "MiG-19",
+      "spoken": [
+        "mích mười chín"
+      ]
+    },
+    {
+      "canonical": "MiG-23",
+      "spoken": [
+        "mích hai mươi ba"
+      ]
+    },
+    {
+      "canonical": "MiG-25",
+      "spoken": [
+        "mích hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "MiG-27",
+      "spoken": [
+        "mích hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "MiG-31",
+      "spoken": [
+        "mích ba mươi mốt"
+      ]
+    },
+    {
+      "canonical": "MiG-35",
+      "spoken": [
+        "mích ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "Su-17",
+      "spoken": [
+        "su mười bảy"
+      ]
+    },
+    {
+      "canonical": "Su-20",
+      "spoken": [
+        "su hai mươi"
+      ]
+    },
+    {
+      "canonical": "Su-24",
+      "spoken": [
+        "su hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "Su-25",
+      "spoken": [
+        "su hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "Su-32",
+      "spoken": [
+        "su ba mươi hai"
+      ]
+    },
+    {
+      "canonical": "Su-33",
+      "spoken": [
+        "su ba mươi ba"
+      ]
+    },
+    {
+      "canonical": "Su-37",
+      "spoken": [
+        "su ba mươi bảy"
+      ]
+    },
+    {
+      "canonical": "Mi-8",
+      "spoken": [
+        "mi tám"
+      ]
+    },
+    {
+      "canonical": "Mi-24",
+      "spoken": [
+        "mi hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "Mi-26",
+      "spoken": [
+        "mi hai mươi sáu"
+      ]
+    },
+    {
+      "canonical": "Mi-28",
+      "spoken": [
+        "mi hai mươi tám"
+      ]
+    },
+    {
+      "canonical": "Mi-35",
+      "spoken": [
+        "mi ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "Mi-38",
+      "spoken": [
+        "mi ba mươi tám"
+      ]
+    },
+    {
+      "canonical": "S-75",
+      "spoken": [
+        "ét bảy mươi lăm"
+      ]
+    },
+    {
+      "canonical": "S-125",
+      "spoken": [
+        "ét một trăm hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "S-200",
+      "spoken": [
+        "ét hai trăm"
+      ]
+    },
+    {
+      "canonical": "S-300",
+      "spoken": [
+        "ét ba trăm"
+      ]
+    },
+    {
+      "canonical": "S-350",
+      "spoken": [
+        "ét ba trăm năm mươi"
+      ]
+    },
+    {
+      "canonical": "S-400",
+      "spoken": [
+        "ét bốn trăm"
+      ]
+    },
+    {
+      "canonical": "S-500",
+      "spoken": [
+        "ét năm trăm"
+      ]
+    },
+    {
+      "canonical": "P-12",
+      "spoken": [
+        "pê mười hai"
+      ]
+    },
+    {
+      "canonical": "P-14",
+      "spoken": [
+        "pê mười bốn"
+      ]
+    },
+    {
+      "canonical": "P-15",
+      "spoken": [
+        "pê mười lăm"
+      ]
+    },
+    {
+      "canonical": "P-18",
+      "spoken": [
+        "pê mười tám"
+      ]
+    },
+    {
+      "canonical": "P-19",
+      "spoken": [
+        "pê mười chín"
+      ]
+    },
+    {
+      "canonical": "P-35",
+      "spoken": [
+        "pê ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "P-37",
+      "spoken": [
+        "pê ba mươi bảy"
+      ]
+    },
+    {
+      "canonical": "P-40",
+      "spoken": [
+        "pê bốn mươi"
+      ]
+    },
+    {
+      "canonical": "AK-74",
+      "spoken": [
+        "a ca bảy mươi bốn"
+      ]
+    },
+    {
+      "canonical": "AK-101",
+      "spoken": [
+        "a ca một không một"
+      ]
+    },
+    {
+      "canonical": "AK-103",
+      "spoken": [
+        "a ca một không ba"
+      ]
+    },
+    {
+      "canonical": "AK-105",
+      "spoken": [
+        "a ca một không năm"
+      ]
+    },
+    {
+      "canonical": "M-18",
+      "spoken": [
+        "em mười tám"
+      ]
+    },
+    {
+      "canonical": "M-48",
+      "spoken": [
+        "em bốn mươi tám"
+      ]
+    },
+    {
+      "canonical": "M-60",
+      "spoken": [
+        "em sáu mươi"
+      ]
+    },
+    {
+      "canonical": "M-109",
+      "spoken": [
+        "em một không chín"
+      ]
+    },
+    {
+      "canonical": "M-113",
+      "spoken": [
+        "em một một ba"
+      ]
+    },
+    {
+      "canonical": "BM-21",
+      "spoken": [
+        "bê em hai mươi mốt"
+      ]
+    },
+    {
+      "canonical": "BM-27",
+      "spoken": [
+        "bê em hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "BM-30",
+      "spoken": [
+        "bê em ba mươi"
+      ]
+    },
+    {
+      "canonical": "ZSU-23",
+      "spoken": [
+        "dét ét u hai mươi ba"
+      ]
+    },
+    {
+      "canonical": "ZSU-57",
+      "spoken": [
+        "dét ét u năm mươi bảy"
+      ]
+    },
+    {
+      "canonical": "PRC-25",
+      "spoken": [
+        "pê e rờ xê hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "PRC-77",
+      "spoken": [
+        "pê e rờ xê bảy mươi bảy"
+      ]
+    },
+    {
+      "canonical": "PRC-117",
+      "spoken": [
+        "pê e rờ xê một một bảy"
+      ]
+    },
+    {
+      "canonical": "PRC-119",
+      "spoken": [
+        "pê e rờ xê một một chín"
+      ]
+    },
+    {
+      "canonical": "PRC-152",
+      "spoken": [
+        "pê e rờ xê một năm hai"
+      ]
+    },
+    {
+      "canonical": "K-300",
+      "spoken": [
+        "ca ba trăm"
+      ]
+    },
+    {
+      "canonical": "K-500",
+      "spoken": [
+        "ca năm trăm"
+      ]
+    },
+    {
+      "canonical": "B-1",
+      "spoken": [
+        "bê một"
+      ]
+    },
+    {
+      "canonical": "B-2",
+      "spoken": [
+        "bê hai"
+      ]
+    },
+    {
+      "canonical": "C-17",
+      "spoken": [
+        "xê mười bảy"
+      ]
+    },
+    {
+      "canonical": "C-130",
+      "spoken": [
+        "xê một trăm ba mươi"
+      ]
+    },
+    {
+      "canonical": "F-4",
+      "spoken": [
+        "ép bốn"
+      ]
+    },
+    {
+      "canonical": "F-5",
+      "spoken": [
+        "ép năm"
+      ]
+    },
+    {
+      "canonical": "F-14",
+      "spoken": [
+        "ép mười bốn"
+      ]
+    },
+    {
+      "canonical": "F-15",
+      "spoken": [
+        "ép mười lăm"
+      ]
+    },
+    {
+      "canonical": "F-18",
+      "spoken": [
+        "ép mười tám"
+      ]
+    },
+    {
+      "canonical": "F-22",
+      "spoken": [
+        "ép hai mươi hai"
+      ]
+    },
+    {
+      "canonical": "F-35",
+      "spoken": [
+        "ép ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "An-2",
+      "spoken": [
+        "an hai"
+      ]
+    },
+    {
+      "canonical": "An-12",
+      "spoken": [
+        "an mười hai"
+      ]
+    },
+    {
+      "canonical": "An-24",
+      "spoken": [
+        "an hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "An-26",
+      "spoken": [
+        "an hai mươi sáu"
+      ]
+    },
+    {
+      "canonical": "An-30",
+      "spoken": [
+        "an ba mươi"
+      ]
+    },
+    {
+      "canonical": "An-32",
+      "spoken": [
+        "an ba mươi hai"
+      ]
+    },
+    {
+      "canonical": "An-72",
+      "spoken": [
+        "an bảy mươi hai"
+      ]
+    },
+    {
+      "canonical": "An-124",
+      "spoken": [
+        "an một trăm hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "Il-18",
+      "spoken": [
+        "i lờ mười tám"
+      ]
+    },
+    {
+      "canonical": "Il-20",
+      "spoken": [
+        "i lờ hai mươi"
+      ]
+    },
+    {
+      "canonical": "Il-38",
+      "spoken": [
+        "i lờ ba mươi tám"
+      ]
+    },
+    {
+      "canonical": "Il-62",
+      "spoken": [
+        "i lờ sáu mươi hai"
+      ]
+    },
+    {
+      "canonical": "Il-76",
+      "spoken": [
+        "i lờ bảy mươi sáu"
+      ]
+    },
+    {
+      "canonical": "Ka-25",
+      "spoken": [
+        "ca a hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "Ka-27",
+      "spoken": [
+        "ca a hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "Ka-29",
+      "spoken": [
+        "ca a hai mươi chín"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-54",
+      "spoken": [
+        "xe tăng tê năm mươi bốn"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-55",
+      "spoken": [
+        "xe tăng tê năm mươi lăm"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-62",
+      "spoken": [
+        "xe tăng tê sáu mươi hai"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-64",
+      "spoken": [
+        "xe tăng tê sáu mươi bốn"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-72",
+      "spoken": [
+        "xe tăng tê bảy mươi hai"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-80",
+      "spoken": [
+        "xe tăng tê tám mươi"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-84",
+      "spoken": [
+        "xe tăng tê tám mươi bốn"
+      ]
+    },
+    {
+      "canonical": "xe tăng T-90",
+      "spoken": [
+        "xe tăng tê chín mươi"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BTR-60",
+      "spoken": [
+        "xe thiết giáp bê tê e rờ sáu mươi"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BTR-70",
+      "spoken": [
+        "xe thiết giáp bê tê e rờ bảy mươi"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BTR-80",
+      "spoken": [
+        "xe thiết giáp bê tê e rờ tám mươi"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BTR-82",
+      "spoken": [
+        "xe thiết giáp bê tê e rờ tám mươi hai"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BMP-1",
+      "spoken": [
+        "xe thiết giáp bê em pê một"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BMP-2",
+      "spoken": [
+        "xe thiết giáp bê em pê hai"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp BMP-3",
+      "spoken": [
+        "xe thiết giáp bê em pê ba"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-17",
+      "spoken": [
+        "máy bay mích mười bảy"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-19",
+      "spoken": [
+        "máy bay mích mười chín"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-21",
+      "spoken": [
+        "máy bay mích hai mươi mốt"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-23",
+      "spoken": [
+        "máy bay mích hai mươi ba"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-25",
+      "spoken": [
+        "máy bay mích hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-27",
+      "spoken": [
+        "máy bay mích hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-29",
+      "spoken": [
+        "máy bay mích hai mươi chín"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-31",
+      "spoken": [
+        "máy bay mích ba mươi mốt"
+      ]
+    },
+    {
+      "canonical": "máy bay MiG-35",
+      "spoken": [
+        "máy bay mích ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-17",
+      "spoken": [
+        "máy bay su mười bảy"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-20",
+      "spoken": [
+        "máy bay su hai mươi"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-22",
+      "spoken": [
+        "máy bay su hai mươi hai"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-24",
+      "spoken": [
+        "máy bay su hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-25",
+      "spoken": [
+        "máy bay su hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-27",
+      "spoken": [
+        "máy bay su hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-30",
+      "spoken": [
+        "máy bay su ba mươi"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-32",
+      "spoken": [
+        "máy bay su ba mươi hai"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-33",
+      "spoken": [
+        "máy bay su ba mươi ba"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-34",
+      "spoken": [
+        "máy bay su ba mươi bốn"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-35",
+      "spoken": [
+        "máy bay su ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "máy bay Su-37",
+      "spoken": [
+        "máy bay su ba mươi bảy"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-8",
+      "spoken": [
+        "trực thăng mi tám"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-17",
+      "spoken": [
+        "trực thăng mi mười bảy"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-24",
+      "spoken": [
+        "trực thăng mi hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-26",
+      "spoken": [
+        "trực thăng mi hai mươi sáu"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-28",
+      "spoken": [
+        "trực thăng mi hai mươi tám"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-35",
+      "spoken": [
+        "trực thăng mi ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "trực thăng Mi-38",
+      "spoken": [
+        "trực thăng mi ba mươi tám"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-75",
+      "spoken": [
+        "hệ thống ét bảy mươi lăm"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-125",
+      "spoken": [
+        "hệ thống ét một trăm hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-200",
+      "spoken": [
+        "hệ thống ét hai trăm"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-300",
+      "spoken": [
+        "hệ thống ét ba trăm"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-350",
+      "spoken": [
+        "hệ thống ét ba trăm năm mươi"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-400",
+      "spoken": [
+        "hệ thống ét bốn trăm"
+      ]
+    },
+    {
+      "canonical": "hệ thống S-500",
+      "spoken": [
+        "hệ thống ét năm trăm"
+      ]
+    },
+    {
+      "canonical": "radar P-12",
+      "spoken": [
+        "radar pê mười hai"
+      ]
+    },
+    {
+      "canonical": "radar P-14",
+      "spoken": [
+        "radar pê mười bốn"
+      ]
+    },
+    {
+      "canonical": "radar P-15",
+      "spoken": [
+        "radar pê mười lăm"
+      ]
+    },
+    {
+      "canonical": "radar P-18",
+      "spoken": [
+        "radar pê mười tám"
+      ]
+    },
+    {
+      "canonical": "radar P-19",
+      "spoken": [
+        "radar pê mười chín"
+      ]
+    },
+    {
+      "canonical": "radar P-35",
+      "spoken": [
+        "radar pê ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "radar P-37",
+      "spoken": [
+        "radar pê ba mươi bảy"
+      ]
+    },
+    {
+      "canonical": "radar P-40",
+      "spoken": [
+        "radar pê bốn mươi"
+      ]
+    },
+    {
+      "canonical": "súng AK-47",
+      "spoken": [
+        "súng a ca bốn mươi bảy"
+      ]
+    },
+    {
+      "canonical": "súng AK-74",
+      "spoken": [
+        "súng a ca bảy mươi bốn"
+      ]
+    },
+    {
+      "canonical": "súng AK-101",
+      "spoken": [
+        "súng a ca một không một"
+      ]
+    },
+    {
+      "canonical": "súng AK-103",
+      "spoken": [
+        "súng a ca một không ba"
+      ]
+    },
+    {
+      "canonical": "súng AK-105",
+      "spoken": [
+        "súng a ca một không năm"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp M-16",
+      "spoken": [
+        "xe thiết giáp em mười sáu"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp M-18",
+      "spoken": [
+        "xe thiết giáp em mười tám"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp M-48",
+      "spoken": [
+        "xe thiết giáp em bốn mươi tám"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp M-60",
+      "spoken": [
+        "xe thiết giáp em sáu mươi"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp M-109",
+      "spoken": [
+        "xe thiết giáp em một không chín"
+      ]
+    },
+    {
+      "canonical": "xe thiết giáp M-113",
+      "spoken": [
+        "xe thiết giáp em một một ba"
+      ]
+    },
+    {
+      "canonical": "pháo phản lực BM-21",
+      "spoken": [
+        "pháo phản lực bê em hai mươi mốt"
+      ]
+    },
+    {
+      "canonical": "pháo phản lực BM-27",
+      "spoken": [
+        "pháo phản lực bê em hai mươi bảy"
+      ]
+    },
+    {
+      "canonical": "pháo phản lực BM-30",
+      "spoken": [
+        "pháo phản lực bê em ba mươi"
+      ]
+    },
+    {
+      "canonical": "phương tiện ZSU-23",
+      "spoken": [
+        "phương tiện dét ét u hai mươi ba"
+      ]
+    },
+    {
+      "canonical": "phương tiện ZSU-57",
+      "spoken": [
+        "phương tiện dét ét u năm mươi bảy"
+      ]
+    },
+    {
+      "canonical": "máy thông tin PRC-25",
+      "spoken": [
+        "máy thông tin pê e rờ xê hai mươi lăm"
+      ]
+    },
+    {
+      "canonical": "máy thông tin PRC-77",
+      "spoken": [
+        "máy thông tin pê e rờ xê bảy mươi bảy"
+      ]
+    },
+    {
+      "canonical": "máy thông tin PRC-117",
+      "spoken": [
+        "máy thông tin pê e rờ xê một một bảy"
+      ]
+    },
+    {
+      "canonical": "máy thông tin PRC-119",
+      "spoken": [
+        "máy thông tin pê e rờ xê một một chín"
+      ]
+    },
+    {
+      "canonical": "máy thông tin PRC-152",
+      "spoken": [
+        "máy thông tin pê e rờ xê một năm hai"
+      ]
+    },
+    {
+      "canonical": "phương tiện K-300",
+      "spoken": [
+        "phương tiện ca ba trăm"
+      ]
+    },
+    {
+      "canonical": "phương tiện K-500",
+      "spoken": [
+        "phương tiện ca năm trăm"
+      ]
+    },
+    {
+      "canonical": "phương tiện B-1",
+      "spoken": [
+        "phương tiện bê một"
+      ]
+    },
+    {
+      "canonical": "phương tiện B-2",
+      "spoken": [
+        "phương tiện bê hai"
+      ]
+    },
+    {
+      "canonical": "phương tiện B-52",
+      "spoken": [
+        "phương tiện bê năm mươi hai"
+      ]
+    },
+    {
+      "canonical": "phương tiện C-17",
+      "spoken": [
+        "phương tiện xê mười bảy"
+      ]
+    },
+    {
+      "canonical": "phương tiện C-130",
+      "spoken": [
+        "phương tiện xê một trăm ba mươi"
+      ]
+    },
+    {
+      "canonical": "máy bay F-4",
+      "spoken": [
+        "máy bay ép bốn"
+      ]
+    },
+    {
+      "canonical": "máy bay F-5",
+      "spoken": [
+        "máy bay ép năm"
+      ]
+    },
+    {
+      "canonical": "máy bay F-14",
+      "spoken": [
+        "máy bay ép mười bốn"
+      ]
+    },
+    {
+      "canonical": "máy bay F-15",
+      "spoken": [
+        "máy bay ép mười lăm"
+      ]
+    },
+    {
+      "canonical": "máy bay F-16",
+      "spoken": [
+        "máy bay ép mười sáu"
+      ]
+    },
+    {
+      "canonical": "máy bay F-18",
+      "spoken": [
+        "máy bay ép mười tám"
+      ]
+    },
+    {
+      "canonical": "máy bay F-22",
+      "spoken": [
+        "máy bay ép hai mươi hai"
+      ]
+    },
+    {
+      "canonical": "máy bay F-35",
+      "spoken": [
+        "máy bay ép ba mươi lăm"
+      ]
+    },
+    {
+      "canonical": "máy bay An-2",
+      "spoken": [
+        "máy bay an hai"
+      ]
+    },
+    {
+      "canonical": "máy bay An-12",
+      "spoken": [
+        "máy bay an mười hai"
+      ]
+    },
+    {
+      "canonical": "máy bay An-24",
+      "spoken": [
+        "máy bay an hai mươi bốn"
+      ]
+    },
+    {
+      "canonical": "máy bay An-26",
+      "spoken": [
+        "máy bay an hai mươi sáu"
+      ]
+    },
+    {
+      "canonical": "máy bay An-30",
+      "spoken": [
+        "máy bay an ba mươi"
+      ]
+    },
+    {
+      "canonical": "máy bay An-32",
+      "spoken": [
+        "máy bay an ba mươi hai"
+      ]
+    }
+  ]
+}

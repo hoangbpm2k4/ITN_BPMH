@@ -1,0 +1,18 @@
+# Khoá API — không bao giờ commit
+api.txt
+*.key
+.env
+
+# Checkpoint và dữ liệu lớn không đưa lên
+*.pt
+*.onnx
+checkpoints*/
+datasets_v2/train.jsonl
+datasets_v2/mil_*.jsonl
+
+__pycache__/
+*.pyc
+
+# Dữ liệu chứa nguyên văn bài báo — không công khai
+*.jsonl
+datasets_v2/csv/test_*.csv
