@@ -7,6 +7,8 @@ tiếp — kèm bằng chứng số cho từng kết luận.
 Triển khai theo [README_ITN_V2_FINAL_UPDATED.md](README_ITN_V2_FINAL_UPDATED.md).
 Tài liệu triển khai chi tiết ở [itn_v2/README.md](itn_v2/README.md).
 
+Đối chiếu với hệ cũ V1 và đánh giá gói dữ liệu v4 ở [README_BASELINE_V1_VA_DANH_GIA_V4.md](README_BASELINE_V1_VA_DANH_GIA_V4.md).
+
 ---
 
 ## 1. Kết quả hiện tại
