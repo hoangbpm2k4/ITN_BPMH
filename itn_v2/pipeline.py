@@ -13,10 +13,28 @@ from typing import List, Optional
 from .config import Config
 from .labels import decode_spans
 from .registry import get_normalizer
-from .validators import validate
+from .validators import has_validator, validate
 
 SENTENCE_END = {".", "?", "!"}
 PUNCT_CHAR = {"O": "", "COMMA": ",", "PERIOD": ".", "QUESTION": "?"}
+
+# Kiểu anh em: cùng HÌNH DẠNG dạng nói nên mô hình hay lẫn, khác nhau ở khuôn
+# viết. Khi validator của kiểu dự đoán bác bỏ, thử lần lượt các kiểu này.
+#
+# Đo được: 19 số điện thoại của bộ test bị mất vì mô hình gán MMSI_ID cho
+# "không chín không tám một hai ba bốn năm sáu". Validator bác đúng (MMSI phải
+# 9 chữ số) rồi pipeline giữ dạng nói — mất trắng, dù TelephoneParser đọc được.
+# TELEPHONE có 369 span huấn luyện, MMSI_ID có 381, cả hai đều là chuỗi chữ số
+# trần nên không có gì phân biệt ngoài ngữ cảnh.
+#
+# Điều kiện an toàn: CHỈ lùi sang kiểu CÓ validator riêng. Kiểu không validator
+# sẽ nhận mọi thứ, biến cổng dự phòng thành đường bịa giá trị — đúng thứ spec
+# §16 cấm. Vì vậy DIGIT_SEQ, VESSEL_ID, CALLSIGN không nằm trong bảng này.
+FALLBACK_TYPES = {
+    "MMSI_ID": ("TELEPHONE", "IMO_ID"),
+    "TELEPHONE": ("MMSI_ID", "IMO_ID"),
+    "IMO_ID": ("MMSI_ID", "TELEPHONE"),
+}
 
 
 @dataclass
@@ -38,6 +56,7 @@ class SpanOutput:
     normalizer: str
     reason: str = ""
     emitted: bool = False
+    resolved_type: str = ""      # kiểu thực sự dùng, khác predicted_type nếu đã lùi
 
     def as_dict(self):
         return {
@@ -57,6 +76,7 @@ class SpanOutput:
             "normalizer": self.normalizer,
             "reason": self.reason,
             "emitted": self.emitted,
+            "resolved_type": self.resolved_type or self.predicted_type,
         }
 
 
@@ -80,24 +100,44 @@ def process_span(raw_words, type_name, start, end, boundaries,
         normalized=None, valid=False, normalizer="",
     )
 
-    normalizer = get_normalizer(type_name)
-    if normalizer is None:
-        out.reason = f"không có normalizer cho kiểu {type_name!r}"
-        return out
-    out.normalizer = normalizer.name
+    attempts = [type_name] + [
+        t for t in FALLBACK_TYPES.get(type_name, ()) if has_validator(t)]
+    first_reason = ""
+    resolved = None
+    for k, candidate in enumerate(attempts):
+        normalizer = get_normalizer(candidate)
+        if normalizer is None:
+            reason = f"không có normalizer cho kiểu {candidate!r}"
+        else:
+            if k == 0:
+                out.normalizer = normalizer.name
+            result = normalizer(raw_span, candidate)
+            if not result.valid:
+                reason = result.reason
+            else:
+                ok, why = validate(candidate, result.normalized)
+                if ok:
+                    resolved = (candidate, normalizer.name, result.normalized)
+                    break
+                if k == 0:
+                    out.normalized = result.normalized
+                reason = f"validator: {why}"
+        if k == 0:
+            first_reason = reason
 
-    result = normalizer(raw_span, type_name)
-    if not result.valid:
-        out.reason = result.reason
+    if resolved is None:
+        out.reason = first_reason
         return out
 
-    ok, why = validate(type_name, result.normalized)
-    if not ok:
-        out.normalized = result.normalized
-        out.reason = f"validator: {why}"
-        return out
+    candidate, normalizer_name, normalized = resolved
+    out.normalizer = normalizer_name
+    out.resolved_type = candidate
+    if candidate != type_name:
+        # Giữ nguyên predicted_type để vết gỡ lỗi vẫn quy được trách nhiệm cho
+        # mô hình; ghi rõ đã lùi sang kiểu nào và vì sao.
+        out.reason = f"lùi {type_name} -> {candidate} ({first_reason})"
 
-    out.normalized = result.normalized
+    out.normalized = normalized
     out.valid = True
     if model_confidence < threshold:
         out.reason = f"tin cậy {model_confidence:.2f} < ngưỡng {threshold:.2f}"

@@ -153,7 +153,61 @@ Cần thêm nhánh phút thập phân.
 `mười bảy giờ mười phút` ra `17 giờ 10 phút` thay vì `17:10`. Đúng về số, sai về
 khuôn. Đây là lỗi phân loại kiểu, sửa được bằng dữ liệu phân biệt ngữ cảnh.
 
-Ba nhóm này cộng lại **36–56 số**, công sửa nhỏ, không cần huấn luyện lại.
+### Đã sửa — kết quả đo lại trên cùng bộ test
+
+`4.1` và `4.2` đã sửa xong, cùng với khuôn số điện thoại quốc tế và đầu số dịch vụ:
+
+| | trước | sau |
+|---|---|---|
+| khớp hoàn toàn (XLM-R) | 34,5% | **34,9%** |
+| F1 theo từ | 0,843 | **0,847** |
+| khôi phục số | 56,4% | **59,8%** |
+| token số mất | 285 | **266** |
+| nhóm B (bị chặn) | 43 | **25** |
+| token số **thừa** (bịa) | 91 | **91** — không phát sinh |
+
+Cùng mức cải thiện trên PhoBERT `mil_v51`: 34,2% → 34,5%, F1 0,843 → 0,846.
+Số bịa đứng yên, tức là phần thu hồi được là thu hồi thật chứ không phải nới cổng.
+
+**Cơ chế đã thêm — cổng dự phòng giữa kiểu anh em** (`pipeline.FALLBACK_TYPES`):
+khi validator của kiểu mô hình dự đoán bác bỏ, pipeline thử các kiểu cùng hình
+dạng dạng nói. Điều kiện an toàn bắt buộc: **chỉ lùi sang kiểu CÓ validator
+riêng**. Kiểu không validator sẽ nhận mọi thứ, biến cổng dự phòng thành đường
+bịa giá trị — đúng thứ spec §16 cấm. Vì vậy `DIGIT_SEQ`, `VESSEL_ID`,
+`CALLSIGN` không nằm trong bảng, và `MK46 → PORT_CODE` vẫn chưa gỡ được bằng
+cách này.
+
+### Chưa sửa — và cố ý không sửa bằng code
+
+**`4.3` TIME vs DURATION không được sửa bằng luật cứng.** Đã tra cụm dẫn đứng
+ngay trước span trong toàn bộ dữ liệu huấn luyện:
+
+| cụm dẫn | tổng | TIME | DURATION |
+|---|---|---|---|
+| `lúc` | 87 | 87 | 0 |
+| `vào` | 61 | 61 | 0 |
+| `từ` | 61 | 61 | 0 |
+| `khoảng` | 120 | 0 | 120 |
+| `dài` | 64 | 0 | 64 |
+| **`sau`** | **0** | 0 | 0 |
+| **`trước`** | **0** | 0 | 0 |
+| **`quá`** | **0** | 0 | 0 |
+| **`sang`** | **0** | 0 | 0 |
+| **`hơn`** | **0** | 0 | 0 |
+
+Đúng những cụm dẫn mà bộ test dùng (`sau 23:30`, `quá 13:45`, `chuyển sang
+17:10`, `chậm hơn 16:45`) **xuất hiện 0 lần** trong huấn luyện. Mô hình đoán
+`DURATION` là nhất quán với thứ nó được dạy.
+
+Viết một bảng cứng `sau/trước/quá/sang/hơn → TIME` sẽ nâng điểm, nhưng đó là
+**chỉnh tay theo đáp án của bộ test cuối** — cùng loại vi phạm với việc chọn
+ngưỡng trên test, thứ `tune_thresholds.py` đã chặn bằng `SystemExit`. Lỗi này
+thuộc về dữ liệu và phải sửa ở §5.4.
+
+Ba số quốc tế còn lại cũng không sửa bằng code: mô hình cắt biên span **bỏ mất
+từ `cộng`**, nên parser chỉ nhận `tám bốn chín không tám…`. Suy ra dấu `+` từ
+việc chuỗi bắt đầu bằng `84` là bịa ra một ký tự không có trong span. Đây là lỗi
+biên, phải sửa bằng dữ liệu (§5.4).
 
 ---
 
@@ -312,6 +366,11 @@ ban`, `hotline`, `số của đại lý`, `liên lạc qua` → `TELEPHONE`; c�
 `em em ét i`, `nhận dạng tàu` → `MMSI_ID`. Sinh **cả câu chứa đồng thời hai loại**
 để mô hình buộc phải dùng ngữ cảnh.
 
+**Bắt buộc về biên span**: với số quốc tế, từ `cộng` phải nằm **bên trong** span
+`TELEPHONE`, không được để ngoài. Hiện mô hình cắt biên bỏ mất `cộng` ở cả 3/3
+số quốc tế của bộ test, khiến parser không dựng được dấu `+`. Cần ít nhất 150
+câu có `cộng` mở đầu span.
+
 #### COORD phút thập phân (DDM)
 
 ```
@@ -330,9 +389,14 @@ lúc mười bảy giờ mười phút        -> 17:10          [TIME]
 kéo dài mười bảy giờ mười phút    -> 17 giờ 10 phút [DURATION]
 ```
 
-Cụm dẫn quyết định kiểu: `lúc`, `vào`, `từ`, `đến`, `sau`, `trước`, `chậm hơn` →
-`TIME`; `kéo dài`, `trong vòng`, `mất`, `hết` → `DURATION`. Sinh cặp câu chỉ khác
-nhau ở cụm dẫn.
+Cụm dẫn quyết định kiểu: `lúc`, `vào`, `từ`, `đến`, `sau`, `trước`, `chậm hơn`,
+`quá`, `chuyển sang`, `muộn hơn` → `TIME`; `kéo dài`, `trong vòng`, `mất`, `hết`,
+`thêm` → `DURATION`. Sinh cặp câu chỉ khác nhau ở cụm dẫn.
+
+**Bắt buộc**: năm cụm dẫn `sau`, `trước`, `quá`, `sang`, `hơn` hiện xuất hiện
+**0 lần** trong dữ liệu huấn luyện. Mỗi cụm cần tối thiểu 60 câu `TIME`.
+Cũng cần câu `khoảng 10:10` mang kiểu `TIME` — hiện `khoảng` gắn với `DURATION`
+120/120 lần nên mô hình không thể học được nghĩa còn lại.
 
 #### ADDRESS có dấu `/`
 
@@ -387,10 +451,10 @@ python -m itn_v2.eval_dv1 --checkpoint checkpoints_v2/mil_v6.pt \
 
 Chỉ số cần theo dõi, xếp theo mức quan trọng:
 
-1. **Khôi phục số** — hiện 56,8%. Đây là chỉ số phản ánh đúng vấn đề này nhất.
-2. **Tỉ lệ nhóm D** — hiện 182/285 = 63,9%. Nếu dữ liệu đúng, nhóm này phải co lại.
-3. Khớp hoàn toàn — hiện 34,5%.
-4. F1 từ — hiện 0,843.
+1. **Khôi phục số** — hiện 59,8%. Đây là chỉ số phản ánh đúng vấn đề này nhất.
+2. **Tỉ lệ nhóm D** — hiện 181/266 = 68,0%. Nếu dữ liệu đúng, nhóm này phải co lại.
+3. Khớp hoàn toàn — hiện 34,9%.
+4. F1 từ — hiện 0,847.
 
 Cảnh báo: **tuyệt đối không chọn ngưỡng trên bộ test cuối.** `tune_thresholds.py`
 đã chặn cứng bằng `SystemExit` nếu đường dẫn chứa `dv1_eval`.

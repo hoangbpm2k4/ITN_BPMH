@@ -21,7 +21,8 @@ class ITNv2Dataset(Dataset):
                  skip_conflicts=True, max_subwords=None):
         self.config = config or Config()
         self.tokenizer = tokenizer or get_tokenizer(self.config.phobert_path)
-        self.segmenter = segmenter or WordSegmenter(self.config.phobert_path)
+        self.segmenter = segmenter or WordSegmenter(
+            self.config.phobert_path, enabled=self.config.segment_words)
         self.max_subwords = max_subwords or self.config.window_useful
         self.items = []
         self.skipped = []

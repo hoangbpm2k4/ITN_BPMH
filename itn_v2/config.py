@@ -28,6 +28,10 @@ def build_thresholds():
 @dataclass
 class Config:
     phobert_path: str = PHOBERT_PATH
+    # PhoBERT được huấn luyện trên văn bản đã tách từ ghép nên cần tầng tách từ.
+    # Các backbone khác (XLM-R, mBERT) huấn luyện trên văn bản THÔ — ghép âm tiết
+    # bằng dấu "_" rồi đưa vào sẽ tạo ra token lạ ngoài vốn từ của chúng.
+    segment_words: bool = True
     max_len: int = 256                 # giới hạn cứng của PhoBERT
     window_useful: int = 224           # spec §19
     window_overlap: int = 40

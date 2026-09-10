@@ -107,18 +107,23 @@ def read_cardinal(words) -> int:
     total = section = cur = 0
     pending_unit = False   # vừa gặp mười/mươi/lẻ -> chữ số kế tiếp là hàng đơn vị
     seen = False
+    # "trăm"/"nghìn"/"mươi" đứng một mình KHÔNG phải một con số — đó là mảnh vỡ
+    # của cụm dài hơn bị cắt sai biên. `seen` cũ bật lên cả với chúng, nên
+    # "trăm" đọc ra 0 và "mươi" đọc ra 10: một giá trị sai dựng lặng lẽ từ một
+    # biên sai, không cổng nào bắt được.
+    saw_digit = False
     for w in words:
         if w.isdigit():
             v = int(w)
             cur = cur + v if pending_unit else v
             pending_unit = False
-            seen = True
+            seen = saw_digit = True
         elif w in FILLERS:
             pending_unit = True
         elif w == "mười":
             cur = 10
             pending_unit = True
-            seen = True
+            seen = saw_digit = True
         elif w == "mươi":
             cur = cur * 10 if cur else 10
             pending_unit = True
@@ -127,7 +132,7 @@ def read_cardinal(words) -> int:
             d = UNIT_DIGITS[w]
             cur = cur + d if pending_unit else d
             pending_unit = False
-            seen = True
+            seen = saw_digit = True
         elif w == "trăm":
             section += cur * 100        # "không trăm" -> 0, không phải 100
             cur = 0
@@ -142,14 +147,22 @@ def read_cardinal(words) -> int:
             raise ParseError(f"từ {w!r} không thuộc văn phạm số đếm")
     if not seen:
         raise ParseError("không đọc được số đếm")
+    if not saw_digit:
+        raise ParseError(
+            f"{' '.join(words)!r} chỉ có từ chỉ hàng, không có chữ số nào")
     return total + section + cur
 
 
 def read_number_auto(words) -> int:
     """Dùng cho phần *bên trong* một parser đã biết kiểu, khi cụm chắc chắn là
-    một giá trị đếm (ví dụ phần ngày, phần tháng). Không dùng ở tầng dispatch."""
+    một giá trị đếm (ví dụ phần ngày, phần tháng). Không dùng ở tầng dispatch.
+
+    Việc chặn cụm chỉ có từ chỉ hàng nằm trong `read_cardinal` — ở đó mới phân
+    biệt được "mười" (là số 10) với "mươi"/"trăm" (chỉ là từ chỉ hàng)."""
     if isinstance(words, str):
         words = words.split()
+    if not words:
+        raise ParseError("cụm số rỗng")
     if has_structure(words):
         return read_cardinal(words)
     return int(read_digit_string(words))

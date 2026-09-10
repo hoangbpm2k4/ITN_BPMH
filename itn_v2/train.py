@@ -103,11 +103,21 @@ def main(argv=None):
     parser.add_argument("--punct-weight", type=float, default=None,
                         help="ghi đè trọng số nhánh dấu câu (spec §8 đặt 0.30)")
     parser.add_argument("--out-name", default="best.pt")
+    parser.add_argument("--encoder", default=None,
+                        help="đường dẫn backbone khác PhoBERT (vd xlm-roberta-base)")
+    parser.add_argument("--no-segment", action="store_true",
+                        help="tắt tách từ ghép — bắt buộc với backbone không phải PhoBERT")
     args = parser.parse_args(argv)
 
     config = Config()
     if args.punct_weight is not None:
         config.w_punct = args.punct_weight
+    if args.encoder:
+        config.phobert_path = args.encoder
+        print(f"[BACKBONE] {args.encoder}")
+    if args.no_segment:
+        config.segment_words = False
+        print("[BACKBONE] tắt tách từ ghép")
     epochs = args.epochs or config.epochs
     device = torch.device(args.device or ("cuda" if torch.cuda.is_available() else "cpu"))
 

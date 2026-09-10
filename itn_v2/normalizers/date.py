@@ -6,10 +6,13 @@ trên 23,9% số cụm DATE của tập huấn luyện.
 """
 
 from .base import Normalizer, ParseError
-from .number import (UNIT_DIGITS, read_cardinal, read_digit_string,
-                     read_number_auto, read_year, strip_negative)
+from .number import (COLLOQUIAL_UNITS, UNIT_DIGITS, read_cardinal,
+                     read_digit_string, read_number_auto, read_year,
+                     strip_negative)
 
 DAY_TRIGGERS = {"ngày", "mùng", "mồng"}
+# Từ có thể mở đầu một con số đọc bằng chữ — dùng để cắt phần dẫn khỏi phần giờ.
+NUMBER_START = set(UNIT_DIGITS) | set(COLLOQUIAL_UNITS) | {"mười", "mươi"}
 HOUR_WORDS = {"giờ", "h"}
 MINUTE_WORDS = {"phút"}
 SECOND_WORDS = {"giây"}
@@ -240,15 +243,32 @@ class TimeParser(Normalizer):
 
 
 class TimezoneParser(Normalizer):
+    """"giờ phối hợp quốc tế cộng bảy" -> UTC+7; "giờ địa phương" -> LT
+
+    Múi giờ KHÔNG bắt buộc có độ lệch. Bản gốc thật viết "07:30 LT, tương đương
+    00:30 UTC" — cả hai đều là nhãn trần. Bản trước bắt buộc phải có cộng/trừ
+    nên trả None cho đúng dạng hay gặp nhất.
+    """
+
     name = "TimezoneParser"
     SIGNS = {"cộng": "+", "dương": "+", "trừ": "-", "âm": "-"}
+    # Tập đóng: chỉ hai nhãn này đứng một mình được.
+    BARE = {"giờ địa phương": "LT", "địa phương": "LT",
+            "giờ phối hợp quốc tế": "UTC", "phối hợp quốc tế": "UTC",
+            "u tê xê": "UTC", "u ti xi": "UTC"}
 
     def parse(self, raw_text, context=None):
         from ..catalog import get_catalog
         words = raw_text.split()
         idx = next((k for k, w in enumerate(words) if w in self.SIGNS), None)
         if idx is None:
-            raise ParseError("không có dấu cộng/trừ của múi giờ")
+            key = " ".join(words)
+            if key in self.BARE:
+                return self.BARE[key]
+            label, score = get_catalog("acronyms").lookup(key)
+            if label and score >= 1.0:
+                return label
+            raise ParseError("không nhận ra múi giờ")
         label_words, sign, offset_words = words[:idx], self.SIGNS[words[idx]], words[idx + 1:]
         if not offset_words:
             raise ParseError("thiếu độ lệch múi giờ")
@@ -261,16 +281,36 @@ class TimezoneParser(Normalizer):
 
 
 class _PrefixedTime(Normalizer):
+    """Giờ có nhãn đứng trước: "… tám giờ mười lăm phút" -> "ETA 08:15".
+
+    Người Việt hiếm khi đánh vần "i ti ây"; họ nói thẳng "thời gian dự kiến
+    đến". Bản trước chỉ nhận dạng đánh vần, và khi không khớp thì lặng lẽ ném cả
+    cụm vào TimeParser — cụm còn nguyên chữ nên hỏng, trả None.
+    """
+
     prefix = ""
     spoken_prefixes = ()
+    # Cụm nghĩa: nhận ra bằng TỪ KHOÁ chứ không so khớp nguyên văn, vì trật tự
+    # thay đổi nhiều ("dự kiến đến lúc", "dự kiến tàu đến vào").
+    trigger_words = ()
 
-    def parse(self, raw_text, context=None):
-        words = raw_text.split()
+    def _strip_prefix(self, words):
         for sp in sorted(self.spoken_prefixes, key=lambda s: -len(s.split())):
             sw = sp.split()
             if words[:len(sw)] == sw:
-                words = words[len(sw):]
-                break
+                return words[len(sw):]
+        if not self.trigger_words:
+            return words
+        # Phần đầu = mọi từ trước con số đầu tiên. Nếu nó chứa đủ từ khoá thì bỏ.
+        head = 0
+        while head < len(words) and words[head] not in NUMBER_START:
+            head += 1
+        if head and all(t in words[:head] for t in self.trigger_words):
+            return words[head:]
+        return words
+
+    def parse(self, raw_text, context=None):
+        words = self._strip_prefix(raw_text.split())
         if not words:
             raise ParseError("thiếu phần giờ sau tiền tố")
         return f"{self.prefix} {TimeParser().parse(' '.join(words))}"
@@ -279,13 +319,15 @@ class _PrefixedTime(Normalizer):
 class ETAParser(_PrefixedTime):
     name = "ETAParser"
     prefix = "ETA"
-    spoken_prefixes = ("ê tê a", "i ti ây", "eta")
+    spoken_prefixes = ("ê tê a", "e tê a", "i ti ây", "eta")
+    trigger_words = ("dự", "kiến", "đến")
 
 
 class ETDParser(_PrefixedTime):
     name = "ETDParser"
     prefix = "ETD"
-    spoken_prefixes = ("ê tê đê", "i ti đi", "etd")
+    spoken_prefixes = ("ê tê đê", "e tê đê", "i ti đi", "etd")
+    trigger_words = ("dự", "kiến", "rời")
 
 
 class DurationParser(Normalizer):

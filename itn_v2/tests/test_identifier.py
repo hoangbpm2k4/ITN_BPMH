@@ -69,7 +69,7 @@ class TestIdentifiers(unittest.TestCase):
 
     def test_address(self):
         self.assertEqual(AddressParser()("số mười hai đường Lê Lợi").normalized,
-                         "số 12 đường Lê Lợi")
+                         "Số 12 đường Lê Lợi")
 
 
 if __name__ == "__main__":

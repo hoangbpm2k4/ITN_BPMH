@@ -16,8 +16,9 @@
     {
       "canonical": "AIS",
       "spoken": [
+        "a ai ét",
         "a i ét",
-        "a ai ét"
+        "hệ thống nhận dạng tự động"
       ]
     },
     {
@@ -27,10 +28,33 @@
       ]
     },
     {
+      "canonical": "ARPA",
+      "spoken": [
+        "a e rờ pê a",
+        "a e rờ pờ a",
+        "a rờ pê a",
+        "a rờ pờ a"
+      ]
+    },
+    {
       "canonical": "ASEAN",
       "spoken": [
         "a s e a n",
         "a ét e a en"
+      ]
+    },
+    {
+      "canonical": "BCHQS",
+      "spoken": [
+        "ban chỉ huy quân sự",
+        "bê xê hát quy ét"
+      ]
+    },
+    {
+      "canonical": "BHXH",
+      "spoken": [
+        "bê hát ích hát",
+        "bảo hiểm xã hội"
       ]
     },
     {
@@ -46,27 +70,112 @@
       ]
     },
     {
+      "canonical": "BLOS",
+      "spoken": [
+        "bê e lờ ô ét"
+      ]
+    },
+    {
       "canonical": "BQP",
       "spoken": [
-        "bê quy pê"
+        "bê quy pê",
+        "bộ quốc phòng"
       ]
     },
     {
       "canonical": "BTL",
       "spoken": [
-        "bê tê e lờ"
+        "bê tê e lờ",
+        "bộ tư lệnh"
       ]
     },
     {
       "canonical": "BĐBP",
       "spoken": [
-        "bê đê bê pê"
+        "bê đê bê pê",
+        "bộ đội biên phòng"
       ]
     },
     {
       "canonical": "BĐHC",
       "spoken": [
         "b đ h c"
+      ]
+    },
+    {
+      "canonical": "C2",
+      "spoken": [
+        "xê hai"
+      ]
+    },
+    {
+      "canonical": "C3",
+      "spoken": [
+        "xê ba"
+      ]
+    },
+    {
+      "canonical": "C4I",
+      "spoken": [
+        "xê bốn i"
+      ]
+    },
+    {
+      "canonical": "C4ISR",
+      "spoken": [
+        "xê bốn i ét e rờ"
+      ]
+    },
+    {
+      "canonical": "CAND",
+      "spoken": [
+        "cê a e nờ dê",
+        "cê a e nờ đê",
+        "cê a en dê",
+        "cê a en đê",
+        "cê a nờ dê",
+        "cê a nờ đê",
+        "công an nhân dân",
+        "xê a e nờ dê",
+        "xê a e nờ đê",
+        "xê a en dê",
+        "xê a en đê",
+        "xê a nờ dê",
+        "xê a nờ đê"
+      ]
+    },
+    {
+      "canonical": "CASEVAC",
+      "spoken": [
+        "xê a ét e vê a xê"
+      ]
+    },
+    {
+      "canonical": "CCCD",
+      "spoken": [
+        "cê cê cê dê",
+        "cê cê cê đê",
+        "cê cê xê dê",
+        "cê cê xê đê",
+        "cê xê cê dê",
+        "cê xê cê đê",
+        "cê xê xê dê",
+        "cê xê xê đê",
+        "căn cước công dân",
+        "xê cê cê dê",
+        "xê cê cê đê",
+        "xê cê xê dê",
+        "xê cê xê đê",
+        "xê xê cê dê",
+        "xê xê cê đê",
+        "xê xê xê dê",
+        "xê xê xê đê"
+      ]
+    },
+    {
+      "canonical": "CCP",
+      "spoken": [
+        "xê xê pê"
       ]
     },
     {
@@ -90,23 +199,157 @@
       ]
     },
     {
+      "canonical": "COC",
+      "spoken": [
+        "xê ô xê"
+      ]
+    },
+    {
+      "canonical": "COMSEC",
+      "spoken": [
+        "xê ô em ét e xê"
+      ]
+    },
+    {
+      "canonical": "CP",
+      "spoken": [
+        "xê pê"
+      ]
+    },
+    {
+      "canonical": "CPA",
+      "spoken": [
+        "cê pê a",
+        "cê pờ a",
+        "xê pê a",
+        "xê pờ a",
+        "điểm tiếp cận gần nhất"
+      ]
+    },
+    {
+      "canonical": "CSAR",
+      "spoken": [
+        "xê ét a e rờ"
+      ]
+    },
+    {
       "canonical": "CSB",
       "spoken": [
-        "xê ét bê",
         "cê ét bê",
-        "cảnh sát biển"
+        "cảnh sát biển",
+        "xê ét bê"
+      ]
+    },
+    {
+      "canonical": "CSGT",
+      "spoken": [
+        "cê sờ giê tê",
+        "cê sờ gờ tê",
+        "cê ét giê tê",
+        "cê ét gờ tê",
+        "cảnh sát giao thông",
+        "xê sờ giê tê",
+        "xê sờ gờ tê",
+        "xê ét giê tê",
+        "xê ét gờ tê"
+      ]
+    },
+    {
+      "canonical": "DNS",
+      "spoken": [
+        "dê e nờ sờ",
+        "dê e nờ ét",
+        "dê en sờ",
+        "dê en ét",
+        "dê nờ sờ",
+        "dê nờ ét",
+        "đê e nờ sờ",
+        "đê e nờ ét",
+        "đê en sờ",
+        "đê en ét",
+        "đê nờ sờ",
+        "đê nờ ét"
+      ]
+    },
+    {
+      "canonical": "DQTV",
+      "spoken": [
+        "dân quân tự vệ",
+        "đê quy tê vê"
+      ]
+    },
+    {
+      "canonical": "DSC",
+      "spoken": [
+        "dê sờ cê",
+        "dê sờ xê",
+        "dê ét cê",
+        "dê ét xê",
+        "gọi chọn số",
+        "đê sờ cê",
+        "đê sờ xê",
+        "đê ét cê",
+        "đê ét xê"
+      ]
+    },
+    {
+      "canonical": "DZ",
+      "spoken": [
+        "đê dét"
+      ]
+    },
+    {
+      "canonical": "ECCM",
+      "spoken": [
+        "e xê xê em"
+      ]
+    },
+    {
+      "canonical": "ECDIS",
+      "spoken": [
+        "e xê đê i ét",
+        "hệ thống thông tin và hiển thị hải đồ điện tử"
+      ]
+    },
+    {
+      "canonical": "ECM",
+      "spoken": [
+        "e xê em"
+      ]
+    },
+    {
+      "canonical": "ELINT",
+      "spoken": [
+        "e e lờ i en tê"
+      ]
+    },
+    {
+      "canonical": "EO",
+      "spoken": [
+        "e ô"
       ]
     },
     {
       "canonical": "EPIRB",
       "spoken": [
-        "e pi ớp"
+        "e pi ớp",
+        "e pê i e rờ bê",
+        "e pê i rờ bê",
+        "e pờ i e rờ bê",
+        "e pờ i rờ bê",
+        "phao vô tuyến chỉ báo vị trí khẩn cấp"
       ]
     },
     {
       "canonical": "ESG",
       "spoken": [
         "e s g"
+      ]
+    },
+    {
+      "canonical": "ESM",
+      "spoken": [
+        "e ét em"
       ]
     },
     {
@@ -126,23 +369,86 @@
       ]
     },
     {
+      "canonical": "EW",
+      "spoken": [
+        "e vê kép"
+      ]
+    },
+    {
+      "canonical": "FOB",
+      "spoken": [
+        "ép ô bê"
+      ]
+    },
+    {
       "canonical": "GDP",
       "spoken": [
         "g d p"
       ]
     },
     {
+      "canonical": "GEOINT",
+      "spoken": [
+        "gờ e ô i en tê"
+      ]
+    },
+    {
+      "canonical": "GIS",
+      "spoken": [
+        "gờ i ét",
+        "hệ thống thông tin địa lý"
+      ]
+    },
+    {
       "canonical": "GMDSS",
       "spoken": [
-        "giê em đê ét ét"
+        "giê em đê ét ét",
+        "gờ em đê ét ét",
+        "hệ thống thông tin an toàn và cứu nạn hàng hải toàn cầu"
+      ]
+    },
+    {
+      "canonical": "GMT",
+      "spoken": [
+        "giê e mờ tê",
+        "giê em tê",
+        "giê mờ tê",
+        "gờ e mờ tê",
+        "gờ em tê",
+        "gờ mờ tê"
+      ]
+    },
+    {
+      "canonical": "GNSS",
+      "spoken": [
+        "gờ en ét ét",
+        "hệ thống vệ tinh định vị toàn cầu"
       ]
     },
     {
       "canonical": "GPS",
       "spoken": [
-        "giê pê ét",
         "gi pi ét",
-        "gờ pê ét"
+        "giê pê ét",
+        "gờ pê ét",
+        "hệ thống định vị toàn cầu"
+      ]
+    },
+    {
+      "canonical": "HCKT",
+      "spoken": [
+        "hát xê ca tê"
+      ]
+    },
+    {
+      "canonical": "HCM",
+      "spoken": [
+        "hát cê e mờ",
+        "hát cê em",
+        "hát cê mờ",
+        "hát xê e mờ",
+        "hát xê em",
+        "hát xê mờ"
       ]
     },
     {
@@ -152,10 +458,35 @@
       ]
     },
     {
+      "canonical": "HQ",
+      "spoken": [
+        "hát quy",
+        "hải quân"
+      ]
+    },
+    {
+      "canonical": "HUMINT",
+      "spoken": [
+        "hát u em i en tê"
+      ]
+    },
+    {
       "canonical": "HĐND",
       "spoken": [
         "hát đê en đê",
         "hội đồng nhân dân"
+      ]
+    },
+    {
+      "canonical": "ICAO",
+      "spoken": [
+        "i xê a ô"
+      ]
+    },
+    {
+      "canonical": "IFF",
+      "spoken": [
+        "i ép ép"
       ]
     },
     {
@@ -167,8 +498,39 @@
     {
       "canonical": "IMO",
       "spoken": [
+        "ai em ô",
         "i em ô",
-        "ai em ô"
+        "tổ chức hàng hải quốc tế"
+      ]
+    },
+    {
+      "canonical": "INS",
+      "spoken": [
+        "i en ét"
+      ]
+    },
+    {
+      "canonical": "IP",
+      "spoken": [
+        "i pê"
+      ]
+    },
+    {
+      "canonical": "IR",
+      "spoken": [
+        "i e rờ"
+      ]
+    },
+    {
+      "canonical": "ISR",
+      "spoken": [
+        "i ét e rờ"
+      ]
+    },
+    {
+      "canonical": "IT",
+      "spoken": [
+        "i tê"
       ]
     },
     {
@@ -181,6 +543,12 @@
       "canonical": "KHCN",
       "spoken": [
         "k h c n"
+      ]
+    },
+    {
+      "canonical": "KTQS",
+      "spoken": [
+        "ca tê quy ét"
       ]
     },
     {
@@ -202,9 +570,85 @@
       ]
     },
     {
+      "canonical": "LOCODE",
+      "spoken": [
+        "e lờ o cê o dê e",
+        "e lờ o cê o đê e",
+        "e lờ o cê ô dê e",
+        "e lờ o cê ô đê e",
+        "e lờ o xê o dê e",
+        "e lờ o xê o đê e",
+        "e lờ o xê ô dê e",
+        "e lờ o xê ô đê e",
+        "e lờ ô cê o dê e",
+        "e lờ ô cê o đê e",
+        "e lờ ô cê ô dê e",
+        "e lờ ô cê ô đê e",
+        "e lờ ô xê o dê e",
+        "e lờ ô xê o đê e",
+        "e lờ ô xê ô dê e",
+        "e lờ ô xê ô đê e",
+        "lờ ô cê o dê e",
+        "lờ ô cê o đê e",
+        "lờ ô cê ô dê e",
+        "lờ ô cê ô đê e",
+        "lờ ô xê o dê e",
+        "lờ ô xê o đê e",
+        "lờ ô xê ô dê e",
+        "lờ ô xê ô đê e"
+      ]
+    },
+    {
+      "canonical": "LOS",
+      "spoken": [
+        "e lờ ô ét"
+      ]
+    },
+    {
+      "canonical": "LZ",
+      "spoken": [
+        "e lờ dét"
+      ]
+    },
+    {
       "canonical": "MARPOL",
       "spoken": [
         "ma pôn"
+      ]
+    },
+    {
+      "canonical": "MAYDAY",
+      "spoken": [
+        "e mờ a i cờ rét dê a i cờ rét",
+        "e mờ a i cờ rét dê a i dài",
+        "e mờ a i cờ rét dê a y",
+        "e mờ a i cờ rét đê a i cờ rét",
+        "e mờ a i cờ rét đê a i dài",
+        "e mờ a i cờ rét đê a y",
+        "e mờ a i dài dê a i cờ rét",
+        "e mờ a i dài dê a i dài",
+        "e mờ a i dài dê a y",
+        "e mờ a i dài đê a i cờ rét",
+        "e mờ a i dài đê a i dài",
+        "e mờ a i dài đê a y",
+        "e mờ a y dê a i cờ rét",
+        "e mờ a y dê a i dài",
+        "e mờ a y dê a y",
+        "e mờ a y đê a i cờ rét",
+        "e mờ a y đê a i dài",
+        "e mờ a y đê a y",
+        "em a i cờ rét dê a i cờ rét",
+        "em a i cờ rét dê a i dài",
+        "em a i cờ rét dê a y",
+        "em a i cờ rét đê a i cờ rét",
+        "em a i cờ rét đê a i dài",
+        "em a i cờ rét đê a y"
+      ]
+    },
+    {
+      "canonical": "MEDEVAC",
+      "spoken": [
+        "em e đê e vê a xê"
       ]
     },
     {
@@ -222,6 +666,50 @@
       ]
     },
     {
+      "canonical": "MRCC",
+      "spoken": [
+        "e mờ e rờ cê cê",
+        "e mờ e rờ cê xê",
+        "e mờ e rờ xê cê",
+        "e mờ e rờ xê xê",
+        "e mờ rờ cê cê",
+        "e mờ rờ cê xê",
+        "e mờ rờ xê cê",
+        "e mờ rờ xê xê",
+        "em e rờ cê cê",
+        "em e rờ cê xê",
+        "em e rờ xê cê",
+        "em e rờ xê xê",
+        "em rờ cê cê",
+        "em rờ cê xê",
+        "em rờ xê cê",
+        "em rờ xê xê",
+        "mờ e rờ cê cê",
+        "mờ e rờ cê xê",
+        "mờ e rờ xê cê",
+        "mờ e rờ xê xê",
+        "mờ rờ cê cê",
+        "mờ rờ cê xê",
+        "mờ rờ xê cê",
+        "mờ rờ xê xê",
+        "trung tâm phối hợp tìm kiếm cứu nạn hàng hải"
+      ]
+    },
+    {
+      "canonical": "NATO",
+      "spoken": [
+        "en a tê ô"
+      ]
+    },
+    {
+      "canonical": "NAVTEX",
+      "spoken": [
+        "e nờ a vê tê e ích",
+        "en a vê tê e ích",
+        "nờ a vê tê e ích"
+      ]
+    },
+    {
       "canonical": "NTLS",
       "spoken": [
         "n t l s"
@@ -234,242 +722,97 @@
       ]
     },
     {
-      "canonical": "QNCN",
+      "canonical": "OOW",
       "spoken": [
-        "q n c n",
-        "quân nhân chuyên nghiệp",
-        "quy en xê en"
+        "o o vê kép",
+        "o ô vê kép",
+        "sĩ quan trực ca",
+        "ô o vê kép",
+        "ô ô vê kép"
       ]
     },
     {
-      "canonical": "QĐND",
+      "canonical": "OP",
       "spoken": [
-        "quy đê en đê",
-        "quân đội nhân dân"
+        "ô pê"
       ]
     },
     {
-      "canonical": "QĐNDVN",
+      "canonical": "OPSEC",
       "spoken": [
-        "q đ n d v n"
+        "ô pê ét e xê"
       ]
     },
     {
-      "canonical": "RIA",
+      "canonical": "OSINT",
       "spoken": [
-        "r i a"
+        "ô ét i en tê"
       ]
     },
     {
-      "canonical": "SAF",
+      "canonical": "PAN-PAN",
       "spoken": [
-        "s a f"
+        "pê a e nờ pê a e nờ",
+        "pê a e nờ pê a en",
+        "pê a e nờ pê a nờ",
+        "pê a e nờ pờ a e nờ",
+        "pê a e nờ pờ a en",
+        "pê a e nờ pờ a nờ",
+        "pê a en pê a e nờ",
+        "pê a en pê a en",
+        "pê a en pê a nờ",
+        "pê a en pờ a e nờ",
+        "pê a en pờ a en",
+        "pê a en pờ a nờ",
+        "pê a nờ pê a e nờ",
+        "pê a nờ pê a en",
+        "pê a nờ pê a nờ",
+        "pê a nờ pờ a e nờ",
+        "pê a nờ pờ a en",
+        "pê a nờ pờ a nờ",
+        "pờ a e nờ pê a e nờ",
+        "pờ a e nờ pê a en",
+        "pờ a e nờ pê a nờ",
+        "pờ a e nờ pờ a e nờ",
+        "pờ a e nờ pờ a en",
+        "pờ a e nờ pờ a nờ"
       ]
     },
     {
-      "canonical": "SAR",
+      "canonical": "PCCC",
       "spoken": [
-        "ét a rờ",
-        "ét a e rờ"
-      ]
-    },
-    {
-      "canonical": "SART",
-      "spoken": [
-        "sát",
-        "ét a rờ tê"
-      ]
-    },
-    {
-      "canonical": "SOLAS",
-      "spoken": [
-        "sô lát",
-        "sồ lát"
-      ]
-    },
-    {
-      "canonical": "SSCĐ",
-      "spoken": [
-        "s s c đ"
-      ]
-    },
-    {
-      "canonical": "TCHC",
-      "spoken": [
-        "t c h c",
-        "tê xê hát xê"
-      ]
-    },
-    {
-      "canonical": "THCS",
-      "spoken": [
-        "t h c s"
-      ]
-    },
-    {
-      "canonical": "TNQĐ",
-      "spoken": [
-        "t n q đ"
-      ]
-    },
-    {
-      "canonical": "TP",
-      "spoken": [
-        "t p"
-      ]
-    },
-    {
-      "canonical": "TS",
-      "spoken": [
-        "t s"
-      ]
-    },
-    {
-      "canonical": "TĐKT",
-      "spoken": [
-        "t đ k t"
-      ]
-    },
-    {
-      "canonical": "TĐQT",
-      "spoken": [
-        "t đ q t"
-      ]
-    },
-    {
-      "canonical": "UAV",
-      "spoken": [
-        "u a vê",
-        "u ây vi"
-      ]
-    },
-    {
-      "canonical": "UBND",
-      "spoken": [
-        "u bê en đê",
-        "ủy ban nhân dân"
-      ]
-    },
-    {
-      "canonical": "UHF",
-      "spoken": [
-        "u hát ép"
-      ]
-    },
-    {
-      "canonical": "UTC",
-      "spoken": [
-        "u tê xê",
-        "u ti xi"
-      ]
-    },
-    {
-      "canonical": "VHF",
-      "spoken": [
-        "vê hát ép",
-        "vê hắt ép"
-      ]
-    },
-    {
-      "canonical": "VOV",
-      "spoken": [
-        "v o v"
-      ]
-    },
-    {
-      "canonical": "VTS",
-      "spoken": [
-        "vê tê ét"
-      ]
-    },
-    {
-      "canonical": "VTĐ",
-      "spoken": [
-        "v t đ"
-      ]
-    },
-    {
-      "canonical": "XHCN",
-      "spoken": [
-        "x h c n"
-      ]
-    },
-    {
-      "canonical": "ĐVTN",
-      "spoken": [
-        "đ v t n"
-      ]
-    },
-    {
-      "canonical": "PK-KQ",
-      "spoken": [
-        "pê ca ca quy"
-      ]
-    },
-    {
-      "canonical": "HQ",
-      "spoken": [
-        "hát quy"
-      ]
-    },
-    {
-      "canonical": "TTLL",
-      "spoken": [
-        "tê tê e lờ e lờ"
-      ]
-    },
-    {
-      "canonical": "KTQS",
-      "spoken": [
-        "ca tê quy ét"
-      ]
-    },
-    {
-      "canonical": "HCKT",
-      "spoken": [
-        "hát xê ca tê"
+        "phòng cháy chữa cháy",
+        "pê cê cê cê",
+        "pê cê cê xê",
+        "pê cê xê cê",
+        "pê cê xê xê",
+        "pê xê cê cê",
+        "pê xê cê xê",
+        "pê xê xê cê",
+        "pê xê xê xê",
+        "pờ cê cê cê",
+        "pờ cê cê xê",
+        "pờ cê xê cê",
+        "pờ cê xê xê",
+        "pờ xê cê cê",
+        "pờ xê cê xê",
+        "pờ xê xê cê",
+        "pờ xê xê xê"
       ]
     },
     {
       "canonical": "PCTT",
       "spoken": [
+        "phòng chống thiên tai",
         "pê xê tê tê"
       ]
     },
     {
-      "canonical": "BCHQS",
+      "canonical": "PK-KQ",
       "spoken": [
-        "bê xê hát quy ét"
-      ]
-    },
-    {
-      "canonical": "DQTV",
-      "spoken": [
-        "đê quy tê vê"
-      ]
-    },
-    {
-      "canonical": "SQDB",
-      "spoken": [
-        "ét quy đê bê"
-      ]
-    },
-    {
-      "canonical": "TMT",
-      "spoken": [
-        "tê em tê"
-      ]
-    },
-    {
-      "canonical": "TCCT",
-      "spoken": [
-        "tê xê xê tê"
-      ]
-    },
-    {
-      "canonical": "TCKT",
-      "spoken": [
-        "tê xê ca tê"
+        "phòng không không quân",
+        "pê ca ca quy",
+        "pê ca gạch ngang ca quy"
       ]
     },
     {
@@ -482,294 +825,6 @@
       "canonical": "QCPKKQ",
       "spoken": [
         "quy xê pê ca ca quy"
-      ]
-    },
-    {
-      "canonical": "GNSS",
-      "spoken": [
-        "gờ en ét ét"
-      ]
-    },
-    {
-      "canonical": "INS",
-      "spoken": [
-        "i en ét"
-      ]
-    },
-    {
-      "canonical": "IFF",
-      "spoken": [
-        "i ép ép"
-      ]
-    },
-    {
-      "canonical": "ECDIS",
-      "spoken": [
-        "e xê đê i ét"
-      ]
-    },
-    {
-      "canonical": "UCAV",
-      "spoken": [
-        "u xê a vê"
-      ]
-    },
-    {
-      "canonical": "ISR",
-      "spoken": [
-        "i ét e rờ"
-      ]
-    },
-    {
-      "canonical": "C4ISR",
-      "spoken": [
-        "xê bốn i ét e rờ"
-      ]
-    },
-    {
-      "canonical": "C4I",
-      "spoken": [
-        "xê bốn i"
-      ]
-    },
-    {
-      "canonical": "COMSEC",
-      "spoken": [
-        "xê ô em ét e xê"
-      ]
-    },
-    {
-      "canonical": "OPSEC",
-      "spoken": [
-        "ô pê ét e xê"
-      ]
-    },
-    {
-      "canonical": "SIGINT",
-      "spoken": [
-        "ét i gờ i en tê"
-      ]
-    },
-    {
-      "canonical": "ELINT",
-      "spoken": [
-        "e e lờ i en tê"
-      ]
-    },
-    {
-      "canonical": "HUMINT",
-      "spoken": [
-        "hát u em i en tê"
-      ]
-    },
-    {
-      "canonical": "GEOINT",
-      "spoken": [
-        "gờ e ô i en tê"
-      ]
-    },
-    {
-      "canonical": "OSINT",
-      "spoken": [
-        "ô ét i en tê"
-      ]
-    },
-    {
-      "canonical": "SATCOM",
-      "spoken": [
-        "ét a tê xê ô em"
-      ]
-    },
-    {
-      "canonical": "BLOS",
-      "spoken": [
-        "bê e lờ ô ét"
-      ]
-    },
-    {
-      "canonical": "LOS",
-      "spoken": [
-        "e lờ ô ét"
-      ]
-    },
-    {
-      "canonical": "NATO",
-      "spoken": [
-        "en a tê ô"
-      ]
-    },
-    {
-      "canonical": "ICAO",
-      "spoken": [
-        "i xê a ô"
-      ]
-    },
-    {
-      "canonical": "TCP",
-      "spoken": [
-        "tê xê pê"
-      ]
-    },
-    {
-      "canonical": "UDP",
-      "spoken": [
-        "u đê pê"
-      ]
-    },
-    {
-      "canonical": "IP",
-      "spoken": [
-        "i pê"
-      ]
-    },
-    {
-      "canonical": "GIS",
-      "spoken": [
-        "gờ i ét"
-      ]
-    },
-    {
-      "canonical": "EO",
-      "spoken": [
-        "e ô"
-      ]
-    },
-    {
-      "canonical": "IR",
-      "spoken": [
-        "i e rờ"
-      ]
-    },
-    {
-      "canonical": "RADAR",
-      "spoken": [
-        "e rờ a đê a e rờ"
-      ]
-    },
-    {
-      "canonical": "SONAR",
-      "spoken": [
-        "ét ô en a e rờ"
-      ]
-    },
-    {
-      "canonical": "RWR",
-      "spoken": [
-        "e rờ vê kép e rờ"
-      ]
-    },
-    {
-      "canonical": "ECM",
-      "spoken": [
-        "e xê em"
-      ]
-    },
-    {
-      "canonical": "ECCM",
-      "spoken": [
-        "e xê xê em"
-      ]
-    },
-    {
-      "canonical": "ESM",
-      "spoken": [
-        "e ét em"
-      ]
-    },
-    {
-      "canonical": "EW",
-      "spoken": [
-        "e vê kép"
-      ]
-    },
-    {
-      "canonical": "ROE",
-      "spoken": [
-        "e rờ ô e"
-      ]
-    },
-    {
-      "canonical": "SOP",
-      "spoken": [
-        "ét ô pê"
-      ]
-    },
-    {
-      "canonical": "COC",
-      "spoken": [
-        "xê ô xê"
-      ]
-    },
-    {
-      "canonical": "TOC",
-      "spoken": [
-        "tê ô xê"
-      ]
-    },
-    {
-      "canonical": "FOB",
-      "spoken": [
-        "ép ô bê"
-      ]
-    },
-    {
-      "canonical": "LZ",
-      "spoken": [
-        "e lờ dét"
-      ]
-    },
-    {
-      "canonical": "DZ",
-      "spoken": [
-        "đê dét"
-      ]
-    },
-    {
-      "canonical": "CP",
-      "spoken": [
-        "xê pê"
-      ]
-    },
-    {
-      "canonical": "OP",
-      "spoken": [
-        "ô pê"
-      ]
-    },
-    {
-      "canonical": "CCP",
-      "spoken": [
-        "xê xê pê"
-      ]
-    },
-    {
-      "canonical": "MEDEVAC",
-      "spoken": [
-        "em e đê e vê a xê"
-      ]
-    },
-    {
-      "canonical": "CASEVAC",
-      "spoken": [
-        "xê a ét e vê a xê"
-      ]
-    },
-    {
-      "canonical": "CSAR",
-      "spoken": [
-        "xê ét a e rờ"
-      ]
-    },
-    {
-      "canonical": "C2",
-      "spoken": [
-        "xê hai"
-      ]
-    },
-    {
-      "canonical": "C3",
-      "spoken": [
-        "xê ba"
       ]
     },
     {
@@ -815,6 +870,14 @@
       ]
     },
     {
+      "canonical": "QNCN",
+      "spoken": [
+        "q n c n",
+        "quy en xê en",
+        "quân nhân chuyên nghiệp"
+      ]
+    },
+    {
       "canonical": "QĐ1",
       "spoken": [
         "quy đê một"
@@ -836,6 +899,315 @@
       "canonical": "QĐ4",
       "spoken": [
         "quy đê bốn"
+      ]
+    },
+    {
+      "canonical": "QĐND",
+      "spoken": [
+        "quy đê en đê",
+        "quân đội nhân dân"
+      ]
+    },
+    {
+      "canonical": "QĐNDVN",
+      "spoken": [
+        "q đ n d v n"
+      ]
+    },
+    {
+      "canonical": "RADAR",
+      "spoken": [
+        "e rờ a đê a e rờ"
+      ]
+    },
+    {
+      "canonical": "RIA",
+      "spoken": [
+        "r i a"
+      ]
+    },
+    {
+      "canonical": "ROE",
+      "spoken": [
+        "e rờ ô e"
+      ]
+    },
+    {
+      "canonical": "RWR",
+      "spoken": [
+        "e rờ vê kép e rờ"
+      ]
+    },
+    {
+      "canonical": "SAF",
+      "spoken": [
+        "s a f"
+      ]
+    },
+    {
+      "canonical": "SAR",
+      "spoken": [
+        "tìm kiếm cứu nạn",
+        "ét a e rờ",
+        "ét a rờ"
+      ]
+    },
+    {
+      "canonical": "SART",
+      "spoken": [
+        "sát",
+        "sờ a e rờ tê",
+        "sờ a rờ tê",
+        "ét a e rờ tê",
+        "ét a rờ tê"
+      ]
+    },
+    {
+      "canonical": "SATCOM",
+      "spoken": [
+        "ét a tê xê ô em"
+      ]
+    },
+    {
+      "canonical": "SIGINT",
+      "spoken": [
+        "ét i gờ i en tê"
+      ]
+    },
+    {
+      "canonical": "SOLAS",
+      "spoken": [
+        "sô lát",
+        "sồ lát"
+      ]
+    },
+    {
+      "canonical": "SONAR",
+      "spoken": [
+        "ét ô en a e rờ"
+      ]
+    },
+    {
+      "canonical": "SOP",
+      "spoken": [
+        "ét ô pê"
+      ]
+    },
+    {
+      "canonical": "SQDB",
+      "spoken": [
+        "ét quy đê bê"
+      ]
+    },
+    {
+      "canonical": "SSCĐ",
+      "spoken": [
+        "s s c đ"
+      ]
+    },
+    {
+      "canonical": "TCCT",
+      "spoken": [
+        "tê xê xê tê"
+      ]
+    },
+    {
+      "canonical": "TCHC",
+      "spoken": [
+        "t c h c",
+        "tê xê hát xê"
+      ]
+    },
+    {
+      "canonical": "TCKT",
+      "spoken": [
+        "tê xê ca tê"
+      ]
+    },
+    {
+      "canonical": "TCP",
+      "spoken": [
+        "tê xê pê"
+      ]
+    },
+    {
+      "canonical": "TCPA",
+      "spoken": [
+        "thời gian tới điểm tiếp cận gần nhất",
+        "tê cê pê a",
+        "tê cê pờ a",
+        "tê xê pê a",
+        "tê xê pờ a"
+      ]
+    },
+    {
+      "canonical": "THCS",
+      "spoken": [
+        "t h c s"
+      ]
+    },
+    {
+      "canonical": "TKCN",
+      "spoken": [
+        "tê ca cê e nờ",
+        "tê ca cê en",
+        "tê ca cê nờ",
+        "tê ca xê e nờ",
+        "tê ca xê en",
+        "tê ca xê nờ",
+        "tê ka cê e nờ",
+        "tê ka cê en",
+        "tê ka cê nờ",
+        "tê ka xê e nờ",
+        "tê ka xê en",
+        "tê ka xê nờ",
+        "tìm kiếm cứu nạn"
+      ]
+    },
+    {
+      "canonical": "TMT",
+      "spoken": [
+        "tê em tê"
+      ]
+    },
+    {
+      "canonical": "TNQĐ",
+      "spoken": [
+        "t n q đ"
+      ]
+    },
+    {
+      "canonical": "TOC",
+      "spoken": [
+        "tê ô xê"
+      ]
+    },
+    {
+      "canonical": "TP",
+      "spoken": [
+        "t p"
+      ]
+    },
+    {
+      "canonical": "TS",
+      "spoken": [
+        "t s"
+      ]
+    },
+    {
+      "canonical": "TTLL",
+      "spoken": [
+        "tê tê e lờ e lờ"
+      ]
+    },
+    {
+      "canonical": "TĐKT",
+      "spoken": [
+        "t đ k t"
+      ]
+    },
+    {
+      "canonical": "TĐQT",
+      "spoken": [
+        "t đ q t"
+      ]
+    },
+    {
+      "canonical": "UAV",
+      "spoken": [
+        "u a vê",
+        "u ây vi"
+      ]
+    },
+    {
+      "canonical": "UBND",
+      "spoken": [
+        "u bê en đê",
+        "ủy ban nhân dân"
+      ]
+    },
+    {
+      "canonical": "UCAV",
+      "spoken": [
+        "u xê a vê"
+      ]
+    },
+    {
+      "canonical": "UDP",
+      "spoken": [
+        "u đê pê"
+      ]
+    },
+    {
+      "canonical": "UHF",
+      "spoken": [
+        "u hát ép",
+        "vô tuyến tần số siêu cao"
+      ]
+    },
+    {
+      "canonical": "UN",
+      "spoken": [
+        "u e nờ",
+        "u en",
+        "u nờ"
+      ]
+    },
+    {
+      "canonical": "UTC",
+      "spoken": [
+        "u tê xê",
+        "u ti xi"
+      ]
+    },
+    {
+      "canonical": "VDR",
+      "spoken": [
+        "thiết bị ghi dữ liệu hành trình",
+        "vê dê e rờ",
+        "vê dê rờ",
+        "vê đê e rờ",
+        "vê đê rờ"
+      ]
+    },
+    {
+      "canonical": "VHF",
+      "spoken": [
+        "vê hát ép",
+        "vê hắt ép",
+        "vô tuyến tần số rất cao"
+      ]
+    },
+    {
+      "canonical": "VOV",
+      "spoken": [
+        "v o v"
+      ]
+    },
+    {
+      "canonical": "VTS",
+      "spoken": [
+        "hệ thống quản lý giao thông hàng hải",
+        "vê tê sờ",
+        "vê tê ét"
+      ]
+    },
+    {
+      "canonical": "VTĐ",
+      "spoken": [
+        "v t đ"
+      ]
+    },
+    {
+      "canonical": "XHCN",
+      "spoken": [
+        "x h c n"
+      ]
+    },
+    {
+      "canonical": "ĐVTN",
+      "spoken": [
+        "đ v t n"
       ]
     }
   ]

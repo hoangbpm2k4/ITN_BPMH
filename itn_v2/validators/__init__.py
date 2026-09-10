@@ -32,6 +32,15 @@ VALIDATORS = {
 }
 
 
+def has_validator(type_name):
+    """Kiểu này có cổng kiểm chứng riêng không?
+
+    Cổng dự phòng của pipeline chỉ được lùi sang kiểu trả về True ở đây: kiểu
+    không validator sẽ nhận mọi thứ, biến dự phòng thành đường bịa giá trị.
+    """
+    return type_name in VALIDATORS
+
+
 def validate(type_name, normalized):
     fn = VALIDATORS.get(type_name)
     if fn is None:
@@ -42,4 +51,4 @@ def validate(type_name, normalized):
         return False, f"validator lỗi: {type(exc).__name__}: {exc}"
 
 
-__all__ = ["validate", "VALIDATORS"]
+__all__ = ["validate", "has_validator", "VALIDATORS"]

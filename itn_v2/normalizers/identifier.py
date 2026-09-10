@@ -71,8 +71,45 @@ class IMOParser(_DigitIdentifier):
 
 
 class TelephoneParser(_DigitIdentifier):
+    """Điện thoại nội địa, quốc tế và đầu số dịch vụ.
+
+    Ba khuôn, phân biệt bằng chính dạng nói chứ không bằng ngoại lệ:
+      - "cộng" mở đầu   -> số quốc tế  "+84 908 123 456"
+      - đầu số 1900/1800 -> dịch vụ     "1900 1234"
+      - còn lại          -> nội địa     "0908123456"
+
+    Từ "cộng" được người đọc phát ra thành tiếng, nên đây là quy tắc đọc thật.
+    Bản trước bỏ qua nó và trả về "84908123456", vừa sai khuôn vừa bị validator
+    bác vì không mở đầu bằng số 0.
+    """
+
     name = "TelephoneParser"
     spoken_prefixes = ("số điện thoại", "điện thoại", "số")
+    PLUS_WORDS = {"cộng", "+"}
+    # Mã quốc gia dài 2 chữ số cho vùng đang phục vụ; phần còn lại nhóm ba một.
+    COUNTRY_CODE_LEN = 2
+    SERVICE_PREFIXES = ("1900", "1800")
+
+    @staticmethod
+    def _group(digits, size=3):
+        return " ".join(digits[i:i + size] for i in range(0, len(digits), size))
+
+    def parse(self, raw_text, context=None):
+        words = raw_text.split()
+        international = False
+        if words and words[0] in self.PLUS_WORDS:
+            international, words = True, words[1:]
+        digits = super().parse(" ".join(words), context)
+        if international:
+            code = digits[:self.COUNTRY_CODE_LEN]
+            rest = digits[self.COUNTRY_CODE_LEN:]
+            if not rest:
+                raise ParseError(f"số quốc tế {digits!r} thiếu phần thuê bao")
+            return f"+{code} {self._group(rest)}"
+        for prefix in self.SERVICE_PREFIXES:
+            if digits.startswith(prefix) and len(digits) > len(prefix):
+                return f"{prefix} {digits[len(prefix):]}"
+        return digits
 
 
 class CallsignParser(Normalizer):
@@ -162,14 +199,48 @@ class LegalDocumentParser(Normalizer):
 
 
 class VehiclePlateParser(Normalizer):
+    """"ba không a gạch ngang một hai ba chấm bốn năm" -> 30A-123.45
+
+    Người đọc biển số Việt Nam đọc CẢ dấu phân cách. Bản trước ném thẳng cả cụm
+    vào `read_alphanumeric`, vốn không biết "gạch ngang"/"chấm" là gì, nên mọi
+    biển số thật đều rơi vào ParseError — 17/17 câu của chủ đề hỏng, âm thầm.
+    """
+
     name = "VehiclePlateParser"
+    SEPARATORS = {"gạch ngang": "-", "gạch nối": "-", "gạch": "-", "chấm": "."}
+    # Có dấu: 30A-123.45. Không dấu: 29A-23532.
+    SHAPES = (r"\d{2}[A-Z]{1,2}-\d{3}\.\d{2}", r"\d{2}[A-Z]{1,2}-\d{4,5}")
+
+    def _read_with_separators(self, words):
+        parts, buf, i, n = [], [], 0, len(words)
+        while i < n:
+            for spoken, symbol in self.SEPARATORS.items():
+                sw = spoken.split()
+                if words[i:i + len(sw)] == sw:
+                    parts.append(read_alphanumeric(buf) if buf else "")
+                    parts.append(symbol)
+                    buf = []
+                    i += len(sw)
+                    break
+            else:
+                buf.append(words[i])
+                i += 1
+        parts.append(read_alphanumeric(buf) if buf else "")
+        return "".join(parts)
 
     def parse(self, raw_text, context=None):
-        code = read_alphanumeric(raw_text.split())
-        m = re.fullmatch(r"(\d{2})([A-Z]{1,2})(\d{4,5})", code)
-        if not m:
+        words = raw_text.split()
+        has_sep = any(w in {"gạch", "chấm"} for w in words)
+        code = (self._read_with_separators(words) if has_sep
+                else read_alphanumeric(words))
+        if not has_sep:
+            m = re.fullmatch(r"(\d{2})([A-Z]{1,2})(\d{4,5})", code)
+            if not m:
+                raise ParseError(f"chuỗi {code!r} không đúng khuôn biển số")
+            return f"{m.group(1)}{m.group(2)}-{m.group(3)}"
+        if not any(re.fullmatch(shape, code) for shape in self.SHAPES):
             raise ParseError(f"chuỗi {code!r} không đúng khuôn biển số")
-        return f"{m.group(1)}{m.group(2)}-{m.group(3)}"
+        return code
 
 
 class AddressParser(Normalizer):
@@ -177,11 +248,18 @@ class AddressParser(Normalizer):
 
     name = "AddressParser"
     KEEP = {"đường", "phố", "ngõ", "hẻm", "quận", "huyện", "phường", "xã",
-            "thành", "tỉnh", "số", "khu", "tổ", "thôn", "ấp", "đại", "lộ"}
+            "tỉnh", "số", "khu", "tổ", "thôn", "ấp", "đại", "lộ"}
+    # "thành" là từ dẫn CHỈ khi đi cùng "phố"; đứng lẻ nó là một tiếng trong
+    # tên riêng ("Nguyễn Tất Thành") và phải được viết hoa.
+    KEEP_IF_NEXT = {"thành": "phố"}
     # Từ dẫn báo hiệu ngay sau nó là TÊN RIÊNG cần viết hoa
     # ("đường trường chinh" -> "đường Trường Chinh").
     NAME_TRIGGERS = {"đường", "phố", "ngõ", "hẻm", "quận", "huyện", "phường",
                      "xã", "tỉnh", "thôn", "ấp", "lộ"}
+    # Sau SỐ NHÀ là tên đường, kể cả khi không có từ dẫn "đường":
+    # "số mười hai trần phú" -> "Số 12 Trần Phú". Bản gốc thật viết như vậy ở
+    # cả 8/8 địa chỉ; bản trước để "số 12 trần phú" nên hỏng hết.
+    HOUSE_NUMBER_WORDS = {"số"}
     # DIGIT_LIKE thiếu hàng trăm/nghìn nên "một trăm năm mươi tám" từng bị cắt
     # thành "1 trăm 58".
     NUMBER_WORDS = DIGIT_LIKE | {"trăm", "nghìn", "ngàn", "lẻ", "linh"}
@@ -190,23 +268,37 @@ class AddressParser(Normalizer):
         words = raw_text.split()
         out, buf = [], []
         naming = False           # đang ở trong một tên riêng?
+        after_house_number = False
 
         def flush():
+            nonlocal naming
             if buf:
                 out.append(str(read_number_auto(buf)))
                 buf.clear()
+                if after_house_number:
+                    naming = True     # từ kế tiếp là tên đường
 
-        for w in words:
+        for i, w in enumerate(words):
+            nxt = words[i + 1] if i + 1 < len(words) else ""
+            if w in self.KEEP_IF_NEXT and nxt == self.KEEP_IF_NEXT[w]:
+                flush()
+                naming = False
+                after_house_number = False
+                out.append(w)
+                continue
             if w in self.NUMBER_WORDS:
                 buf.append(w)
                 continue
             flush()
             if w in self.KEEP:
                 naming = w in self.NAME_TRIGGERS
-                out.append(w)
+                after_house_number = w in self.HOUSE_NUMBER_WORDS
+                # "Số" mở đầu một địa chỉ thì viết hoa (8/8 địa chỉ trong bản gốc).
+                out.append("Số" if (after_house_number and not out) else w)
             elif naming:
                 out.append(w[:1].upper() + w[1:])
             else:
+                after_house_number = False
                 out.append(w)
         flush()
         if not any(ch.isdigit() for ch in " ".join(out)):

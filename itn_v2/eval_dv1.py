@@ -48,7 +48,13 @@ def main(argv=None):
     parser.add_argument("--eval-set", default="datasets_v2/dv1_eval.jsonl")
     parser.add_argument("--out", default="datasets_v2/csv/dv1_eval_output.csv")
     parser.add_argument("--threshold", type=float, default=None)
+    parser.add_argument("--thresholds", default=None,
+                        help="JSON ngưỡng theo lớp (itn_v2.tune_thresholds sinh ra)")
     parser.add_argument("--device", default=None)
+    parser.add_argument("--encoder", default=None,
+                        help="backbone khác PhoBERT — PHẢI trùng với lúc train")
+    parser.add_argument("--no-segment", action="store_true",
+                        help="tắt tách từ ghép — PHẢI trùng với lúc train")
     args = parser.parse_args(argv)
 
     rows = [json.loads(l) for l in (ROOT / args.eval_set).open(encoding="utf-8")]
@@ -69,9 +75,20 @@ def main(argv=None):
     print(f"{len(samples)} câu dạng nói hợp lệ (bỏ {len(rows)-len(samples)} câu còn chữ số)")
 
     config = Config()
+    if args.encoder:
+        config.phobert_path = args.encoder
+        print(f"[BACKBONE] {args.encoder}")
+    if args.no_segment:
+        config.segment_words = False
+        print("[BACKBONE] tắt tách từ ghép")
     if args.threshold is not None:
         config.thresholds = {k: args.threshold for k in config.thresholds}
         print(f"[CHẨN ĐOÁN] ép mọi ngưỡng về {args.threshold}")
+    if args.thresholds:
+        tuned = json.loads((ROOT / args.thresholds).read_text(encoding="utf-8"))
+        changed = {k: v for k, v in tuned.items() if config.thresholds.get(k) != v}
+        config.thresholds.update(tuned)
+        print(f"[NGƯỠNG] nạp {args.thresholds}: {len(changed)} lớp khác mặc định")
     device = torch.device(args.device or ("cuda" if torch.cuda.is_available() else "cpu"))
     model = ITNv2Model(config).to(device)
     state = torch.load(ROOT / args.checkpoint, map_location=device, weights_only=False)
@@ -114,9 +131,14 @@ def main(argv=None):
                     "chi_tiet_span": "; ".join(
                         f"{o.raw_span} -> {o.normalized} [{o.predicted_type}]"
                         for o in emitted),
-                    "bi_nguong_chan": "; ".join(
+                    # In LÝ DO THẬT. Bản trước viết cứng "{tin cậy}<{ngưỡng}"
+                    # cho mọi span không phát ra, nên span bị VALIDATOR bác vẫn
+                    # hiện ra như bị ngưỡng chặn — có dòng ghi "1.00<0.9", vô lý
+                    # nhưng không ai để ý. Nó che mất một lỗi thật: validator
+                    # biển số bác cả 30A-123.45.
+                    "khong_phat_ra": "; ".join(
                         f"{o.raw_span} -> {o.normalized} [{o.predicted_type}] "
-                        f"{o.model_confidence:.2f}<{o.threshold}"
+                        f"({o.reason})"
                         for o in outputs if not o.emitted and o.normalized),
                 })
 
@@ -131,12 +153,12 @@ def main(argv=None):
     exact = sum(1 for r in out_rows if r["khop"] == "ĐÚNG")
     f1 = sum(r["f1_tu"] for r in out_rows) / n
     spans = sum(r["so_span"] for r in out_rows)
-    blocked = sum(1 for r in out_rows if r["bi_nguong_chan"])
+    blocked = sum(1 for r in out_rows if r["khong_phat_ra"])
     print(f"\n=== KẾT QUẢ ĐẦU-CUỐI ===")
     print(f"  câu khớp hoàn toàn : {exact}/{n} = {exact/n:.1%}")
     print(f"  F1 theo từ (TB)    : {f1:.3f}")
     print(f"  span phát ra       : {spans}")
-    print(f"  câu có span bị ngưỡng chặn: {blocked}")
+    print(f"  câu có span dựng được nhưng KHÔNG phát ra: {blocked}")
     print(f"\n{'CHỦ ĐỀ':40}{'n':>4}{'khớp':>6}{'F1':>7}")
     for t, (cnt, ok, fs) in sorted(per_topic.items(), key=lambda x: -x[1][2] / max(x[1][0], 1)):
         print(f"  {t:38}{cnt:4}{ok:6}{fs/cnt:7.3f}")

@@ -11,8 +11,11 @@ class TestCatalogEntities(unittest.TestCase):
         self.assertEqual(EquipmentNameResolver()("pa tri ốt").normalized, "Patriot")
         self.assertEqual(ForeignNameResolver()("oa sinh tơn").normalized, "Washington")
         self.assertEqual(AcronymResolver()("vê hát ép").normalized, "VHF")
+        # Dạng chuẩn để chữ THƯỜNG: bản gốc thật viết "main engine", "slow
+        # astern", "full ahead" thường khi nằm giữa câu (76 hoa / 124 thường).
+        # Bước viết hoa đầu câu ở render() lo phần vị trí.
         self.assertEqual(MaritimeTermResolver()("đét xờ lâu a hét").normalized,
-                         "Dead slow ahead")
+                         "dead slow ahead")
 
     def test_bien_the_phat_am(self):
         for spoken in ["pa tri ốt", "pat ri ốt", "ba tri ốt"]:

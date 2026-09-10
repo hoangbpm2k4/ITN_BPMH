@@ -67,8 +67,11 @@ class Alignment:
 class WordSegmenter:
     """Khớp dài nhất từ trái sang phải theo từ điển từ ghép của PhoBERT."""
 
-    def __init__(self, phobert_path: str = PHOBERT_PATH, max_syllables: int = MAX_WORD_SYLLABLES):
-        self.lexicon = load_compound_lexicon(phobert_path)
+    def __init__(self, phobert_path: str = PHOBERT_PATH,
+                 max_syllables: int = MAX_WORD_SYLLABLES, enabled: bool = True):
+        # Từ điển rỗng = mỗi token ASR là một model word, tức tắt hẳn tách từ.
+        # Ánh xạ hai chiều vẫn giữ nguyên nên phần còn lại của pipeline không đổi.
+        self.lexicon = load_compound_lexicon(phobert_path) if enabled else frozenset()
         self.max_syllables = max_syllables
 
     def segment(self, text_or_tokens) -> Alignment:

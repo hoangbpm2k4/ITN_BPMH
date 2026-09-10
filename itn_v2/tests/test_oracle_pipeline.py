@@ -23,7 +23,7 @@ class TestV1FailuresMustDisappear(unittest.TestCase):
         """
         co_nhan, _, _, _ = run("vị trí mười chín độ hai mươi phút bắc",
                                ("mười chín độ hai mươi phút bắc", "COORD"))
-        self.assertEqual(co_nhan, "Vị trí 19°20'N.")
+        self.assertEqual(co_nhan, "Vị trí 19°20′N.")
         khong_nhan, _, _, _ = run("vị trí mười chín độ hai mươi phút bắc")
         self.assertEqual(khong_nhan, "Vị trí mười chín độ hai mươi phút bắc.")
 
