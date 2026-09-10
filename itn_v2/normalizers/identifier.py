@@ -328,8 +328,38 @@ class AddressParser(Normalizer):
     # thành "1 trăm 58".
     NUMBER_WORDS = DIGIT_LIKE | {"trăm", "nghìn", "ngàn", "lẻ", "linh"}
 
+    # Mã lô/khu là chuỗi CHỮ + SỐ có dấu nối, không phải số nhà: "lô bi tám
+    # gạch tám bốn hai" -> "Lô B8-842". Văn phạm số nhà đọc "bi" thành chữ
+    # thường rồi "tám" thành số, ra "lô bi 8 trừ 842".
+    BLOCK_LEADS = {"lô": "Lô", "block": "Block", "khu": "Khu"}
+    BLOCK_SEPARATORS = ("dấu gạch ngang", "gạch ngang", "gạch nối", "dấu gạch",
+                        "gạch", "trừ")
+
+    def _parse_block(self, lead, words):
+        parts, buf = [], []
+        i, n = 0, len(words)
+        while i < n:
+            for sep in self.BLOCK_SEPARATORS:
+                sw = sep.split()
+                if words[i:i + len(sw)] == sw:
+                    parts.append(read_alphanumeric(buf) if buf else "")
+                    parts.append("-")
+                    buf = []
+                    i += len(sw)
+                    break
+            else:
+                buf.append(words[i])
+                i += 1
+        parts.append(read_alphanumeric(buf) if buf else "")
+        code = "".join(parts)
+        if not any(ch.isdigit() for ch in code):
+            raise ParseError(f"mã lô {code!r} không có phần số")
+        return f"{self.BLOCK_LEADS[lead]} {code}"
+
     def parse(self, raw_text, context=None):
         words = raw_text.split()
+        if words and words[0] in self.BLOCK_LEADS and len(words) > 1:
+            return self._parse_block(words[0], words[1:])
         out, buf = [], []
         naming = False           # đang ở trong một tên riêng?
         after_house_number = False

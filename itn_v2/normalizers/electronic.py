@@ -90,22 +90,35 @@ class ElectronicParser(Normalizer):
     PROTOCOL_STEMS = ("i p v", "i p vê", "i p phiên bản", "ai pi vi", "ip vờ")
 
     def _protocol_label(self, raw_text):
+        """Trả (nhãn giao thức, phần còn lại) — phần còn lại rỗng nếu nhãn đứng một mình."""
         text = " ".join(raw_text.split())
         for lead in self.PROTOCOL_LEAD:
             if text.startswith(lead + " "):
                 text = text[len(lead) + 1:]
         for stem in self.PROTOCOL_STEMS:
-            if text.startswith(stem + " "):
-                version = self.PROTOCOL_VERSION.get(text[len(stem) + 1:].strip())
-                if version:
-                    return f"IPv{version}"
-        return None
+            if not text.startswith(stem + " "):
+                continue
+            rest = text[len(stem) + 1:].split()
+            if not rest:
+                continue
+            version = self.PROTOCOL_VERSION.get(rest[0])
+            if version:
+                return f"IPv{version}", " ".join(rest[1:])
+        return None, ""
 
     def parse(self, raw_text, context=None):
-        label = self._protocol_label(raw_text)
-        if label:
+        # Nhãn giao thức có thể đứng một mình ("máy chủ dùng IPv6") hoặc đứng
+        # NGAY TRƯỚC địa chỉ ("IPv6 2001:db8:42e::162"). Bản trước chỉ nhận
+        # trường hợp đầu nên mọi span kèm địa chỉ đều ghép dính thành
+        # "ipv620012.db8..." rồi trượt.
+        label, rest = self._protocol_label(raw_text)
+        if label and not rest:
             return label
+        if label:
+            return f"{label} {self._parse_address(rest)}"
+        return self._parse_address(raw_text)
 
+    def _parse_address(self, raw_text):
         # ASR có thể đã trả về dạng viết sẵn -> chỉ cần xác nhận
         compact = raw_text.replace(" ", "")
         subtype = detect_subtype(compact)
@@ -139,6 +152,13 @@ class ElectronicParser(Normalizer):
                 if words[i] in NUMBER_WORDS:
                     j = i
                     while j < n and words[j] in NUMBER_WORDS:
+                        # "hai" mở đầu cụm "hai chấm" (dấu :) thuộc về DẤU chứ
+                        # không thuộc về số. Không dừng ở đây thì 2001 nuốt luôn
+                        # chữ "hai" của dấu hai chấm và cả địa chỉ IPv6 hỏng.
+                        # Chỉ áp dụng ở lượt thử CÓ dấu hai chấm; lượt kia đọc
+                        # "chín mươi hai chấm" là 92 rồi dấu chấm, phải để yên.
+                        if colon_first and j > i and words[j:j + 2] == ["hai", "chấm"]:
+                            break
                         j += 1
                     out.append(read_number_run(words[i:j]))
                     i = j

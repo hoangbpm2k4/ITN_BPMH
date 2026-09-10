@@ -71,7 +71,78 @@
     "dê ét u": "ZSU",
     "dét ét u": "ZSU",
     "dét u": "ZSU",
-    "dê ét ka": "ZSK"
+    "dê ét ka": "ZSK",
+    "em mờ u": "MU",
+    "mờ ka": "MK",
+    "rợt pi ji": "RPG",
+    "bi em pi": "BMP",
+    "ba mờ": "M",
+    "pi": "P",
+    "pi ca mờ": "PKM",
+    "ây kây": "AK",
+    "ba em": "M",
+    "es": "S",
+    "ef": "F",
+    "em mờ bốn a": "MA",
+    "pê ca mờ": "PKM",
+    "xi âych": "CH",
+    "ti": "T",
+    "ai gi e lờ a": "IGLA",
+    "iu âych": "UH",
+    "em mờ": "M",
+    "ai gi i eo ây": "IGLA",
+    "khát": "Kh",
+    "pê ka em": "PKM",
+    "es i ti": "SET",
+    "mờ tư a": "MA",
+    "em mờ ca": "MK",
+    "pi ca em": "PKM",
+    "bi ti a": "BTR",
+    "ba em mờ": "M",
+    "pê a en tê ét i e rờ gạch es": "Pantsir",
+    "em mờ iu": "MU",
+    "pê a en tê ét i e rờ es": "Pantsir",
+    "kây a": "Ka",
+    "ét vi đê": "SVD",
+    "es vê di": "SVD",
+    "pi ka em": "PKM",
+    "ây âych": "AH",
+    "em tư a": "MA",
+    "es vi di": "SVD",
+    "xu gạch ba không em mờ ka": "Su",
+    "pantsir gạch ét": "Pantsir",
+    "mờ tư ây": "MA",
+    "i gờ i eo ây": "IGLA",
+    "pê ka mờ": "PKM",
+    "pê a en tê ét i e rờ gạch ét": "Pantsir",
+    "mờ iu": "MU",
+    "pantsir gạch nối ét": "Pantsir",
+    "pi ka mờ": "PKM",
+    "es vi đê": "SVD",
+    "bi": "B",
+    "em mờ bốn ây": "MA",
+    "pê a en tê ét i e rờ trừ es": "Pantsir",
+    "em bốn ây": "MA",
+    "su ba không em mờ ka": "Su",
+    "pantsir gạch es": "Pantsir",
+    "es vê đê": "SVD",
+    "i gi i eo ây": "IGLA",
+    "ai gờ i eo ây": "IGLA",
+    "ai gờ e lờ a": "IGLA",
+    "i gờ e lờ a": "IGLA",
+    "pantsir gạch nối es": "Pantsir",
+    "pantsir ét": "Pantsir",
+    "ét vê di": "SVD",
+    "em iu": "MU",
+    "i gi e lờ a": "IGLA",
+    "em mờ ka": "MK",
+    "em tư ây": "MA",
+    "pantsir trừ ét": "Pantsir",
+    "ét vi di": "SVD",
+    "pantsir gạch ngang ét": "Pantsir",
+    "em mờ tư ây": "MA",
+    "pê a en tê ét i e rờ trừ ét": "Pantsir",
+    "em mờ tư a": "MA"
   },
   "models": [
     {
@@ -105,14 +176,20 @@
         "bê năm hai",
         "bê năm mươi hai",
         "bờ năm mươi hai",
-        "bi năm mươi hai"
+        "bi năm mươi hai",
+        "bi gạch ngang năm hai",
+        "bi năm hai"
       ]
     },
     {
       "canonical": "M16",
       "spoken": [
         "em mười sáu",
-        "mờ mười sáu"
+        "mờ mười sáu",
+        "em một sáu",
+        "em mờ mười sáu",
+        "em mờ một sáu",
+        "mờ một sáu"
       ]
     },
     {
@@ -266,7 +343,17 @@
         "m u chín mươi",
         "mu chín mươi",
         "m u chín không",
-        "mu chín không"
+        "mu chín không",
+        "em iu chín không",
+        "em iu chín mươi",
+        "em mờ iu chín không",
+        "em mờ iu chín mươi",
+        "em mờ u chín không",
+        "em mờ u chín mươi",
+        "em u chín không",
+        "mờ iu chín không",
+        "mờ iu chín mươi",
+        "mờ u chín không"
       ]
     },
     {
@@ -276,7 +363,20 @@
         "mờ ca bốn sáu",
         "em ca bốn mươi sáu",
         "mác bốn mươi sáu",
-        "mác bốn sáu"
+        "mác bốn sáu",
+        "em ca tư sáu",
+        "em ka bốn mươi sáu",
+        "em ka tư sáu",
+        "em mờ ca bốn mươi sáu",
+        "em mờ ca bốn sáu",
+        "em mờ ca tư sáu",
+        "em mờ ka bốn mươi sáu",
+        "em mờ ka tư sáu",
+        "mờ ca bốn mươi sáu",
+        "mờ ca tư sáu",
+        "mờ ka bốn mươi sáu",
+        "mờ ka bốn sáu",
+        "mờ ka tư sáu"
       ]
     },
     {
@@ -411,13 +511,17 @@
     {
       "canonical": "BMP-1",
       "spoken": [
-        "bê em pê một"
+        "bê em pê một",
+        "bi em pi gạch ngang một",
+        "bi em pi một"
       ]
     },
     {
       "canonical": "BMP-2",
       "spoken": [
-        "bê em pê hai"
+        "bê em pê hai",
+        "bi em pi gạch ngang hai",
+        "bi em pi hai"
       ]
     },
     {
@@ -743,12 +847,6 @@
         "m gạch ngang bốn mươi tám",
         "m gạch bốn tám",
         "m gạch ngang bốn tám"
-      ]
-    },
-    {
-      "canonical": "M-60",
-      "spoken": [
-        "em sáu mươi"
       ]
     },
     {
@@ -2197,6 +2295,85 @@
         "máy bay a nờ ba hai",
         "máy bay a nờ ba mươi hai",
         "máy bay a nờ gạch ngang ba hai"
+      ]
+    },
+    {
+      "canonical": "M249",
+      "spoken": [
+        "em hai bốn chín",
+        "em hai trăm bốn mươi chín",
+        "em hai tư chín",
+        "em mờ hai bốn chín",
+        "em mờ hai trăm bốn mươi chín",
+        "em mờ hai tư chín",
+        "mờ hai bốn chín",
+        "mờ hai trăm bốn mươi chín",
+        "mờ hai tư chín"
+      ]
+    },
+    {
+      "canonical": "Pantsir-S1",
+      "spoken": [
+        "pantsir es một",
+        "pantsir gạch es một",
+        "pantsir gạch ngang es một",
+        "pantsir gạch ngang ét một",
+        "pantsir gạch nối es một",
+        "pantsir gạch nối ét một",
+        "pantsir gạch ét một",
+        "pantsir trừ ét một",
+        "pantsir ét một",
+        "pê a en tê ét i e rờ es một",
+        "pê a en tê ét i e rờ gạch es một",
+        "pê a en tê ét i e rờ gạch ngang ét một",
+        "pê a en tê ét i e rờ gạch nối es một",
+        "pê a en tê ét i e rờ gạch ét một",
+        "pê a en tê ét i e rờ trừ es một",
+        "pê a en tê ét i e rờ trừ ét một"
+      ]
+    },
+    {
+      "canonical": "PKM",
+      "spoken": [
+        "pi ca em",
+        "pi ca mờ",
+        "pi ka em",
+        "pi ka mờ",
+        "pê ca em",
+        "pê ca mờ",
+        "pê ka em",
+        "pê ka mờ"
+      ]
+    },
+    {
+      "canonical": "M60",
+      "spoken": [
+        "em mờ sáu không",
+        "em mờ sáu mươi",
+        "em sáu không",
+        "em sáu mươi",
+        "mờ sáu không",
+        "mờ sáu mươi"
+      ]
+    },
+    {
+      "canonical": "IGLA",
+      "spoken": [
+        "ai gi e lờ a",
+        "ai gờ e lờ a",
+        "i gi e lờ a",
+        "i gờ e lờ a"
+      ]
+    },
+    {
+      "canonical": "SVD",
+      "spoken": [
+        "es vi di",
+        "es vi đê",
+        "es vê di",
+        "es vê đê",
+        "ét vi đê",
+        "ét vê đê"
       ]
     }
   ]

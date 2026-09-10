@@ -161,12 +161,25 @@ def split_timezone_span(words, spans):
 
 
 def read_record(record):
-    """Rút (từ, nhãn dấu câu, nhãn BIO, đích) từ hai lược đồ mẻ khác nhau.
+    """Rút (từ, nhãn dấu câu, span) từ ba lược đồ mẻ khác nhau.
 
-    v6: ``tokens`` là chuỗi và CHỨA token dấu câu, phải bóc ra thành nhãn.
-    v7: ``tokens`` là đối tượng {text,start,end}, không có token dấu câu, và đã
-        kèm sẵn ``punctuation_targets`` đúng bốn nhãn của ta.
+    v6:  ``tokens`` là chuỗi và CHỨA token dấu câu, phải bóc ra thành nhãn.
+    v7:  ``tokens`` là đối tượng {text,start,end}, không có token dấu câu, và
+         đã kèm sẵn ``punctuation_targets`` đúng bốn nhãn của ta.
+    v7.1: đã theo ĐÚNG hợp đồng V2 (``words``/``spans``/``punct``) — không cần
+         chuyển đổi gì, nhưng vẫn phải đi qua đủ ba cổng như mọi mẻ khác.
+
+    ``span`` trả về luôn là danh sách (đầu, cuối, KIỂU) với ``cuối`` BAO GỒM.
     """
+    if record.get("words") and record.get("punct") is not None \
+            and "spans" in record and "tokens" not in record:
+        words = [str(w).lower() for w in record["words"]]
+        punct = [p if p in PUNCT_LABELS else "O" for p in record["punct"]]
+        if len(punct) != len(words):
+            return None
+        spans = [(int(a), int(b), str(t)) for a, b, t in record["spans"]]
+        return words, punct, spans
+
     tokens = record.get("tokens") or []
     bio = record.get("bio_tags") or []
     if not tokens or len(tokens) != len(bio):
@@ -178,17 +191,20 @@ def read_record(record):
         if len(punct) != len(words):
             punct = ["O"] * len(words)
         punct = [p if p in PUNCT_LABELS else "O" for p in punct]
-        return words, punct, list(bio)
-    return strip_punctuation(tokens, bio)
+        tags = list(bio)
+    else:
+        words, punct, tags = strip_punctuation(tokens, bio)
+    spans = decode_bio(tags)
+    return None if spans is None else (words, punct, spans)
 
 
 def convert(record, stats, config=None):
-    target = (record.get("normalized_text") or "").strip()
+    target = (record.get("normalized_text") or record.get("written") or "").strip()
     parsed = read_record(record)
     if parsed is None or not target:
         stats["lệch độ dài / thiếu đích"] += 1
         return None
-    words, punct, tags = parsed
+    words, punct, spans = parsed
     if not words:
         stats["rỗng sau khi bóc dấu câu"] += 1
         return None
@@ -196,12 +212,7 @@ def convert(record, stats, config=None):
         stats["dạng nói còn chữ số"] += 1
         return None
 
-    spans = decode_bio(tags)
-    if spans is not None:
-        spans = split_timezone_span(words, spans)
-    if spans is None:
-        stats["chuỗi BIO không hợp lệ"] += 1
-        return None
+    spans = split_timezone_span(words, spans)
     if not spans:
         # Câu không có span nào là MẪU ÂM: nó dạy mô hình đừng chuẩn hoá bậy
         # (spec §23). Bỏ đi là vứt mất đúng thứ ghìm tỉ lệ chuẩn hoá sai.
