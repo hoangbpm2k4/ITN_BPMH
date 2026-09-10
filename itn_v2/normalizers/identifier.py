@@ -7,6 +7,10 @@ from .base import Normalizer, ParseError
 from .number import UNIT_DIGITS, read_digit_string, read_number_auto
 
 DIGIT_LIKE = set(UNIT_DIGITS) | {"mười", "mươi"}
+# Số hiệu văn bản đọc theo SỐ NGUYÊN chứ không phải từng chữ số: "số một trăm
+# sáu mươi lăm xẹt hai nghìn mười chín". Bản trước chỉ nhận chữ số rời nên gặp
+# "trăm"/"nghìn" là rơi xuống read_alphanumeric rồi ném ParseError.
+NUMBER_LIKE = DIGIT_LIKE | {"trăm", "nghìn", "ngàn", "triệu", "lẻ", "linh"}
 SLASH_WORDS = {"xẹt", "xẹc", "trên", "phần", "gạch chéo", "/"}
 DASH_WORDS = {"gạch", "gạch ngang", "-"}
 
@@ -142,6 +146,16 @@ class DocumentIDParser(Normalizer):
 
     name = "DocumentIDParser"
 
+    @staticmethod
+    def _is_year_separator(word, current, nxt):
+        """"số hai mươi hai NĂM hai nghìn không trăm hai mươi tư" -> 22/2024.
+
+        Người đọc số hiệu văn bản hay thay dấu "/" bằng chữ "năm" vì phần sau
+        đúng là năm ban hành. Chỉ nhận khi "năm" nằm GIỮA hai cụm số — nếu
+        không, "năm" là chữ số 5 và phải giữ nguyên trong cụm.
+        """
+        return word == "năm" and bool(current) and nxt in NUMBER_LIKE
+
     def parse(self, raw_text, context=None):
         words = raw_text.replace("gạch chéo", "xẹt").split()
         prefix = ""
@@ -151,8 +165,9 @@ class DocumentIDParser(Normalizer):
             raise ParseError("thiếu phần số hiệu")
 
         groups, cur, seps = [], [], []
-        for w in words:
-            if w in SLASH_WORDS:
+        for i, w in enumerate(words):
+            nxt = words[i + 1] if i + 1 < len(words) else ""
+            if w in SLASH_WORDS or self._is_year_separator(w, cur, nxt):
                 groups.append(cur); seps.append("/"); cur = []
             elif w in DASH_WORDS:
                 groups.append(cur); seps.append("-"); cur = []
@@ -167,7 +182,7 @@ class DocumentIDParser(Normalizer):
             if len(g) >= 3 and g[0] == "hai" and g[1] == "không":
                 tail = read_number_auto(g[2:])
                 rendered.append(f"20{tail:02d}" if 0 <= tail <= 99 else str(read_number_auto(g)))
-            elif all(w in DIGIT_LIKE for w in g):
+            elif all(w in NUMBER_LIKE for w in g):
                 rendered.append(str(read_number_auto(g)))
             else:
                 rendered.append(read_alphanumeric(g))
@@ -207,7 +222,10 @@ class VehiclePlateParser(Normalizer):
     """
 
     name = "VehiclePlateParser"
-    SEPARATORS = {"gạch ngang": "-", "gạch nối": "-", "gạch": "-", "chấm": "."}
+    # Người đọc hay chèn từ "dấu": "gạch chín chín bảy dấu chấm ba sáu".
+    SEPARATORS = {"dấu gạch ngang": "-", "dấu gạch nối": "-", "dấu gạch": "-",
+                  "gạch ngang": "-", "gạch nối": "-", "gạch": "-",
+                  "dấu chấm": ".", "chấm": "."}
     # Có dấu: 30A-123.45. Không dấu: 29A-23532.
     SHAPES = (r"\d{2}[A-Z]{1,2}-\d{3}\.\d{2}", r"\d{2}[A-Z]{1,2}-\d{4,5}")
 

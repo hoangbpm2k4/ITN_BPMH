@@ -82,7 +82,30 @@ def detect_subtype(text):
 class ElectronicParser(Normalizer):
     name = "ElectronicParser"
 
+    # Tên giao thức đứng MỘT MÌNH, không kèm địa chỉ: "máy chủ dùng IPv6".
+    # Đây không phải địa chỉ nên văn phạm địa chỉ bên dưới không đọc được; bản
+    # trước ghép thành "ipphienban6" rồi ném ParseError.
+    PROTOCOL_LEAD = ("giao thức", "chuẩn", "địa chỉ")
+    PROTOCOL_VERSION = {"bốn": "4", "sáu": "6"}
+    PROTOCOL_STEMS = ("i p v", "i p vê", "i p phiên bản", "ai pi vi", "ip vờ")
+
+    def _protocol_label(self, raw_text):
+        text = " ".join(raw_text.split())
+        for lead in self.PROTOCOL_LEAD:
+            if text.startswith(lead + " "):
+                text = text[len(lead) + 1:]
+        for stem in self.PROTOCOL_STEMS:
+            if text.startswith(stem + " "):
+                version = self.PROTOCOL_VERSION.get(text[len(stem) + 1:].strip())
+                if version:
+                    return f"IPv{version}"
+        return None
+
     def parse(self, raw_text, context=None):
+        label = self._protocol_label(raw_text)
+        if label:
+            return label
+
         # ASR có thể đã trả về dạng viết sẵn -> chỉ cần xác nhận
         compact = raw_text.replace(" ", "")
         subtype = detect_subtype(compact)

@@ -19,6 +19,23 @@ MODEL_MATCH_THRESHOLD = 0.90
 # và "ca ba trăm pê" (K-300P) đứt ngay tại từ "trăm" rồi ném ParseError.
 NUMBER_WORDS = DIGIT_LIKE | {"trăm", "nghìn", "ngàn"}
 
+# Người đọc số hiệu khí tài thường ĐỌC CẢ DẤU GẠCH: "ét u gạch ngang hai hai".
+# Bản trước dừng ngay tại "gạch" vì nó không phải từ chỉ số, nên mọi số hiệu đọc
+# kiểu này đều trượt — đúng cách đọc chiếm 94% lỗi của hai chủ đề vũ khí trong
+# bộ test. Dấu gạch là thứ ta TỰ SINH ra ở đầu ra nên đọc thành tiếng hay không
+# cũng cho cùng một kết quả.
+SEPARATOR_WORDS = (("dấu", "gạch", "ngang"), ("dấu", "gạch", "nối"),
+                   ("gạch", "ngang"), ("gạch", "nối"), ("dấu", "gạch"),
+                   ("gạch",), ("trừ",))
+
+
+def strip_separator(words):
+    """Bỏ cụm chỉ dấu gạch ở ĐẦU danh sách, trả phần còn lại."""
+    for sw in SEPARATOR_WORDS:
+        if tuple(words[:len(sw)]) == sw:
+            return words[len(sw):]
+    return words
+
 
 class EquipmentIDParser(Normalizer):
     name = "EquipmentIDParser"
@@ -41,7 +58,7 @@ class EquipmentIDParser(Normalizer):
             sw = spoken.split()
             if words[:len(sw)] != sw:
                 continue
-            rest = words[len(sw):]
+            rest = strip_separator(words[len(sw):])
             if not rest:
                 continue
             j = 0

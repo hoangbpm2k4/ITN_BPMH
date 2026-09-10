@@ -335,12 +335,25 @@ class DurationParser(Normalizer):
     UNITS = [("giờ", "giờ"), ("phút", "phút"), ("giây", "giây"),
              ("ngày", "ngày"), ("tuần", "tuần"), ("tháng", "tháng"), ("năm", "năm")]
 
+    # "năm" vừa là đơn vị (year) vừa là chữ số (5). Bản trước luôn coi nó là đơn
+    # vị, nên "mười một giờ năm mươi lăm phút" đứt ngay tại "năm" — hỏng mọi
+    # thời lượng có phút trong khoảng 50-59.
+    SCALE_AFTER_DIGIT = {"mươi", "mười"}
+
+    def _is_unit(self, word, buf, nxt):
+        if word not in {u for u, _ in self.UNITS}:
+            return False
+        if word != "năm":
+            return True
+        # Là chữ số khi đứng đầu một cụm số, hoặc khi có hàng chục đi ngay sau.
+        return bool(buf) and nxt not in self.SCALE_AFTER_DIGIT
+
     def parse(self, raw_text, context=None):
         words = raw_text.split()
-        unit_names = {u for u, _ in self.UNITS}
         out, buf = [], []
-        for w in words:
-            if w in unit_names:
+        for i, w in enumerate(words):
+            nxt = words[i + 1] if i + 1 < len(words) else ""
+            if self._is_unit(w, buf, nxt):
                 if not buf:
                     raise ParseError(f"đơn vị {w!r} không có phần số đứng trước")
                 out.append(f"{read_number_auto(buf)} {w}")
