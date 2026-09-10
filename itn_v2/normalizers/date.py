@@ -254,8 +254,10 @@ class TimezoneParser(Normalizer):
     SIGNS = {"cộng": "+", "dương": "+", "trừ": "-", "âm": "-"}
     # Tập đóng: chỉ hai nhãn này đứng một mình được.
     BARE = {"giờ địa phương": "LT", "địa phương": "LT",
+            "thời gian địa phương": "LT", "giờ theo địa phương": "LT",
             "giờ phối hợp quốc tế": "UTC", "phối hợp quốc tế": "UTC",
-            "u tê xê": "UTC", "u ti xi": "UTC"}
+            "thời gian phối hợp quốc tế": "UTC", "giờ quốc tế": "UTC",
+            "thời gian quốc tế": "UTC", "u tê xê": "UTC", "u ti xi": "UTC"}
 
     def parse(self, raw_text, context=None):
         from ..catalog import get_catalog

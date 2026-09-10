@@ -80,6 +80,17 @@ def _build():
     }
 
 
+def reset_registry():
+    """Dựng lại bảng normalizer ở lượt gọi sau.
+
+    Một số normalizer nạp danh mục ngay trong __init__ (EquipmentIDParser dựng
+    bảng model). Công cụ nào sửa file danh mục lúc đang chạy phải gọi hàm này,
+    nếu không nó vẫn nhìn thấy bản cũ.
+    """
+    global _REGISTRY
+    _REGISTRY = None
+
+
 def get_normalizer(type_name):
     global _REGISTRY
     if _REGISTRY is None:

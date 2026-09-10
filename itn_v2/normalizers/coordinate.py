@@ -79,14 +79,22 @@ def _format_one(words, direction):
     minute_fraction = None
     if "phút" in rest:
         k = rest.index("phút")
-        minute = read_number_auto(rest[:k])
+        head = rest[:k]
+        if "phẩy" in head:
+            # "bốn mươi hai PHẨY chín phút" = 42,9 phút. Khuôn độ-phút-thập-phân
+            # đọc theo lối này thay vì đọc liền cả cụm chữ số.
+            j = head.index("phẩy")
+            minute = read_number_auto(head[:j])
+            minute_fraction = str(read_number_auto(head[j + 1:]))
+        else:
+            minute = read_number_auto(head)
         rest = rest[k + 1:]
     if "giây" in rest:
         k = rest.index("giây")
         second = read_number_auto(rest[:k])
         rest = rest[k + 1:]
 
-    if minute is not None and minute >= 60:
+    if minute is not None and minute_fraction is None and minute >= 60:
         minute, minute_fraction = _split_decimal_minute(minute, second)
 
     width = DEGREE_WIDTH.get(direction, 0)

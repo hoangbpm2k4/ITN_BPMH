@@ -17,7 +17,8 @@ MODEL_MATCH_THRESHOLD = 0.90
 
 # DIGIT_LIKE chỉ có chữ số rời. Thiếu "trăm"/"nghìn" nên "ét hai trăm" (S-200)
 # và "ca ba trăm pê" (K-300P) đứt ngay tại từ "trăm" rồi ném ParseError.
-NUMBER_WORDS = DIGIT_LIKE | {"trăm", "nghìn", "ngàn"}
+# "lẻ"/"linh" là từ nối hàng trăm: AK-103 đọc "a ka một trăm LẺ ba".
+NUMBER_WORDS = DIGIT_LIKE | {"trăm", "nghìn", "ngàn", "lẻ", "linh"}
 
 # Người đọc số hiệu khí tài thường ĐỌC CẢ DẤU GẠCH: "ét u gạch ngang hai hai".
 # Bản trước dừng ngay tại "gạch" vì nó không phải từ chỉ số, nên mọi số hiệu đọc
@@ -26,7 +27,7 @@ NUMBER_WORDS = DIGIT_LIKE | {"trăm", "nghìn", "ngàn"}
 # cũng cho cùng một kết quả.
 SEPARATOR_WORDS = (("dấu", "gạch", "ngang"), ("dấu", "gạch", "nối"),
                    ("gạch", "ngang"), ("gạch", "nối"), ("dấu", "gạch"),
-                   ("gạch",), ("trừ",))
+                   ("gạch",), ("trừ",), ("xẹt",), ("xẹc",))
 
 
 def strip_separator(words):

@@ -338,12 +338,44 @@ class RangeParser(Normalizer):
         return f"{one(left)}-{one(right)}"
 
 
+def _is_number_word(word):
+    return word in _VERSION_NUMBER_WORDS
+
+
+_VERSION_NUMBER_WORDS = set(UNIT_DIGITS) | STRUCTURE_WORDS | FILLERS | {"mười"}
+
+
 class VersionParser(Normalizer):
     name = "VersionParser"
     PREFIXES = ("phiên", "bản", "phiên_bản", "version")
+    # Phiên bản thật thường đi kèm TÊN SẢN PHẨM: "firmware vê tám chấm năm chấm
+    # chín" -> "Firmware v8.5.9". Bản trước chỉ biết bỏ tiền tố nên gặp tên sản
+    # phẩm là ném ParseError — hỏng toàn bộ 300 span VERSION của mẻ v7.
+    MARKERS = {"vê": "v", "vi": "v", "v": "v", "version": "Version"}
+
+    def _split_label(self, words):
+        """Tách phần TÊN đứng trước phần số. Trả (chuỗi tên đã dựng, phần còn lại)."""
+        cut = 0
+        while cut < len(words) and words[cut] not in DOT_SEP_WORDS \
+                and words[cut] != "." and not _is_number_word(words[cut]):
+            cut += 1
+        head, rest = words[:cut], words[cut:]
+        if not head or all(w in self.PREFIXES for w in head):
+            return "", rest          # chỉ có tiền tố -> giữ hành vi cũ
+        pieces = [self.MARKERS.get(w, w[:1].upper() + w[1:]) for w in head]
+        label = ""
+        for piece in pieces:
+            if not label:
+                label = piece
+            elif piece == "v":
+                label += " v"
+            else:
+                label += " " + piece
+        return label, rest
 
     def parse(self, raw_text, context=None):
-        words = [w for w in raw_text.split() if w not in self.PREFIXES]
+        label, words = self._split_label(raw_text.split())
+        words = [w for w in words if w not in self.PREFIXES]
         if not words:
             raise ParseError("chỉ có tiền tố, không có phần số")
         parts, cur = [], []
@@ -359,4 +391,8 @@ class VersionParser(Normalizer):
             parts.append(cur)
         if len(parts) < 2:
             raise ParseError("phiên bản cần ít nhất hai thành phần")
-        return ".".join(str(read_number_auto(p)) for p in parts)
+        number = ".".join(str(read_number_auto(p)) for p in parts)
+        if not label:
+            return number
+        # "v" dính liền phần số (v8.5.9), tên sản phẩm thì cách ra.
+        return label + number if label.endswith("v") else label + " " + number

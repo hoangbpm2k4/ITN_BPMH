@@ -146,15 +146,38 @@ class DocumentIDParser(Normalizer):
 
     name = "DocumentIDParser"
 
-    @staticmethod
-    def _is_year_separator(word, current, nxt):
+    # Năm ban hành hợp lệ. Ngoài khoảng này thì "năm" là chữ số 5.
+    YEAR_RANGE = (1900, 2100)
+
+    @classmethod
+    def _is_year_separator(cls, word, current, rest):
         """"số hai mươi hai NĂM hai nghìn không trăm hai mươi tư" -> 22/2024.
 
         Người đọc số hiệu văn bản hay thay dấu "/" bằng chữ "năm" vì phần sau
-        đúng là năm ban hành. Chỉ nhận khi "năm" nằm GIỮA hai cụm số — nếu
-        không, "năm" là chữ số 5 và phải giữ nguyên trong cụm.
+        đúng là năm ban hành. Nhưng "năm" cũng là chữ số 5, và số hiệu hay được
+        đọc từng chữ số: "một NĂM chín" = 159. Phân biệt bằng cách nhìn ra sau —
+        chỉ là dấu phân cách khi phần theo sau đọc ra một NĂM thật.
+        Không có điều kiện này thì "một năm chín" ra "1/9".
         """
-        return word == "năm" and bool(current) and nxt in NUMBER_LIKE
+        if word != "năm" or not current:
+            return False
+        # "năm mươi"/"năm mười" là số 50-59. Chỉ dựa vào phép thử năm ở dưới là
+        # chưa đủ: "năm mươi năm hai nghìn không trăm mười sáu" thì phần đuôi
+        # tính từ "mươi" vẫn đọc ra 2016, nên "năm" đầu bị cắt oan.
+        if rest[:1] and rest[0] in {"mươi", "mười"}:
+            return False
+        run = []
+        for w in rest:
+            if w not in NUMBER_LIKE:
+                break
+            run.append(w)
+        if not run:
+            return False
+        try:
+            value = read_number_auto(run)
+        except ParseError:
+            return False
+        return cls.YEAR_RANGE[0] <= value <= cls.YEAR_RANGE[1]
 
     def parse(self, raw_text, context=None):
         words = raw_text.replace("gạch chéo", "xẹt").split()
@@ -166,8 +189,7 @@ class DocumentIDParser(Normalizer):
 
         groups, cur, seps = [], [], []
         for i, w in enumerate(words):
-            nxt = words[i + 1] if i + 1 < len(words) else ""
-            if w in SLASH_WORDS or self._is_year_separator(w, cur, nxt):
+            if w in SLASH_WORDS or self._is_year_separator(w, cur, words[i + 1:]):
                 groups.append(cur); seps.append("/"); cur = []
             elif w in DASH_WORDS:
                 groups.append(cur); seps.append("-"); cur = []
@@ -196,12 +218,24 @@ class LegalDocumentParser(Normalizer):
     """'nờ đê cê pê' -> 'NĐ-CP'; kèm số hiệu -> 'Số 12/2024/NĐ-CP'."""
 
     name = "LegalDocumentParser"
+    # Dấu gạch trong ký hiệu ("quy đê GẠCH NGANG tê tê giê") được đọc thành
+    # tiếng. Dấu này ta tự sinh ở đầu ra nên bỏ đi trước khi tra danh mục.
+    # Dấu bên trong ký hiệu được đọc thành tiếng theo nhiều lối: "en quy GẠCH
+    # NGANG cê pê", "nờ đê XẸT cê pê", "quy đê TRÊN tê tê gờ".
+    SYMBOL_DASH = ("dấu gạch ngang", "gạch ngang", "gạch nối", "dấu gạch",
+                   "gạch chéo", "xẹt", "xẹc", "trên", "gạch")
+
+    @classmethod
+    def _drop_dash(cls, text):
+        for dash in cls.SYMBOL_DASH:
+            text = text.replace(" " + dash + " ", " ")
+        return " ".join(text.split())
 
     def parse(self, raw_text, context=None):
         catalog = get_catalog("legal_docs")
         words = raw_text.split()
         for k in range(len(words), 0, -1):
-            canonical, score = catalog.lookup(" ".join(words[-k:]))
+            canonical, score = catalog.lookup(self._drop_dash(" ".join(words[-k:])))
             if canonical and score >= 1.0:
                 head = words[:-k]
                 if not head:
@@ -229,13 +263,25 @@ class VehiclePlateParser(Normalizer):
     # Có dấu: 30A-123.45. Không dấu: 29A-23532.
     SHAPES = (r"\d{2}[A-Z]{1,2}-\d{3}\.\d{2}", r"\d{2}[A-Z]{1,2}-\d{4,5}")
 
+    @staticmethod
+    def _read_group(words):
+        """Nhóm giữa hai dấu: đọc từng chữ số, hoặc đọc theo số nguyên.
+
+        "chín trăm bảy mươi sáu" = 976 — read_alphanumeric không biết "trăm"
+        nên trước đây cả biển số hỏng.
+        """
+        if words and all(w in AddressParser.NUMBER_WORDS for w in words) \
+                and any(w in {"trăm", "nghìn", "ngàn", "lẻ", "linh"} for w in words):
+            return str(read_number_auto(words))
+        return read_alphanumeric(words)
+
     def _read_with_separators(self, words):
         parts, buf, i, n = [], [], 0, len(words)
         while i < n:
             for spoken, symbol in self.SEPARATORS.items():
                 sw = spoken.split()
                 if words[i:i + len(sw)] == sw:
-                    parts.append(read_alphanumeric(buf) if buf else "")
+                    parts.append(self._read_group(buf) if buf else "")
                     parts.append(symbol)
                     buf = []
                     i += len(sw)
@@ -243,7 +289,7 @@ class VehiclePlateParser(Normalizer):
             else:
                 buf.append(words[i])
                 i += 1
-        parts.append(read_alphanumeric(buf) if buf else "")
+        parts.append(self._read_group(buf) if buf else "")
         return "".join(parts)
 
     def parse(self, raw_text, context=None):

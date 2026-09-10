@@ -13,7 +13,9 @@
         "pa tri ốt",
         "pat ri ốt",
         "ba tri ốt",
-        "patriot"
+        "patriot",
+        "pét ri ót",
+        "pét ri ốt"
       ]
     },
     {
@@ -63,14 +65,16 @@
       "canonical": "Starlink",
       "spoken": [
         "sờ ta linh",
-        "star link"
+        "star link",
+        "ve tinh starlink"
       ]
     },
     {
       "canonical": "Facebook",
       "spoken": [
         "phây búc",
-        "phây bút"
+        "phây bút",
+        "phết búc"
       ]
     },
     {
@@ -90,21 +94,26 @@
     {
       "canonical": "Livestream",
       "spoken": [
-        "lai sờ trim"
+        "lai sờ trim",
+        "lai su trêm"
       ]
     },
     {
       "canonical": "Podcast",
       "spoken": [
         "pót cát",
-        "bót cát"
+        "bót cát",
+        "pốt",
+        "pót"
       ]
     },
     {
       "canonical": "Workshop",
       "spoken": [
         "quốc sóp",
-        "guốc sóp"
+        "guốc sóp",
+        "vok sop",
+        "vok so"
       ]
     },
     {
@@ -156,14 +165,17 @@
       "canonical": "Indonesia",
       "spoken": [
         "in đô nê xi a",
-        "in đô nê si a"
+        "in đô nê si a",
+        "in đô lết xi a",
+        "in đô"
       ]
     },
     {
       "canonical": "Malaysia",
       "spoken": [
         "ma lai xi a",
-        "ma lay xi a"
+        "ma lay xi a",
+        "ma lai"
       ]
     },
     {
@@ -185,7 +197,8 @@
       "canonical": "Tokyo",
       "spoken": [
         "tô ki ô",
-        "tô ky ô"
+        "tô ky ô",
+        "đô ki ô"
       ]
     },
     {
@@ -208,7 +221,8 @@
       "spoken": [
         "bờ ra din",
         "bra din",
-        "brazil"
+        "brazil",
+        "bra xin"
       ]
     },
     {
@@ -228,13 +242,15 @@
     {
       "canonical": "Lào",
       "spoken": [
-        "lào"
+        "lào",
+        "nước lào"
       ]
     },
     {
       "canonical": "Nhật Bản",
       "spoken": [
-        "nhật bản"
+        "nhật bản",
+        "nhật"
       ]
     },
     {
@@ -246,7 +262,8 @@
     {
       "canonical": "Ấn Độ",
       "spoken": [
-        "ấn độ"
+        "ấn độ",
+        "nuoc an do"
       ]
     },
     {
@@ -258,13 +275,15 @@
     {
       "canonical": "Pháp",
       "spoken": [
-        "pháp"
+        "pháp",
+        "nước pháp"
       ]
     },
     {
       "canonical": "Đức",
       "spoken": [
-        "đức"
+        "đức",
+        "nuoc duc"
       ]
     },
     {
@@ -300,7 +319,8 @@
     {
       "canonical": "Hà Lan",
       "spoken": [
-        "hà lan"
+        "hà lan",
+        "nước hà lan"
       ]
     },
     {
@@ -336,7 +356,8 @@
     {
       "canonical": "Đan Mạch",
       "spoken": [
-        "đan mạch"
+        "đan mạch",
+        "nuoc dan mach"
       ]
     },
     {
@@ -360,7 +381,8 @@
     {
       "canonical": "Ai Cập",
       "spoken": [
-        "ai cập"
+        "ai cập",
+        "ai cợp"
       ]
     },
     {
@@ -372,7 +394,8 @@
     {
       "canonical": "Kenya",
       "spoken": [
-        "kenya"
+        "kenya",
+        "ki nia"
       ]
     },
     {
@@ -384,7 +407,10 @@
     {
       "canonical": "Algeria",
       "spoken": [
-        "algeria"
+        "algeria",
+        "an giê ri",
+        "an giê ri a",
+        "an giê ria"
       ]
     },
     {
@@ -396,7 +422,9 @@
     {
       "canonical": "Tunisia",
       "spoken": [
-        "tunisia"
+        "tunisia",
+        "tu ni di a",
+        "tu ni di"
       ]
     },
     {
@@ -408,7 +436,8 @@
     {
       "canonical": "Sudan",
       "spoken": [
-        "sudan"
+        "sudan",
+        "nuoc sudan"
       ]
     },
     {
@@ -420,13 +449,15 @@
     {
       "canonical": "Somalia",
       "spoken": [
-        "somalia"
+        "somalia",
+        "nuoc somalia"
       ]
     },
     {
       "canonical": "Nigeria",
       "spoken": [
-        "nigeria"
+        "nigeria",
+        "ni giê ri"
       ]
     },
     {
@@ -438,7 +469,8 @@
     {
       "canonical": "Senegal",
       "spoken": [
-        "senegal"
+        "senegal",
+        "sê nê gan"
       ]
     },
     {
@@ -450,37 +482,44 @@
     {
       "canonical": "Mozambique",
       "spoken": [
-        "mozambique"
+        "mozambique",
+        "mô zam bích"
       ]
     },
     {
       "canonical": "Zimbabwe",
       "spoken": [
-        "zimbabwe"
+        "zimbabwe",
+        "din ba bue"
       ]
     },
     {
       "canonical": "Zambia",
       "spoken": [
-        "zambia"
+        "zambia",
+        "dham bia",
+        "dambia"
       ]
     },
     {
       "canonical": "Cuba",
       "spoken": [
-        "cuba"
+        "cuba",
+        "nước cu ba"
       ]
     },
     {
       "canonical": "Mexico",
       "spoken": [
-        "mexico"
+        "mexico",
+        "mê hi cô"
       ]
     },
     {
       "canonical": "Chile",
       "spoken": [
-        "chile"
+        "chile",
+        "nước chi lê"
       ]
     },
     {
@@ -498,7 +537,8 @@
     {
       "canonical": "Venezuela",
       "spoken": [
-        "venezuela"
+        "venezuela",
+        "vi ne xu e la"
       ]
     },
     {
@@ -522,7 +562,8 @@
     {
       "canonical": "Ecuador",
       "spoken": [
-        "ecuador"
+        "ecuador",
+        "éc qua đo"
       ]
     },
     {
@@ -582,19 +623,22 @@
     {
       "canonical": "Syria",
       "spoken": [
-        "syria"
+        "syria",
+        "nuoc syria"
       ]
     },
     {
       "canonical": "Jordan",
       "spoken": [
-        "jordan"
+        "jordan",
+        "dan"
       ]
     },
     {
       "canonical": "Qatar",
       "spoken": [
-        "qatar"
+        "qatar",
+        "quang ta"
       ]
     },
     {
@@ -606,13 +650,15 @@
     {
       "canonical": "Yemen",
       "spoken": [
-        "yemen"
+        "yemen",
+        "gi e men"
       ]
     },
     {
       "canonical": "Nepal",
       "spoken": [
-        "nepal"
+        "nepal",
+        "nê pan"
       ]
     },
     {
@@ -624,13 +670,15 @@
     {
       "canonical": "Bangladesh",
       "spoken": [
-        "bangladesh"
+        "bangladesh",
+        "ban gla đét"
       ]
     },
     {
       "canonical": "Sri Lanka",
       "spoken": [
-        "sri lanka"
+        "sri lanka",
+        "xi lan"
       ]
     },
     {
@@ -648,19 +696,23 @@
     {
       "canonical": "Fiji",
       "spoken": [
-        "fiji"
+        "fiji",
+        "phi gi"
       ]
     },
     {
       "canonical": "Romania",
       "spoken": [
-        "romania"
+        "romania",
+        "ru ma ni"
       ]
     },
     {
       "canonical": "Bulgaria",
       "spoken": [
-        "bulgaria"
+        "bulgaria",
+        "bun ga ri",
+        "bun ga ry"
       ]
     },
     {
@@ -678,7 +730,8 @@
     {
       "canonical": "Cộng hòa Séc",
       "spoken": [
-        "cộng hòa séc"
+        "cộng hòa séc",
+        "cộng hoà chéch"
       ]
     },
     {
@@ -690,7 +743,8 @@
     {
       "canonical": "Slovenia",
       "spoken": [
-        "slovenia"
+        "slovenia",
+        "nuoc slovenia"
       ]
     },
     {
@@ -702,13 +756,18 @@
     {
       "canonical": "Serbia",
       "spoken": [
-        "serbia"
+        "serbia",
+        "séc bi",
+        "xéc bi"
       ]
     },
     {
       "canonical": "Albania",
       "spoken": [
-        "albania"
+        "albania",
+        "an ba ni",
+        "an ba ni a",
+        "an ba nia"
       ]
     },
     {
@@ -720,19 +779,25 @@
     {
       "canonical": "Ireland",
       "spoken": [
-        "ireland"
+        "ireland",
+        "ai rít lân"
       ]
     },
     {
       "canonical": "Luxembourg",
       "spoken": [
-        "luxembourg"
+        "luxembourg",
+        "lúc xăm bua",
+        "lúc xen bua",
+        "lúc xăm bọc",
+        "lúc xêm bớc"
       ]
     },
     {
       "canonical": "Malta",
       "spoken": [
-        "malta"
+        "malta",
+        "man ta"
       ]
     },
     {
@@ -780,7 +845,8 @@
     {
       "canonical": "Pakistan",
       "spoken": [
-        "pa ki xtan"
+        "pa ki xtan",
+        "paki"
       ]
     },
     {

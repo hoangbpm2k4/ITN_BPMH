@@ -13,7 +13,10 @@
       "canonical": "PAN-PAN",
       "spoken": [
         "pan pan",
-        "pang pang"
+        "pang pang",
+        "pan gạch pan",
+        "pan gạch ngang pan",
+        "panh gạch panh"
       ]
     },
     {
@@ -21,7 +24,8 @@
       "spoken": [
         "sê cu ri tê",
         "sê kiu ri tê",
-        "xê cu ri tê"
+        "xê cu ri tê",
+        "sê cu ri"
       ]
     },
     {
@@ -37,13 +41,15 @@
       "spoken": [
         "slâu a hét",
         "sờ lô a hét",
-        "xờ lâu a hét"
+        "xờ lâu a hét",
+        "x lô ở hét"
       ]
     },
     {
       "canonical": "half ahead",
       "spoken": [
-        "háp a hét"
+        "háp a hét",
+        "hao a hét"
       ]
     },
     {
@@ -65,7 +71,8 @@
       "canonical": "slow astern",
       "spoken": [
         "sờ lô a xtơn",
-        "xờ lâu át tơn"
+        "xờ lâu át tơn",
+        "x lô ở tơn"
       ]
     },
     {
@@ -79,7 +86,8 @@
     {
       "canonical": "hard to starboard",
       "spoken": [
-        "hát tu xtát bo"
+        "hát tu xtát bo",
+        "hát tu sờ ta bót"
       ]
     },
     {
@@ -92,7 +100,8 @@
       "canonical": "starboard",
       "spoken": [
         "stát bo",
-        "xtát bo"
+        "xtát bo",
+        "xa bo"
       ]
     },
     {
@@ -138,13 +147,16 @@
     {
       "canonical": "half astern",
       "spoken": [
-        "háp a xtơn"
+        "háp a xtơn",
+        "háp a sờ tần"
       ]
     },
     {
       "canonical": "dead slow astern",
       "spoken": [
-        "đét sờ lô a xtơn"
+        "đét sờ lô a xtơn",
+        "dét x lô ơ tơn",
+        "đét x lô ơ tơn"
       ]
     },
     {
@@ -162,7 +174,11 @@
     {
       "canonical": "hard a port",
       "spoken": [
-        "hát a poóc"
+        "hát a poóc",
+        "hát a pót",
+        "hát a bốt",
+        "hát a pốt",
+        "hát a pót hết cỡ"
       ]
     },
     {
@@ -174,25 +190,30 @@
     {
       "canonical": "port ten",
       "spoken": [
-        "poóc ten"
+        "poóc ten",
+        "pờ ô rờ tờ t e n"
       ]
     },
     {
       "canonical": "starboard ten",
       "spoken": [
-        "xta bọt ten"
+        "xta bọt ten",
+        "ta ba bo ten"
       ]
     },
     {
       "canonical": "steady",
       "spoken": [
-        "xtê đi"
+        "xtê đi",
+        "xít đi",
+        "ít đi"
       ]
     },
     {
       "canonical": "keep course",
       "spoken": [
-        "kíp coóc"
+        "kíp coóc",
+        "kíp cô s"
       ]
     },
     {
@@ -222,7 +243,9 @@
     {
       "canonical": "restricted visibility",
       "spoken": [
-        "ri xtrích tịt vi zi bi li ti"
+        "ri xtrích tịt vi zi bi li ti",
+        "rét tríc tịt vít si bi lờ ti",
+        "vít si bi lờ ti"
       ]
     },
     {
@@ -276,13 +299,18 @@
     {
       "canonical": "port side",
       "spoken": [
-        "poóc sai"
+        "poóc sai",
+        "pót sai",
+        "pót sai đờ",
+        "bờ ó tờ sờ ai đờ"
       ]
     },
     {
       "canonical": "starboard side",
       "spoken": [
-        "xta bọt sai"
+        "xta bọt sai",
+        "ta ba bo sai đ",
+        "xa bo sai đờ"
       ]
     },
     {
@@ -300,13 +328,16 @@
     {
       "canonical": "forward",
       "spoken": [
-        "pho quợt"
+        "pho quợt",
+        "pho oát"
       ]
     },
     {
       "canonical": "aft",
       "spoken": [
-        "áp"
+        "áp",
+        "áp t",
+        "a phờ t"
       ]
     },
     {
@@ -330,7 +361,9 @@
     {
       "canonical": "main engine",
       "spoken": [
-        "mên en gin"
+        "mên en gin",
+        "máy chính",
+        "men gin"
       ]
     },
     {
@@ -360,7 +393,9 @@
     {
       "canonical": "let go anchor",
       "spoken": [
-        "lét gâu an cơ"
+        "lét gâu an cơ",
+        "lét gô ăng cờ",
+        "let go"
       ]
     },
     {
@@ -378,13 +413,15 @@
     {
       "canonical": "make fast",
       "spoken": [
-        "mâyk phát"
+        "mâyk phát",
+        "mếch phát"
       ]
     },
     {
       "canonical": "cast off",
       "spoken": [
-        "cát óp"
+        "cát óp",
+        "cát"
       ]
     },
     {
@@ -396,7 +433,8 @@
     {
       "canonical": "tug boat",
       "spoken": [
-        "tắc bốt"
+        "tắc bốt",
+        "túc bốt"
       ]
     },
     {
@@ -420,13 +458,17 @@
     {
       "canonical": "distress alert",
       "spoken": [
-        "đi xtret a lớt"
+        "đi xtret a lớt",
+        "đít tress ơ lết",
+        "đít trét ơ lết"
       ]
     },
     {
       "canonical": "man overboard",
       "spoken": [
-        "man ô vờ bo"
+        "man ô vờ bo",
+        "mên ô vơ bọt",
+        "men ô vơ boad"
       ]
     },
     {
@@ -450,7 +492,8 @@
     {
       "canonical": "closest point of approach",
       "spoken": [
-        "clô sít poi ơv a prôch"
+        "clô sít poi ơv a prôch",
+        "cờ lô dít pôi ốp bơ râu trờ"
       ]
     },
     {
@@ -480,7 +523,8 @@
     {
       "canonical": "crossing vessel",
       "spoken": [
-        "cro xinh ve xồ"
+        "cro xinh ve xồ",
+        "cờ rốt sinh vét sần"
       ]
     },
     {
@@ -492,25 +536,31 @@
     {
       "canonical": "emergency steering",
       "spoken": [
-        "i mơ giên xi xtia rinh"
+        "i mơ giên xi xtia rinh",
+        "em rơ gân xi ti rinh"
       ]
     },
     {
       "canonical": "steering gear",
       "spoken": [
-        "xtia rinh ghia"
+        "xtia rinh ghia",
+        "xtê ring gia"
       ]
     },
     {
       "canonical": "echo sounder",
       "spoken": [
-        "e cô xao đờ"
+        "e cô xao đờ",
+        "ếch cô xoun đơ",
+        "e cô xoun đơ"
       ]
     },
     {
       "canonical": "radar",
       "spoken": [
-        "rây đa"
+        "rây đa",
+        "rờ a đờ a",
+        "máy ra đa"
       ]
     },
     {
@@ -540,19 +590,23 @@
     {
       "canonical": "lateral mark",
       "spoken": [
-        "la tơ rồ mac"
+        "la tơ rồ mac",
+        "la tơ rát mác"
       ]
     },
     {
       "canonical": "port hand buoy",
       "spoken": [
-        "poóc hen boi"
+        "poóc hen boi",
+        "pót han bôi"
       ]
     },
     {
       "canonical": "starboard hand buoy",
       "spoken": [
-        "xta bọt hen boi"
+        "xta bọt hen boi",
+        "ta ba bo han bui",
+        "xa bo han bui"
       ]
     },
     {
@@ -570,7 +624,8 @@
     {
       "canonical": "recommended track",
       "spoken": [
-        "re co men địt trác"
+        "re co men địt trác",
+        "ri com mẻn t rắc"
       ]
     },
     {
@@ -588,7 +643,8 @@
     {
       "canonical": "freeboard",
       "spoken": [
-        "phri bo"
+        "phri bo",
+        "phri bốt đờ"
       ]
     },
     {
@@ -600,13 +656,17 @@
     {
       "canonical": "dredging operations",
       "spoken": [
-        "đrét ching ô pơ rây sần"
+        "đrét ching ô pơ rây sần",
+        "đrét jing ốp pê ra xần",
+        "đrét jing op pe ra xần"
       ]
     },
     {
       "canonical": "restricted area",
       "spoken": [
-        "ri xtrích tịt e ri a"
+        "ri xtrích tịt e ri a",
+        "rét tríc tịt đì ri a",
+        "rét tríc tịt e ri a"
       ]
     },
     {
@@ -624,7 +684,10 @@
     {
       "canonical": "general alarm",
       "spoken": [
-        "gen nơ rồ a lam"
+        "gen nơ rồ a lam",
+        "dê nê ra anh a lam",
+        "giê nê rác a lam",
+        "giê nê rờ al am"
       ]
     },
     {
@@ -636,7 +699,8 @@
     {
       "canonical": "emergency towing",
       "spoken": [
-        "i mơ giên xi tô uinh"
+        "i mơ giên xi tô uinh",
+        "em rơ gân tô uing"
       ]
     }
   ]

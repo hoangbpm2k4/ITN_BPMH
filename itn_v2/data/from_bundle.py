@@ -1,4 +1,4 @@
-"""Chuyển mẻ v6 (reading-variant) về hợp đồng dữ liệu V2 — qua ba cổng.
+"""Chuyển mẻ dữ liệu ngoài (v6, v7) về hợp đồng dữ liệu V2 — qua ba cổng.
 
 Mẻ v6 dùng lược đồ riêng và mang ba khuyết tật chặn, đo trên 4.341 câu:
 
@@ -27,6 +27,7 @@ lẽ ra phải có span):
 import argparse
 import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -39,6 +40,7 @@ from .schema import Sample, validate_sample, write_jsonl
 # từ đứng trước. Dấu chấm phẩy gộp vào COMMA vì taxonomy chỉ có bốn nhãn.
 PUNCT_TO_LABEL = {",": "COMMA", ";": "COMMA", ".": "PERIOD",
                   "!": "PERIOD", "?": "QUESTION"}
+PUNCT_LABELS = ("O", "COMMA", "PERIOD", "QUESTION")
 SENTENCE_END = {"PERIOD", "QUESTION"}
 NUMBER_WORDS = set(UNIT_DIGITS) | STRUCTURE_WORDS | FILLERS | {"mười"}
 
@@ -106,15 +108,87 @@ def restore_sentence_case(text, reference):
     return "".join(out)
 
 
-def convert(record, stats, config=None):
+# Ba quy ước v6 lệch với quy ước của ta. Đây là khác biệt CÁCH GHI, không phải
+# khác biệt nội dung, nên quy về một mối rồi mới so — thay vì vứt 600 câu tốt.
+COORD_RE = re.compile(r"(\d+)°(\d+)(?:,(\d+))?([′\'])(\d{2}[″\"])?([NSEW])?")
+# Vĩ độ hai chữ số, kinh độ ba — quy ước hàng hải, và bản gốc thật dùng đúng
+# vậy (8/8 vĩ độ hai chữ số, 9/9 kinh độ ba chữ số).
+DEGREE_WIDTH = {"N": 2, "S": 2, "E": 3, "W": 3}
+# Nhãn múi giờ đứng cuối span: v6 gộp cả giờ lẫn nhãn vào MỘT span TIMEZONE,
+# còn quy ước của ta (đo trên 2.397 span train) là nhãn TRẦN.
+TIMEZONE_TAILS = ("giờ địa phương", "giờ phối hợp quốc tế", "u tê xê", "u ti xi")
+
+
+def align_v6_target(text):
+    """Đưa `normalized_text` của v6 về quy ước ghi của ta.
+
+      - Dấu chấm phẩy -> dấu phẩy: taxonomy dấu câu chỉ có bốn nhãn (spec §6),
+        không có nhãn nào cho ";" nên ta không bao giờ sinh ra được nó.
+      - Toạ độ: đệm 0 cho phần độ (8° -> 08°) và dùng dấu CHẤM cho phút thập
+        phân. Bản gốc thật dùng cả hai quy ước này ở 18/18 toạ độ.
+    """
+    text = text.replace(";", ",")
+
+    def fix(m):
+        degree, minute, fraction, prime, second, direction = m.groups()
+        width = DEGREE_WIDTH.get(direction, 2)
+        out = f"{int(degree):0{width}d}°{int(minute):02d}"
+        if fraction:
+            out += f".{fraction}"
+        return out + prime + (second or "") + (direction or "")
+
+    return COORD_RE.sub(fix, text)
+
+
+def split_timezone_span(words, spans):
+    """Tách span TIMEZONE gộp thành TIME + TIMEZONE theo quy ước của ta."""
+    out = []
+    for start, end, type_name in spans:
+        if type_name != "TIMEZONE":
+            out.append((start, end, type_name))
+            continue
+        text = " ".join(words[start:end + 1])
+        for tail in TIMEZONE_TAILS:
+            suffix = " " + tail
+            if text.endswith(suffix) and len(text) > len(suffix):
+                cut = end - len(tail.split())
+                out.append((start, cut, "TIME"))
+                out.append((cut + 1, end, "TIMEZONE"))
+                break
+        else:
+            out.append((start, end, type_name))
+    return out
+
+
+def read_record(record):
+    """Rút (từ, nhãn dấu câu, nhãn BIO, đích) từ hai lược đồ mẻ khác nhau.
+
+    v6: ``tokens`` là chuỗi và CHỨA token dấu câu, phải bóc ra thành nhãn.
+    v7: ``tokens`` là đối tượng {text,start,end}, không có token dấu câu, và đã
+        kèm sẵn ``punctuation_targets`` đúng bốn nhãn của ta.
+    """
     tokens = record.get("tokens") or []
     bio = record.get("bio_tags") or []
-    target = (record.get("normalized_text") or "").strip()
-    if not tokens or len(tokens) != len(bio) or not target:
-        stats["lệch độ dài / thiếu đích"] += 1
+    if not tokens or len(tokens) != len(bio):
         return None
 
-    words, punct, tags = strip_punctuation(tokens, bio)
+    if isinstance(tokens[0], dict):
+        words = [str(t.get("text", "")).lower() for t in tokens]
+        punct = list(record.get("punctuation_targets") or [])
+        if len(punct) != len(words):
+            punct = ["O"] * len(words)
+        punct = [p if p in PUNCT_LABELS else "O" for p in punct]
+        return words, punct, list(bio)
+    return strip_punctuation(tokens, bio)
+
+
+def convert(record, stats, config=None):
+    target = (record.get("normalized_text") or "").strip()
+    parsed = read_record(record)
+    if parsed is None or not target:
+        stats["lệch độ dài / thiếu đích"] += 1
+        return None
+    words, punct, tags = parsed
     if not words:
         stats["rỗng sau khi bóc dấu câu"] += 1
         return None
@@ -123,21 +197,30 @@ def convert(record, stats, config=None):
         return None
 
     spans = decode_bio(tags)
+    if spans is not None:
+        spans = split_timezone_span(words, spans)
     if spans is None:
         stats["chuỗi BIO không hợp lệ"] += 1
         return None
     if not spans:
-        stats["không span nào"] += 1
-        return None
+        # Câu không có span nào là MẪU ÂM: nó dạy mô hình đừng chuẩn hoá bậy
+        # (spec §23). Bỏ đi là vứt mất đúng thứ ghìm tỉ lệ chuẩn hoá sai.
+        stats["giữ làm mẫu âm (không span)"] += 1
 
+    # Vị trí đã thuộc một span khác thì từ ở đó KHÔNG phải bằng chứng biên cụt:
+    # "…năm mươi | giờ địa phương" là hai span kề nhau, không phải một span bị
+    # cắt đôi. Thiếu điều kiện này thì mọi cặp TIME+TIMEZONE đều bị loại oan.
+    covered = {i for start, end, _ in spans for i in range(start, end + 1)}
     for start, end, type_name in spans:
         if type_name not in SEMANTIC_TYPES:
             stats[f"kiểu ngoài taxonomy: {type_name}"] += 1
             return None
-        if start > 0 and words[start - 1] in NUMBER_WORDS:
+        if (start > 0 and start - 1 not in covered
+                and words[start - 1] in NUMBER_WORDS):
             stats[f"biên cụt trái: {type_name}"] += 1
             return None
-        if end + 1 < len(words) and words[end + 1] in NUMBER_WORDS:
+        if (end + 1 < len(words) and end + 1 not in covered
+                and words[end + 1] in NUMBER_WORDS):
             stats[f"biên cụt phải: {type_name}"] += 1
             return None
 
@@ -163,19 +246,20 @@ def convert(record, stats, config=None):
         stats[f"normalizer trượt: {failed[0].predicted_type}"] += 1
         return None
 
-    expected = restore_sentence_case(target, rendered)
+    expected = restore_sentence_case(align_v6_target(target), rendered)
     if rendered != expected:
         stats[f"tái dựng lệch: {spans[0][2]}"] += 1
         return None
 
     spoken = " ".join(words)
     sample = Sample(
-        id="v6" + hashlib.sha1(spoken.encode()).hexdigest()[:14],
+        id="bd" + hashlib.sha1(spoken.encode()).hexdigest()[:14],
         spoken=spoken, written=rendered, words=words, punct=punct,
         spans=[tuple(s) for s in spans],
         types=[t for _, _, t in spans],
         leak_key="|".join(sorted(o.normalized or "" for o in outputs)),
-        source="v6:" + str(record.get("priority_group", "")),
+        source=str(record.get("source_type") or "bundle").split("_")[0] + ":"
+               + str(record.get("priority_group") or record.get("focus_family") or ""),
         written_source=target)
     errors = validate_sample(sample)
     if errors:
@@ -187,7 +271,7 @@ def convert(record, stats, config=None):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True,
-                        help="v6_variant_train.jsonl của mẻ v6")
+                        help="tệp .jsonl của mẻ ngoài (v6 hoặc v7)")
     parser.add_argument("--out", required=True)
     parser.add_argument("--leak-against", default="datasets_v2/dv1_eval.jsonl",
                         help="bộ phải chống rò rỉ (mặc định: TEST CUỐI)")

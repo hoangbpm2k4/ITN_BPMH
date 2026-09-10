@@ -62,7 +62,16 @@
     "ét vê đê": "SVD",
     "em bê tê": "MBT",
     "pê en": "PN",
-    "quy đê": "QD"
+    "quy đê": "QD",
+    "sờ u": "Su",
+    "ét sờ u": "Su",
+    "mi gờ": "MiG",
+    "em ai gi": "MiG",
+    "em ai giê": "MiG",
+    "dê ét u": "ZSU",
+    "dét ét u": "ZSU",
+    "dét u": "ZSU",
+    "dê ét ka": "ZSK"
   },
   "models": [
     {
@@ -85,14 +94,18 @@
       "canonical": "F-16",
       "spoken": [
         "ép mười sáu",
-        "ep mười sáu"
+        "ep mười sáu",
+        "ét ph mười sáu",
+        "ép cờ mười sáu"
       ]
     },
     {
       "canonical": "B-52",
       "spoken": [
         "bê năm hai",
-        "bê năm mươi hai"
+        "bê năm mươi hai",
+        "bờ năm mươi hai",
+        "bi năm mươi hai"
       ]
     },
     {
@@ -113,7 +126,12 @@
       "canonical": "RPG-7",
       "spoken": [
         "rờ pê giê bảy",
-        "rê pê giê bảy"
+        "rê pê giê bảy",
+        "rờ pê gờ bảy",
+        "rờ pê gờ gạch bảy",
+        "rờ pế giê bảy",
+        "rờ pế giê gạch bảy",
+        "a r p ê giê bảy"
       ]
     },
     {
@@ -126,7 +144,9 @@
       "canonical": "T-90",
       "spoken": [
         "tê chín mươi",
-        "tê chín không"
+        "tê chín không",
+        "ti chín mươi",
+        "ti gạch chín mươi"
       ]
     },
     {
@@ -134,7 +154,8 @@
       "spoken": [
         "su hai hai",
         "xu hai hai",
-        "su hai mươi hai"
+        "su hai mươi hai",
+        "s u gạch ngang hai mươi hai"
       ]
     },
     {
@@ -192,7 +213,9 @@
         "míc hai mốt",
         "míc hai mươi mốt",
         "mích hai mốt",
-        "mích hai mươi mốt"
+        "mích hai mươi mốt",
+        "mig hai mươi mốt",
+        "mig hai một"
       ]
     },
     {
@@ -200,7 +223,8 @@
       "spoken": [
         "míc hai chín",
         "míc hai mươi chín",
-        "mích hai mươi chín"
+        "mích hai mươi chín",
+        "em i gờ gạch ngang hai mươi chín"
       ]
     },
     {
@@ -216,21 +240,33 @@
       "spoken": [
         "ka hát ba lăm",
         "ca hát ba lăm",
-        "ka hát ba mươi lăm"
+        "ka hát ba mươi lăm",
+        "kh ba lăm",
+        "kh ba mươi lăm",
+        "kh gạch ngang ba lăm",
+        "kh gạch ba lăm"
       ]
     },
     {
       "canonical": "P-800",
       "spoken": [
         "pê tám trăm",
-        "pê tám không không"
+        "pê tám không không",
+        "p tám trăm",
+        "p tám không không",
+        "pe tám trăm",
+        "pe tám không không"
       ]
     },
     {
       "canonical": "MU90",
       "spoken": [
         "em u chín mươi",
-        "mờ u chín mươi"
+        "mờ u chín mươi",
+        "m u chín mươi",
+        "mu chín mươi",
+        "m u chín không",
+        "mu chín không"
       ]
     },
     {
@@ -238,14 +274,24 @@
       "spoken": [
         "em ca bốn sáu",
         "mờ ca bốn sáu",
-        "em ca bốn mươi sáu"
+        "em ca bốn mươi sáu",
+        "mác bốn mươi sáu",
+        "mác bốn sáu"
       ]
     },
     {
       "canonical": "SET-65",
       "spoken": [
         "ét e tê sáu lăm",
-        "ét e tê sáu mươi lăm"
+        "ét e tê sáu mươi lăm",
+        "s e tê sáu mươi lăm",
+        "s e tê sáu năm",
+        "rét sáu mươi lăm",
+        "set sáu mươi lăm",
+        "s e tê gạch sáu mươi lăm",
+        "s e tê gạch ngang sáu năm",
+        "rét gạch sáu mươi lăm",
+        "set gạch sáu mươi lăm"
       ]
     },
     {
@@ -270,55 +316,96 @@
     {
       "canonical": "T-62",
       "spoken": [
-        "tê sáu mươi hai"
+        "tê sáu mươi hai",
+        "ti sáu mươi hai",
+        "ti gạch sáu mươi hai"
       ]
     },
     {
       "canonical": "T-64",
       "spoken": [
-        "tê sáu mươi bốn"
+        "tê sáu mươi bốn",
+        "ti sáu mươi tư",
+        "ti gạch sáu mươi tư"
       ]
     },
     {
       "canonical": "T-72",
       "spoken": [
-        "tê bảy mươi hai"
+        "tê bảy mươi hai",
+        "ti bảy mươi hai",
+        "ti gạch bảy mươi hai"
       ]
     },
     {
       "canonical": "T-80",
       "spoken": [
-        "tê tám mươi"
+        "tê tám mươi",
+        "ti tám mươi",
+        "ti gạch tám mươi"
       ]
     },
     {
       "canonical": "T-84",
       "spoken": [
-        "tê tám mươi bốn"
+        "tê tám mươi bốn",
+        "ti tám mươi tư",
+        "ti gạch tám mươi tư"
       ]
     },
     {
       "canonical": "BTR-60",
       "spoken": [
-        "bê tê e rờ sáu mươi"
+        "bê tê e rờ sáu mươi",
+        "bê tê rờ sáu mươi",
+        "bê tê rờ gạch sáu mươi",
+        "bê tê rờ gạch ngang sáu mươi",
+        "bi ti ar sáu mươi",
+        "bi ti ar gạch sáu mươi",
+        "bê tê rờ sáu không",
+        "bê tê rờ gạch sáu không",
+        "bi ti ar sáu không"
       ]
     },
     {
       "canonical": "BTR-70",
       "spoken": [
-        "bê tê e rờ bảy mươi"
+        "bê tê e rờ bảy mươi",
+        "bê tê rờ bảy mươi",
+        "bê tê rờ gạch bảy mươi",
+        "bê tê rờ gạch ngang bảy mươi",
+        "bi ti ar bảy mươi",
+        "bi ti ar gạch bảy mươi",
+        "bê tê rờ bảy không",
+        "bê tê rờ gạch bảy không",
+        "bi ti ar bảy không"
       ]
     },
     {
       "canonical": "BTR-80",
       "spoken": [
-        "bê tê e rờ tám mươi"
+        "bê tê e rờ tám mươi",
+        "bê tê rờ tám mươi",
+        "bê tê rờ gạch tám mươi",
+        "bê tê rờ gạch ngang tám mươi",
+        "bi ti ar tám mươi",
+        "bi ti ar gạch tám mươi",
+        "bê tê rờ tám không",
+        "bê tê rờ gạch tám không",
+        "bi ti ar tám không"
       ]
     },
     {
       "canonical": "BTR-82",
       "spoken": [
-        "bê tê e rờ tám mươi hai"
+        "bê tê e rờ tám mươi hai",
+        "bê tê rờ tám mươi hai",
+        "bê tê rờ tám hai",
+        "bê tê rờ gạch tám mươi hai",
+        "bê tê rờ gạch ngang tám mươi hai",
+        "bi ti ar tám mươi hai",
+        "bi ti ar tám hai",
+        "bi ti ar gạch tám mươi hai"
       ]
     },
     {
@@ -342,61 +429,76 @@
     {
       "canonical": "MiG-17",
       "spoken": [
-        "mích mười bảy"
+        "mích mười bảy",
+        "mig mười bảy",
+        "mig một bảy"
       ]
     },
     {
       "canonical": "MiG-19",
       "spoken": [
-        "mích mười chín"
+        "mích mười chín",
+        "mig mười chín",
+        "mig một chín"
       ]
     },
     {
       "canonical": "MiG-23",
       "spoken": [
-        "mích hai mươi ba"
+        "mích hai mươi ba",
+        "mig hai mươi ba",
+        "mig hai ba"
       ]
     },
     {
       "canonical": "MiG-25",
       "spoken": [
-        "mích hai mươi lăm"
+        "mích hai mươi lăm",
+        "mig hai mươi lăm",
+        "mig hai lăm"
       ]
     },
     {
       "canonical": "MiG-27",
       "spoken": [
-        "mích hai mươi bảy"
+        "mích hai mươi bảy",
+        "mig hai mươi bảy",
+        "mig hai bảy"
       ]
     },
     {
       "canonical": "MiG-31",
       "spoken": [
-        "mích ba mươi mốt"
+        "mích ba mươi mốt",
+        "em i gờ gạch ngang ba một"
       ]
     },
     {
       "canonical": "MiG-35",
       "spoken": [
-        "mích ba mươi lăm"
+        "mích ba mươi lăm",
+        "em i gờ gạch ngang ba lăm"
       ]
     },
     {
       "canonical": "Su-17",
       "spoken": [
-        "su mười bảy"
+        "su mười bảy",
+        "s u gạch ngang mười bảy"
       ]
     },
     {
       "canonical": "Su-20",
       "spoken": [
-        "su hai mươi"
+        "su hai mươi",
+        "s u gạch ngang hai mươi"
       ]
     },
     {
       "canonical": "Su-24",
       "spoken": [
-        "su hai mươi bốn"
+        "su hai mươi bốn",
+        "s u gạch ngang hai mươi bốn"
       ]
     },
     {
@@ -462,43 +564,69 @@
     {
       "canonical": "S-75",
       "spoken": [
-        "ét bảy mươi lăm"
+        "ét bảy mươi lăm",
+        "s bảy mươi lăm",
+        "s bảy năm",
+        "s gạch bảy năm",
+        "s gạch ngang bảy mươi lăm"
       ]
     },
     {
       "canonical": "S-125",
       "spoken": [
-        "ét một trăm hai mươi lăm"
+        "ét một trăm hai mươi lăm",
+        "s một hai năm",
+        "s gạch ngang một hai năm",
+        "s một trăm hai mươi lăm",
+        "s gạch một trăm hai mươi lăm"
       ]
     },
     {
       "canonical": "S-200",
       "spoken": [
-        "ét hai trăm"
+        "ét hai trăm",
+        "s hai trăm",
+        "s gạch ngang hai trăm",
+        "s hai không không",
+        "s gạch hai không không"
       ]
     },
     {
       "canonical": "S-300",
       "spoken": [
-        "ét ba trăm"
+        "ét ba trăm",
+        "s ba trăm",
+        "s gạch ngang ba trăm",
+        "s ba không không",
+        "s gạch ba không không"
       ]
     },
     {
       "canonical": "S-350",
       "spoken": [
-        "ét ba trăm năm mươi"
+        "ét ba trăm năm mươi",
+        "s ba trăm năm mươi",
+        "s gạch ngang ba trăm năm mươi"
       ]
     },
     {
       "canonical": "S-400",
       "spoken": [
-        "ét bốn trăm"
+        "ét bốn trăm",
+        "s bốn trăm",
+        "s gạch ngang bốn trăm",
+        "s bốn không không",
+        "s gạch bốn không không"
       ]
     },
     {
       "canonical": "S-500",
       "spoken": [
-        "ét năm trăm"
+        "ét năm trăm",
+        "s năm trăm",
+        "s gạch ngang năm trăm",
+        "s năm không không",
+        "s gạch năm không không"
       ]
     },
     {
@@ -522,31 +650,53 @@
     {
       "canonical": "P-18",
       "spoken": [
-        "pê mười tám"
+        "pê mười tám",
+        "p mười tám",
+        "p một tám",
+        "pe mười tám",
+        "pe một tám"
       ]
     },
     {
       "canonical": "P-19",
       "spoken": [
-        "pê mười chín"
+        "pê mười chín",
+        "p mười chín",
+        "p một chín",
+        "pe mười chín",
+        "pe một chín"
       ]
     },
     {
       "canonical": "P-35",
       "spoken": [
-        "pê ba mươi lăm"
+        "pê ba mươi lăm",
+        "p ba mươi lăm",
+        "p ba lăm",
+        "pe ba mươi lăm",
+        "pe ba lăm",
+        "p ba mươi năm",
+        "p ba năm"
       ]
     },
     {
       "canonical": "P-37",
       "spoken": [
-        "pê ba mươi bảy"
+        "pê ba mươi bảy",
+        "p ba mươi bảy",
+        "p ba bảy",
+        "pe ba mươi bảy",
+        "pe ba bảy"
       ]
     },
     {
       "canonical": "P-40",
       "spoken": [
-        "pê bốn mươi"
+        "pê bốn mươi",
+        "p bốn mươi",
+        "p bốn không",
+        "pe bốn mươi",
+        "pe bốn không"
       ]
     },
     {
@@ -576,13 +726,23 @@
     {
       "canonical": "M-18",
       "spoken": [
-        "em mười tám"
+        "em mười tám",
+        "m mười tám",
+        "m một tám",
+        "m gạch ngang mười tám",
+        "m gạch một tám",
+        "m gạch ngang một tám"
       ]
     },
     {
       "canonical": "M-48",
       "spoken": [
-        "em bốn mươi tám"
+        "em bốn mươi tám",
+        "m bốn mươi tám",
+        "m bốn tám",
+        "m gạch ngang bốn mươi tám",
+        "m gạch bốn tám",
+        "m gạch ngang bốn tám"
       ]
     },
     {
@@ -594,73 +754,137 @@
     {
       "canonical": "M-109",
       "spoken": [
-        "em một không chín"
+        "em một không chín",
+        "m một không chín",
+        "m một trăm lẻ chín",
+        "m gạch ngang một trăm lẻ chín",
+        "m gạch một không chín",
+        "m một trăm linh chín",
+        "m gạch ngang một không chín"
       ]
     },
     {
       "canonical": "M-113",
       "spoken": [
-        "em một một ba"
+        "em một một ba",
+        "m một trăm mười ba",
+        "m gạch ngang một trăm mười ba",
+        "m gạch một một ba",
+        "m gạch ngang một một ba"
       ]
     },
     {
       "canonical": "BM-21",
       "spoken": [
-        "bê em hai mươi mốt"
+        "bê em hai mươi mốt",
+        "bê em hai mốt",
+        "bê em gạch ngang hai mốt",
+        "bê em gạch hai mươi mốt",
+        "bê em hai một"
       ]
     },
     {
       "canonical": "BM-27",
       "spoken": [
-        "bê em hai mươi bảy"
+        "bê em hai mươi bảy",
+        "bê em hai bảy",
+        "bê em gạch ngang hai bảy",
+        "bê em gạch hai mươi bảy"
       ]
     },
     {
       "canonical": "BM-30",
       "spoken": [
-        "bê em ba mươi"
+        "bê em ba mươi",
+        "bê em ba không",
+        "bê em gạch ngang ba mươi",
+        "bê em gạch ba không"
       ]
     },
     {
       "canonical": "ZSU-23",
       "spoken": [
-        "dét ét u hai mươi ba"
+        "dét ét u hai mươi ba",
+        "zét s u hai ba",
+        "zét s u hai mươi ba",
+        "zét s u gạch ngang hai ba",
+        "zét s u gạch ngang hai mươi ba",
+        "zê s u hai ba",
+        "zê s u hai mươi ba",
+        "zê s u gạch ngang hai ba",
+        "dét s u hai ba",
+        "dét s u hai mươi ba"
       ]
     },
     {
       "canonical": "ZSU-57",
       "spoken": [
-        "dét ét u năm mươi bảy"
+        "dét ét u năm mươi bảy",
+        "zét s u năm mươi bảy",
+        "zét s u năm bảy",
+        "zét s u gạch ngang năm mươi bảy",
+        "zét s u gạch ngang năm bảy",
+        "zê s u năm mươi bảy",
+        "zê s u năm bảy",
+        "dét s u năm mươi bảy",
+        "dét s u năm bảy"
       ]
     },
     {
       "canonical": "PRC-25",
       "spoken": [
-        "pê e rờ xê hai mươi lăm"
+        "pê e rờ xê hai mươi lăm",
+        "pê rờ xê hai lăm",
+        "pê rờ xê gạch hai lăm",
+        "pê rờ xê hai mươi lăm",
+        "pê rờ xê gạch hai mươi lăm",
+        "pi a r c hai lăm",
+        "pờ rờ xê hai lăm"
       ]
     },
     {
       "canonical": "PRC-77",
       "spoken": [
-        "pê e rờ xê bảy mươi bảy"
+        "pê e rờ xê bảy mươi bảy",
+        "pê rờ xê bảy bảy",
+        "pê rờ xê gạch bảy bảy",
+        "pê rờ xê bảy mươi bảy",
+        "pê rờ xê gạch bảy mươi bảy",
+        "pi a r c bảy bảy",
+        "pờ rờ xê bảy bảy"
       ]
     },
     {
       "canonical": "PRC-117",
       "spoken": [
-        "pê e rờ xê một một bảy"
+        "pê e rờ xê một một bảy",
+        "pê rờ xê một một bảy",
+        "pê rờ xê gạch một một bảy",
+        "pê rờ xê một trăm mười bảy",
+        "pê rờ xê gạch một trăm mười bảy",
+        "pờ rờ xê một một bảy"
       ]
     },
     {
       "canonical": "PRC-119",
       "spoken": [
-        "pê e rờ xê một một chín"
+        "pê e rờ xê một một chín",
+        "pê rờ xê một một chín",
+        "pê rờ xê gạch một một chín",
+        "pê rờ xê một trăm mười chín",
+        "pê rờ xê gạch một trăm mười chín",
+        "pờ rờ xê một một chín"
       ]
     },
     {
       "canonical": "PRC-152",
       "spoken": [
-        "pê e rờ xê một năm hai"
+        "pê e rờ xê một năm hai",
+        "pê rờ xê một năm hai",
+        "pê rờ xê gạch một năm hai",
+        "pê rờ xê một trăm năm mươi hai",
+        "pi a r c một năm hai",
+        "pờ rờ xê một năm hai"
       ]
     },
     {
@@ -678,145 +902,217 @@
     {
       "canonical": "B-1",
       "spoken": [
-        "bê một"
+        "bê một",
+        "bờ một",
+        "bi một"
       ]
     },
     {
       "canonical": "B-2",
       "spoken": [
-        "bê hai"
+        "bê hai",
+        "bờ hai",
+        "bi hai"
       ]
     },
     {
       "canonical": "C-17",
       "spoken": [
-        "xê mười bảy"
+        "xê mười bảy",
+        "xi mười bảy",
+        "xi một bảy",
+        "xi gạch mười bảy"
       ]
     },
     {
       "canonical": "C-130",
       "spoken": [
-        "xê một trăm ba mươi"
+        "xê một trăm ba mươi",
+        "xi một trăm ba mươi",
+        "xi một ba không",
+        "xi gạch một trăm ba mươi"
       ]
     },
     {
       "canonical": "F-4",
       "spoken": [
-        "ép bốn"
+        "ép bốn",
+        "ét phờ bốn",
+        "ét phờ gạch ngang bốn"
       ]
     },
     {
       "canonical": "F-5",
       "spoken": [
-        "ép năm"
+        "ép năm",
+        "ét phờ năm",
+        "ét phờ gạch ngang năm"
       ]
     },
     {
       "canonical": "F-14",
       "spoken": [
-        "ép mười bốn"
+        "ép mười bốn",
+        "ét ph mười bốn",
+        "ép cờ mười bốn"
       ]
     },
     {
       "canonical": "F-15",
       "spoken": [
-        "ép mười lăm"
+        "ép mười lăm",
+        "ét ph mười lăm",
+        "ép cờ mười lăm"
       ]
     },
     {
       "canonical": "F-18",
       "spoken": [
-        "ép mười tám"
+        "ép mười tám",
+        "ét ph mười tám",
+        "ép cờ mười tám"
       ]
     },
     {
       "canonical": "F-22",
       "spoken": [
-        "ép hai mươi hai"
+        "ép hai mươi hai",
+        "ét ph hai hai",
+        "ép cờ hai hai"
       ]
     },
     {
       "canonical": "F-35",
       "spoken": [
-        "ép ba mươi lăm"
+        "ép ba mươi lăm",
+        "ét ph ba lăm",
+        "ép cờ ba lăm"
       ]
     },
     {
       "canonical": "An-2",
       "spoken": [
-        "an hai"
+        "an hai",
+        "an gạch ngang hai"
       ]
     },
     {
       "canonical": "An-12",
       "spoken": [
-        "an mười hai"
+        "an mười hai",
+        "an gạch ngang mười hai"
       ]
     },
     {
       "canonical": "An-24",
       "spoken": [
-        "an hai mươi bốn"
+        "an hai mươi bốn",
+        "an hai mươi tư",
+        "an hai bốn",
+        "a n hai mươi tư",
+        "an gạch ngang hai mươi tư",
+        "an hai tư"
       ]
     },
     {
       "canonical": "An-26",
       "spoken": [
-        "an hai mươi sáu"
+        "an hai mươi sáu",
+        "an hai sáu",
+        "an gạch ngang hai mươi sáu"
       ]
     },
     {
       "canonical": "An-30",
       "spoken": [
-        "an ba mươi"
+        "an ba mươi",
+        "an ba không"
       ]
     },
     {
       "canonical": "An-32",
       "spoken": [
-        "an ba mươi hai"
+        "an ba mươi hai",
+        "an ba hai"
       ]
     },
     {
       "canonical": "An-72",
       "spoken": [
-        "an bảy mươi hai"
+        "an bảy mươi hai",
+        "an bảy hai"
       ]
     },
     {
       "canonical": "An-124",
       "spoken": [
-        "an một trăm hai mươi bốn"
+        "an một trăm hai mươi bốn",
+        "an một trăm hai mươi tư",
+        "a n một trăm hai mươi tư",
+        "an gạch ngang một trăm hai mươi tư",
+        "an một hai tư"
       ]
     },
     {
       "canonical": "Il-18",
       "spoken": [
-        "i lờ mười tám"
+        "i lờ mười tám",
+        "in mười tám",
+        "in gạch ngang mười tám",
+        "in một tám",
+        "in gạch một tám",
+        "i lờ gạch ngang mười tám",
+        "iu mười tám"
       ]
     },
     {
       "canonical": "Il-20",
       "spoken": [
-        "i lờ hai mươi"
+        "i lờ hai mươi",
+        "in hai mươi",
+        "in gạch ngang hai mươi",
+        "in hai không",
+        "in gạch hai không",
+        "i lờ gạch ngang hai mươi",
+        "iu hai mươi"
       ]
     },
     {
       "canonical": "Il-38",
       "spoken": [
-        "i lờ ba mươi tám"
+        "i lờ ba mươi tám",
+        "in ba mươi tám",
+        "in gạch ngang ba mươi tám",
+        "in ba tám",
+        "in gạch ba tám",
+        "i lờ gạch ngang ba mươi tám",
+        "iu ba mươi tám"
       ]
     },
     {
       "canonical": "Il-62",
       "spoken": [
-        "i lờ sáu mươi hai"
+        "i lờ sáu mươi hai",
+        "in sáu mươi hai",
+        "in gạch ngang sáu mươi hai",
+        "in sáu hai",
+        "in gạch sáu hai",
+        "i lờ gạch ngang sáu mươi hai",
+        "iu sáu mươi hai"
       ]
     },
     {
       "canonical": "Il-76",
       "spoken": [
-        "i lờ bảy mươi sáu"
+        "i lờ bảy mươi sáu",
+        "i el bảy mươi sáu",
+        "i el bảy sáu",
+        "il bảy mươi sáu",
+        "il bảy sáu",
+        "i el gạch bảy mươi sáu",
+        "i el gạch bảy sáu",
+        "i l bảy mươi sáu",
+        "i l bảy sáu"
       ]
     },
     {
@@ -840,469 +1136,859 @@
     {
       "canonical": "xe tăng T-54",
       "spoken": [
-        "xe tăng tê năm mươi bốn"
+        "xe tăng tê năm mươi bốn",
+        "xe tăng tê năm mươi tư",
+        "xe tăng ti năm mươi tư",
+        "xe tăng tê năm bốn",
+        "xe tăng ti năm bốn"
       ]
     },
     {
       "canonical": "xe tăng T-55",
       "spoken": [
-        "xe tăng tê năm mươi lăm"
+        "xe tăng tê năm mươi lăm",
+        "xe tăng ti năm mươi lăm",
+        "xe tăng tê năm năm",
+        "xe tăng ti năm năm"
       ]
     },
     {
       "canonical": "xe tăng T-62",
       "spoken": [
-        "xe tăng tê sáu mươi hai"
+        "xe tăng tê sáu mươi hai",
+        "xe tăng t sáu mươi hai",
+        "xe tăng tê sáu hai",
+        "xe tăng t sáu hai",
+        "xe tăng tê gạch sáu mươi hai",
+        "xe tăng t gạch sáu mươi hai",
+        "xe tăng tê gạch ngang sáu mươi hai",
+        "t sáu mươi hai"
       ]
     },
     {
       "canonical": "xe tăng T-64",
       "spoken": [
-        "xe tăng tê sáu mươi bốn"
+        "xe tăng tê sáu mươi bốn",
+        "xe tăng tê sáu mươi tư",
+        "xe tăng t sáu mươi tư",
+        "xe tăng tê sáu tư",
+        "xe tăng t sáu tư",
+        "xe tăng tê gạch sáu mươi tư",
+        "xe tăng t gạch sáu mươi tư",
+        "xe tăng tê gạch ngang sáu mươi tư",
+        "xe tăng t sáu mươi bốn",
+        "t sáu mươi tư"
       ]
     },
     {
       "canonical": "xe tăng T-72",
       "spoken": [
-        "xe tăng tê bảy mươi hai"
+        "xe tăng tê bảy mươi hai",
+        "xe tăng t bảy mươi hai",
+        "xe tăng tê bảy hai",
+        "xe tăng t bảy hai",
+        "xe tăng tê gạch bảy mươi hai",
+        "xe tăng t gạch bảy mươi hai",
+        "xe tăng tê gạch ngang bảy mươi hai",
+        "t bảy mươi hai"
       ]
     },
     {
       "canonical": "xe tăng T-80",
       "spoken": [
-        "xe tăng tê tám mươi"
+        "xe tăng tê tám mươi",
+        "xe tăng t tám mươi",
+        "xe tăng tê gạch tám mươi",
+        "xe tăng t gạch tám mươi",
+        "xe tăng tê gạch ngang tám mươi",
+        "t tám mươi"
       ]
     },
     {
       "canonical": "xe tăng T-84",
       "spoken": [
-        "xe tăng tê tám mươi bốn"
+        "xe tăng tê tám mươi bốn",
+        "xe tăng tê tám mươi tư",
+        "xe tăng t tám mươi tư",
+        "xe tăng tê tám tư",
+        "xe tăng t tám tư",
+        "xe tăng tê gạch tám mươi tư",
+        "xe tăng t gạch tám mươi tư",
+        "xe tăng tê gạch ngang tám mươi tư",
+        "xe tăng t tám mươi bốn",
+        "t tám mươi tư"
       ]
     },
     {
       "canonical": "xe tăng T-90",
       "spoken": [
-        "xe tăng tê chín mươi"
+        "xe tăng tê chín mươi",
+        "xe tăng t chín mươi",
+        "xe tăng tê gạch chín mươi",
+        "xe tăng t gạch chín mươi",
+        "xe tăng tê gạch ngang chín mươi",
+        "t chín mươi"
       ]
     },
     {
       "canonical": "xe thiết giáp BTR-60",
       "spoken": [
-        "xe thiết giáp bê tê e rờ sáu mươi"
+        "xe thiết giáp bê tê e rờ sáu mươi",
+        "xe thiết giáp b tê rờ sáu mươi",
+        "xe thiết giáp b tr sáu mươi",
+        "b tr sáu mươi",
+        "b tê rờ gạch sáu mươi",
+        "b tr gạch sáu mươi",
+        "b tr sáu không"
       ]
     },
     {
       "canonical": "xe thiết giáp BTR-70",
       "spoken": [
-        "xe thiết giáp bê tê e rờ bảy mươi"
+        "xe thiết giáp bê tê e rờ bảy mươi",
+        "xe thiết giáp b tê rờ bảy mươi",
+        "xe thiết giáp b tr bảy mươi",
+        "b tr bảy mươi",
+        "b tê rờ gạch bảy mươi",
+        "b tr gạch bảy mươi",
+        "b tr bảy không"
       ]
     },
     {
       "canonical": "xe thiết giáp BTR-80",
       "spoken": [
-        "xe thiết giáp bê tê e rờ tám mươi"
+        "xe thiết giáp bê tê e rờ tám mươi",
+        "xe thiết giáp b tê rờ tám mươi",
+        "xe thiết giáp b tr tám mươi",
+        "b tr tám mươi",
+        "b tê rờ gạch tám mươi",
+        "b tr gạch tám mươi",
+        "b tr tám không"
       ]
     },
     {
       "canonical": "xe thiết giáp BTR-82",
       "spoken": [
-        "xe thiết giáp bê tê e rờ tám mươi hai"
+        "xe thiết giáp bê tê e rờ tám mươi hai",
+        "xe thiết giáp b tr tám mươi hai",
+        "b tr tám mươi hai",
+        "b tê rờ gạch tám mươi hai",
+        "b tr gạch tám mươi hai",
+        "b tr tám hai"
       ]
     },
     {
       "canonical": "xe thiết giáp BMP-1",
       "spoken": [
-        "xe thiết giáp bê em pê một"
+        "xe thiết giáp bê em pê một",
+        "xe thiết giáp bê em pế một",
+        "xe thiết giáp bi em pi một",
+        "bê em pế một",
+        "bi em pi một",
+        "bê em pế gạch ngang một",
+        "bi em pi gạch ngang một"
       ]
     },
     {
       "canonical": "xe thiết giáp BMP-2",
       "spoken": [
-        "xe thiết giáp bê em pê hai"
+        "xe thiết giáp bê em pê hai",
+        "xe thiết giáp bê em pế hai",
+        "xe thiết giáp bi em pi hai",
+        "bê em pế hai",
+        "bi em pi hai",
+        "bê em pế gạch ngang hai",
+        "bi em pi gạch ngang hai"
       ]
     },
     {
       "canonical": "xe thiết giáp BMP-3",
       "spoken": [
-        "xe thiết giáp bê em pê ba"
+        "xe thiết giáp bê em pê ba",
+        "xe thiết giáp bê em pế ba",
+        "xe thiết giáp bi em pi ba",
+        "bê em pế ba",
+        "bi em pi ba",
+        "bê em pế gạch ngang ba",
+        "bi em pi gạch ngang ba"
       ]
     },
     {
       "canonical": "máy bay MiG-17",
       "spoken": [
-        "máy bay mích mười bảy"
+        "máy bay mích mười bảy",
+        "máy bay mít mười bảy",
+        "máy bay mít một bảy",
+        "máy bay mít gạch ngang mười bảy",
+        "máy bay mít gạch ngang một bảy",
+        "mít mười bảy",
+        "mít một bảy"
       ]
     },
     {
       "canonical": "máy bay MiG-19",
       "spoken": [
-        "máy bay mích mười chín"
+        "máy bay mích mười chín",
+        "máy bay mít mười chín",
+        "máy bay mít mốt chín",
+        "máy bay mít một chín",
+        "máy bay mi gờ mười chín",
+        "máy bay mi gờ một chín"
       ]
     },
     {
       "canonical": "máy bay MiG-21",
       "spoken": [
-        "máy bay mích hai mươi mốt"
+        "máy bay mích hai mươi mốt",
+        "máy bay mít hai mươi mốt",
+        "máy bay mít hai mốt",
+        "máy bay mít hai một",
+        "máy bay mi gờ hai mươi mốt",
+        "máy bay mi gờ hai mốt",
+        "máy bay mi gờ hai một"
       ]
     },
     {
       "canonical": "máy bay MiG-23",
       "spoken": [
-        "máy bay mích hai mươi ba"
+        "máy bay mích hai mươi ba",
+        "máy bay mít hai mươi ba",
+        "máy bay mít hai ba",
+        "máy bay mi gờ hai mươi ba",
+        "máy bay mi gờ hai ba"
       ]
     },
     {
       "canonical": "máy bay MiG-25",
       "spoken": [
-        "máy bay mích hai mươi lăm"
+        "máy bay mích hai mươi lăm",
+        "máy bay mít hai mươi lăm",
+        "máy bay mít hai lăm",
+        "máy bay mít hai năm",
+        "máy bay mi gờ hai mươi lăm",
+        "máy bay mi gờ hai lăm",
+        "máy bay mi gờ hai năm"
       ]
     },
     {
       "canonical": "máy bay MiG-27",
       "spoken": [
-        "máy bay mích hai mươi bảy"
+        "máy bay mích hai mươi bảy",
+        "máy bay mít hai mươi bảy",
+        "máy bay mít hai bảy",
+        "máy bay mi gờ hai mươi bảy",
+        "máy bay mi gờ hai bảy"
       ]
     },
     {
       "canonical": "máy bay MiG-29",
       "spoken": [
-        "máy bay mích hai mươi chín"
+        "máy bay mích hai mươi chín",
+        "máy bay mít hai mươi chín",
+        "máy bay mít hai chín",
+        "máy bay mi gờ hai mươi chín",
+        "máy bay mi gờ hai chín"
       ]
     },
     {
       "canonical": "máy bay MiG-31",
       "spoken": [
-        "máy bay mích ba mươi mốt"
+        "máy bay mích ba mươi mốt",
+        "máy bay mig ba mươi mốt",
+        "máy bay mig ba mốt",
+        "máy bay mig ba một",
+        "máy bay m i g ba mốt",
+        "máy bay míc ba mươi mốt",
+        "máy bay míc ba mốt"
       ]
     },
     {
       "canonical": "máy bay MiG-35",
       "spoken": [
-        "máy bay mích ba mươi lăm"
+        "máy bay mích ba mươi lăm",
+        "máy bay mig ba mươi lăm",
+        "máy bay mig ba lăm",
+        "máy bay mig ba năm",
+        "máy bay mig ba mươi năm",
+        "máy bay míc ba mươi lăm",
+        "máy bay míc ba lăm"
       ]
     },
     {
       "canonical": "máy bay Su-17",
       "spoken": [
-        "máy bay su mười bảy"
+        "máy bay su mười bảy",
+        "máy bay su một bảy",
+        "máy bay ét u mười bảy",
+        "máy bay ét u một bảy",
+        "máy bay su gạch ngang mười bảy",
+        "máy bay ét u gạch ngang mười bảy",
+        "máy bay xu mười bảy"
       ]
     },
     {
       "canonical": "máy bay Su-20",
       "spoken": [
-        "máy bay su hai mươi"
+        "máy bay su hai mươi",
+        "máy bay su hai không",
+        "máy bay ét u hai mươi",
+        "máy bay ét u hai không",
+        "máy bay su gạch ngang hai mươi",
+        "máy bay ét u gạch ngang hai mươi",
+        "máy bay xu hai mươi"
       ]
     },
     {
       "canonical": "máy bay Su-22",
       "spoken": [
-        "máy bay su hai mươi hai"
+        "máy bay su hai mươi hai",
+        "máy bay su hai hai",
+        "máy bay ét u hai mươi hai",
+        "máy bay ét u hai hai",
+        "máy bay su gạch ngang hai mươi hai",
+        "máy bay xu hai mươi hai"
       ]
     },
     {
       "canonical": "máy bay Su-24",
       "spoken": [
-        "máy bay su hai mươi bốn"
+        "máy bay su hai mươi bốn",
+        "máy bay su hai mươi tư",
+        "máy bay su hai bốn",
+        "máy bay ét u hai mươi tư",
+        "máy bay ét u hai bốn",
+        "máy bay su gạch ngang hai mươi tư",
+        "máy bay xu hai mươi tư"
       ]
     },
     {
       "canonical": "máy bay Su-25",
       "spoken": [
-        "máy bay su hai mươi lăm"
+        "máy bay su hai mươi lăm",
+        "máy bay su hai lăm",
+        "máy bay ét u hai lăm",
+        "máy bay ét u hai mươi lăm",
+        "máy bay su gạch ngang hai lăm",
+        "máy bay su gạch hai lăm",
+        "máy bay ét u gạch hai lăm"
       ]
     },
     {
       "canonical": "máy bay Su-27",
       "spoken": [
-        "máy bay su hai mươi bảy"
+        "máy bay su hai mươi bảy",
+        "máy bay su hai bảy",
+        "máy bay ét u hai bảy",
+        "máy bay ét u hai mươi bảy",
+        "máy bay su gạch ngang hai bảy",
+        "máy bay su gạch hai bảy",
+        "máy bay ét u gạch hai bảy"
       ]
     },
     {
       "canonical": "máy bay Su-30",
       "spoken": [
-        "máy bay su ba mươi"
+        "máy bay su ba mươi",
+        "máy bay ét u ba mươi",
+        "máy bay su ba không",
+        "máy bay ét u ba không",
+        "máy bay su gạch ngang ba mươi",
+        "máy bay su gạch ba mươi",
+        "máy bay ét u gạch ba mươi"
       ]
     },
     {
       "canonical": "máy bay Su-32",
       "spoken": [
-        "máy bay su ba mươi hai"
+        "máy bay su ba mươi hai",
+        "máy bay su ba hai",
+        "máy bay ét u ba hai",
+        "máy bay ét u ba mươi hai",
+        "máy bay su gạch ngang ba hai",
+        "máy bay su gạch ba hai",
+        "máy bay ét u gạch ba hai"
       ]
     },
     {
       "canonical": "máy bay Su-33",
       "spoken": [
-        "máy bay su ba mươi ba"
+        "máy bay su ba mươi ba",
+        "máy bay su ba ba",
+        "máy bay ét u ba ba",
+        "máy bay ét u ba mươi ba",
+        "máy bay su gạch ngang ba ba",
+        "máy bay su gạch ba ba",
+        "máy bay ét u gạch ba ba"
       ]
     },
     {
       "canonical": "máy bay Su-34",
       "spoken": [
-        "máy bay su ba mươi bốn"
+        "máy bay su ba mươi bốn",
+        "máy bay su ba tư",
+        "máy bay su ba bốn",
+        "máy bay su ba mươi tư",
+        "máy bay ét u ba tư",
+        "máy bay ét u ba bốn",
+        "máy bay su gạch ngang ba tư",
+        "máy bay su gạch ba bốn"
       ]
     },
     {
       "canonical": "máy bay Su-35",
       "spoken": [
-        "máy bay su ba mươi lăm"
+        "máy bay su ba mươi lăm",
+        "máy bay su ba lăm",
+        "máy bay ét u ba lăm",
+        "máy bay ét u ba mươi lăm",
+        "máy bay su gạch ngang ba lăm",
+        "máy bay ét u gạch ba lăm"
       ]
     },
     {
       "canonical": "máy bay Su-37",
       "spoken": [
-        "máy bay su ba mươi bảy"
+        "máy bay su ba mươi bảy",
+        "máy bay su ba bảy",
+        "máy bay ét u ba bảy",
+        "máy bay ét u ba mươi bảy",
+        "máy bay su gạch ngang ba bảy",
+        "máy bay ét u gạch ba bảy"
       ]
     },
     {
       "canonical": "trực thăng Mi-8",
       "spoken": [
-        "trực thăng mi tám"
+        "trực thăng mi tám",
+        "trực thăng mi gạch ngang tám",
+        "trực thăng em i tám",
+        "trực thăng em i gạch ngang tám"
       ]
     },
     {
       "canonical": "trực thăng Mi-17",
       "spoken": [
-        "trực thăng mi mười bảy"
+        "trực thăng mi mười bảy",
+        "trực thăng mi một bảy",
+        "trực thăng mi gạch ngang mười bảy",
+        "trực thăng mi gạch một bảy",
+        "trực thăng mi gạch mười bảy"
       ]
     },
     {
       "canonical": "trực thăng Mi-24",
       "spoken": [
-        "trực thăng mi hai mươi bốn"
+        "trực thăng mi hai mươi bốn",
+        "trực thăng mi hai bốn",
+        "trực thăng mi hai mươi tư",
+        "trực thăng mi gạch hai bốn",
+        "trực thăng mi gạch hai mươi tư",
+        "trực thăng mi gạch ngang hai bốn"
       ]
     },
     {
       "canonical": "trực thăng Mi-26",
       "spoken": [
-        "trực thăng mi hai mươi sáu"
+        "trực thăng mi hai mươi sáu",
+        "trực thăng mi hai sáu",
+        "trực thăng mi gạch hai sáu",
+        "trực thăng mi gạch hai mươi sáu",
+        "trực thăng mi gạch ngang hai sáu"
       ]
     },
     {
       "canonical": "trực thăng Mi-28",
       "spoken": [
-        "trực thăng mi hai mươi tám"
+        "trực thăng mi hai mươi tám",
+        "trực thăng mi hai tám",
+        "trực thăng mi gạch hai tám",
+        "trực thăng mi gạch hai mươi tám",
+        "trực thăng mi gạch ngang hai tám"
       ]
     },
     {
       "canonical": "trực thăng Mi-35",
       "spoken": [
-        "trực thăng mi ba mươi lăm"
+        "trực thăng mi ba mươi lăm",
+        "trực thăng mi ba lăm",
+        "trực thăng mi gạch ngang ba mươi lăm",
+        "trực thăng mi gạch ngang ba lăm",
+        "trực thăng em i ba mươi lăm",
+        "trực thăng em i ba lăm",
+        "trực thăng em i gạch ngang ba lăm"
       ]
     },
     {
       "canonical": "trực thăng Mi-38",
       "spoken": [
-        "trực thăng mi ba mươi tám"
+        "trực thăng mi ba mươi tám",
+        "trực thăng mi ba tám",
+        "trực thăng mi gạch ngang ba mươi tám",
+        "trực thăng mi gạch ngang ba tám",
+        "trực thăng em i ba mươi tám",
+        "trực thăng em i ba tám",
+        "trực thăng em i gạch ngang ba tám"
       ]
     },
     {
       "canonical": "hệ thống S-75",
       "spoken": [
-        "hệ thống ét bảy mươi lăm"
+        "hệ thống ét bảy mươi lăm",
+        "hệ thống ếch bảy mươi lăm",
+        "hệ thống s bảy mươi lăm",
+        "hệ thống s bảy lăm",
+        "hệ thống ét gạch bảy mươi lăm",
+        "hệ thống ếch gạch bảy mươi lăm"
       ]
     },
     {
       "canonical": "hệ thống S-125",
       "spoken": [
-        "hệ thống ét một trăm hai mươi lăm"
+        "hệ thống ét một trăm hai mươi lăm",
+        "hệ thống s một hai lăm",
+        "hệ thống s gạch ngang một hai lăm",
+        "hệ thống ét một hai lăm",
+        "hệ thống ét gạch ngang một hai lăm"
       ]
     },
     {
       "canonical": "hệ thống S-200",
       "spoken": [
-        "hệ thống ét hai trăm"
+        "hệ thống ét hai trăm",
+        "hệ thống s hai trăm",
+        "hệ thống s hai không không",
+        "hệ thống s gạch ngang hai trăm",
+        "hệ thống s gạch ngang hai không không",
+        "hệ thống ét hai không không",
+        "hệ thống ét gạch ngang hai trăm",
+        "hệ thống ét gạch ngang hai không không"
       ]
     },
     {
       "canonical": "hệ thống S-300",
       "spoken": [
-        "hệ thống ét ba trăm"
+        "hệ thống ét ba trăm",
+        "hệ thống s ba trăm",
+        "hệ thống s ba không không",
+        "hệ thống s gạch ngang ba trăm",
+        "hệ thống s gạch ngang ba không không",
+        "hệ thống ét ba không không",
+        "hệ thống ét gạch ngang ba trăm",
+        "hệ thống ét gạch ngang ba không không"
       ]
     },
     {
       "canonical": "hệ thống S-350",
       "spoken": [
-        "hệ thống ét ba trăm năm mươi"
+        "hệ thống ét ba trăm năm mươi",
+        "hệ thống s ba trăm năm mươi"
       ]
     },
     {
       "canonical": "hệ thống S-400",
       "spoken": [
-        "hệ thống ét bốn trăm"
+        "hệ thống ét bốn trăm",
+        "hệ thống ếch bốn trăm",
+        "hệ thống s bốn trăm",
+        "hệ thống s gạch ngang bốn trăm",
+        "hệ thống s bốn không không",
+        "hệ thống ét gạch bốn trăm",
+        "hệ thống ếch gạch bốn trăm"
       ]
     },
     {
       "canonical": "hệ thống S-500",
       "spoken": [
-        "hệ thống ét năm trăm"
+        "hệ thống ét năm trăm",
+        "hệ thống ếch năm trăm",
+        "hệ thống s năm trăm",
+        "hệ thống s gạch ngang năm trăm",
+        "hệ thống s năm không không",
+        "hệ thống ét gạch năm trăm",
+        "hệ thống ếch gạch năm trăm"
       ]
     },
     {
       "canonical": "radar P-12",
       "spoken": [
-        "radar pê mười hai"
+        "radar pê mười hai",
+        "pe mười hai",
+        "pe một hai",
+        "pe gạch ngang mười hai"
       ]
     },
     {
       "canonical": "radar P-14",
       "spoken": [
-        "radar pê mười bốn"
+        "radar pê mười bốn",
+        "pe mười bốn",
+        "pe một bốn",
+        "pe gạch ngang mười bốn"
       ]
     },
     {
       "canonical": "radar P-15",
       "spoken": [
-        "radar pê mười lăm"
+        "radar pê mười lăm",
+        "pe mười lăm",
+        "pe một năm",
+        "pe gạch ngang mười lăm"
       ]
     },
     {
       "canonical": "radar P-18",
       "spoken": [
-        "radar pê mười tám"
+        "radar pê mười tám",
+        "pe gạch ngang mười tám"
       ]
     },
     {
       "canonical": "radar P-19",
       "spoken": [
-        "radar pê mười chín"
+        "radar pê mười chín",
+        "pe gạch ngang mười chín"
       ]
     },
     {
       "canonical": "radar P-35",
       "spoken": [
-        "radar pê ba mươi lăm"
+        "radar pê ba mươi lăm",
+        "ra đa p ba mươi lăm",
+        "ra đa pê ba mươi lăm",
+        "ra đa p gạch ngang ba lăm",
+        "ra đa pê gạch ngang ba lăm",
+        "ra đa p ba năm",
+        "ra đa pê ba năm",
+        "ra đa p gạch ngang ba năm",
+        "ra đa p ba lăm"
       ]
     },
     {
       "canonical": "radar P-37",
       "spoken": [
-        "radar pê ba mươi bảy"
+        "radar pê ba mươi bảy",
+        "ra đa p ba mươi bảy",
+        "ra đa pê ba mươi bảy",
+        "ra đa p gạch ngang ba bảy",
+        "ra đa pê gạch ngang ba bảy",
+        "ra đa p ba bảy",
+        "ra đa pê ba bảy",
+        "ra đa p gạch ngang ba mươi bảy"
       ]
     },
     {
       "canonical": "radar P-40",
       "spoken": [
-        "radar pê bốn mươi"
+        "radar pê bốn mươi",
+        "ra đa p bốn mươi",
+        "ra đa pê bốn mươi",
+        "ra đa p gạch ngang bốn mươi",
+        "ra đa pê gạch ngang bốn mươi",
+        "ra đa p bốn không",
+        "ra đa pê bốn không",
+        "ra đa p gạch ngang bốn không"
       ]
     },
     {
       "canonical": "súng AK-47",
       "spoken": [
-        "súng a ca bốn mươi bảy"
+        "súng a ca bốn mươi bảy",
+        "súng a ca bốn bảy",
+        "súng a ca gạch ngang bốn bảy",
+        "súng a ca gạch bốn bảy",
+        "súng a ka bốn bảy",
+        "súng a ka bốn mươi bảy"
       ]
     },
     {
       "canonical": "súng AK-74",
       "spoken": [
-        "súng a ca bảy mươi bốn"
+        "súng a ca bảy mươi bốn",
+        "súng a ca bảy tư",
+        "súng a ca gạch ngang bảy tư",
+        "súng a ca gạch bảy tư",
+        "súng a ka bảy tư",
+        "súng a ka bảy mươi bốn",
+        "súng a ka gạch bảy tư"
       ]
     },
     {
       "canonical": "súng AK-101",
       "spoken": [
-        "súng a ca một không một"
+        "súng a ca một không một",
+        "súng a ka một trăm linh một",
+        "súng a ca một trăm linh một",
+        "súng a ka một không một",
+        "súng a ka gạch ngang một không một",
+        "súng a ka một trăm lẻ một"
       ]
     },
     {
       "canonical": "súng AK-103",
       "spoken": [
-        "súng a ca một không ba"
+        "súng a ca một không ba",
+        "súng a ka một trăm linh ba",
+        "súng a ca một trăm linh ba",
+        "súng a ka một không ba",
+        "súng a ka gạch ngang một không ba",
+        "súng a ka một trăm lẻ ba"
       ]
     },
     {
       "canonical": "súng AK-105",
       "spoken": [
-        "súng a ca một không năm"
+        "súng a ca một không năm",
+        "súng a ka một trăm linh năm",
+        "súng a ca một trăm linh năm",
+        "súng a ka một không năm",
+        "súng a ka gạch ngang một không năm",
+        "súng a ka một trăm lẻ năm"
       ]
     },
     {
       "canonical": "xe thiết giáp M-16",
       "spoken": [
-        "xe thiết giáp em mười sáu"
+        "xe thiết giáp em mười sáu",
+        "xe thiết giáp m mười sáu",
+        "xe thiết giáp m một sáu",
+        "xe thiết giáp em một sáu"
       ]
     },
     {
       "canonical": "xe thiết giáp M-18",
       "spoken": [
-        "xe thiết giáp em mười tám"
+        "xe thiết giáp em mười tám",
+        "xe thiết giáp m mười tám",
+        "xe thiết giáp m một tám",
+        "xe thiết giáp em một tám"
       ]
     },
     {
       "canonical": "xe thiết giáp M-48",
       "spoken": [
-        "xe thiết giáp em bốn mươi tám"
+        "xe thiết giáp em bốn mươi tám",
+        "xe thiết giáp m bốn mươi tám",
+        "xe thiết giáp m bốn tám",
+        "xe thiết giáp em bốn tám"
       ]
     },
     {
       "canonical": "xe thiết giáp M-60",
       "spoken": [
-        "xe thiết giáp em sáu mươi"
+        "xe thiết giáp em sáu mươi",
+        "xe thiết giáp m sáu mươi",
+        "xe thiết giáp m sáu không",
+        "xe thiết giáp em sáu không"
       ]
     },
     {
       "canonical": "xe thiết giáp M-109",
       "spoken": [
-        "xe thiết giáp em một không chín"
+        "xe thiết giáp em một không chín",
+        "xe thiết giáp mờ một trăm lẻ chín",
+        "xe thiết giáp em một trăm lẻ chín"
       ]
     },
     {
       "canonical": "xe thiết giáp M-113",
       "spoken": [
-        "xe thiết giáp em một một ba"
+        "xe thiết giáp em một một ba",
+        "xe thiết giáp mờ một trăm mười ba",
+        "xe thiết giáp em một trăm mười ba"
       ]
     },
     {
       "canonical": "pháo phản lực BM-21",
       "spoken": [
-        "pháo phản lực bê em hai mươi mốt"
+        "pháo phản lực bê em hai mươi mốt",
+        "pháo phản lực b m hai mươi mốt",
+        "pháo phản lực bê mờ hai mươi một",
+        "pháo phản lực b m hai một",
+        "b m hai mươi mốt",
+        "bê mờ hai một",
+        "bm hai mươi mốt",
+        "pháo bm hai mươi mốt"
       ]
     },
     {
       "canonical": "pháo phản lực BM-27",
       "spoken": [
-        "pháo phản lực bê em hai mươi bảy"
+        "pháo phản lực bê em hai mươi bảy",
+        "pháo phản lực b m hai mươi bảy",
+        "pháo phản lực bê mờ hai bảy",
+        "pháo phản lực b m hai bảy",
+        "b m hai mươi bảy",
+        "bê mờ hai mươi bảy",
+        "bm hai bảy",
+        "pháo bm hai mươi bảy"
       ]
     },
     {
       "canonical": "pháo phản lực BM-30",
       "spoken": [
-        "pháo phản lực bê em ba mươi"
+        "pháo phản lực bê em ba mươi",
+        "pháo phản lực b m ba mươi",
+        "pháo phản lực bê mờ ba mươi",
+        "b m ba mươi",
+        "bê mờ ba mươi",
+        "bm ba mươi",
+        "pháo bm ba mươi"
       ]
     },
     {
       "canonical": "phương tiện ZSU-23",
       "spoken": [
-        "phương tiện dét ét u hai mươi ba"
+        "phương tiện dét ét u hai mươi ba",
+        "zét ét u hai ba",
+        "giét ét u hai ba",
+        "zét ét u hai mươi ba",
+        "zét ét u gạch ngang hai ba",
+        "zét xu hai ba"
       ]
     },
     {
       "canonical": "phương tiện ZSU-57",
       "spoken": [
-        "phương tiện dét ét u năm mươi bảy"
+        "phương tiện dét ét u năm mươi bảy",
+        "zét sụ năm bảy",
+        "zét sụ năm mươi bảy",
+        "zét sụ gạch ngang năm bảy",
+        "zét sụ gạch ngang năm mươi bảy",
+        "zờ ét sụ năm bảy",
+        "zờ ét sụ năm mươi bảy",
+        "dét sụ năm bảy"
       ]
     },
     {
       "canonical": "máy thông tin PRC-25",
       "spoken": [
-        "máy thông tin pê e rờ xê hai mươi lăm"
+        "máy thông tin pê e rờ xê hai mươi lăm",
+        "máy thông tin pê rờ cê hai lăm",
+        "máy thông tin prc hai lăm",
+        "máy thông tin pờ rờ cê hai lăm"
       ]
     },
     {
       "canonical": "máy thông tin PRC-77",
       "spoken": [
-        "máy thông tin pê e rờ xê bảy mươi bảy"
+        "máy thông tin pê e rờ xê bảy mươi bảy",
+        "p r c bảy mươi bảy",
+        "prc bảy bảy",
+        "máy p r c bảy mươi bảy"
       ]
     },
     {
       "canonical": "máy thông tin PRC-117",
       "spoken": [
-        "máy thông tin pê e rờ xê một một bảy"
+        "máy thông tin pê e rờ xê một một bảy",
+        "máy thông tin prc một trăm mười bảy"
       ]
     },
     {
       "canonical": "máy thông tin PRC-119",
       "spoken": [
-        "máy thông tin pê e rờ xê một một chín"
+        "máy thông tin pê e rờ xê một một chín",
+        "máy thông tin prc một trăm mười chín"
       ]
     },
     {
@@ -1326,115 +2012,191 @@
     {
       "canonical": "phương tiện B-1",
       "spoken": [
-        "phương tiện bê một"
+        "phương tiện bê một",
+        "phương tiện b một",
+        "b một",
+        "xe b một"
       ]
     },
     {
       "canonical": "phương tiện B-2",
       "spoken": [
-        "phương tiện bê hai"
+        "phương tiện bê hai",
+        "phương tiện b hai",
+        "b hai",
+        "xe b hai"
       ]
     },
     {
       "canonical": "phương tiện B-52",
       "spoken": [
-        "phương tiện bê năm mươi hai"
+        "phương tiện bê năm mươi hai",
+        "bi năm hai",
+        "bi gạch ngang năm mươi hai",
+        "bi gạch ngang năm hai"
       ]
     },
     {
       "canonical": "phương tiện C-17",
       "spoken": [
-        "phương tiện xê mười bảy"
+        "phương tiện xê mười bảy",
+        "xi gạch ngang mười bảy",
+        "xi gạch ngang một bảy"
       ]
     },
     {
       "canonical": "phương tiện C-130",
       "spoken": [
-        "phương tiện xê một trăm ba mươi"
+        "phương tiện xê một trăm ba mươi",
+        "xi gạch ngang một trăm ba mươi"
       ]
     },
     {
       "canonical": "máy bay F-4",
       "spoken": [
-        "máy bay ép bốn"
+        "máy bay ép bốn",
+        "máy bay ép gạch ngang bốn",
+        "máy bay ép tư"
       ]
     },
     {
       "canonical": "máy bay F-5",
       "spoken": [
-        "máy bay ép năm"
+        "máy bay ép năm",
+        "máy bay ép gạch ngang năm"
       ]
     },
     {
       "canonical": "máy bay F-14",
       "spoken": [
-        "máy bay ép mười bốn"
+        "máy bay ép mười bốn",
+        "máy bay ép một bốn",
+        "máy bay ép gạch ngang mười bốn",
+        "máy bay ép gạch ngang một bốn",
+        "máy bay ếch mười bốn",
+        "máy bay ếch một bốn",
+        "máy bay ếch gạch ngang mười bốn",
+        "máy bay ếch gạch ngang một bốn"
       ]
     },
     {
       "canonical": "máy bay F-15",
       "spoken": [
-        "máy bay ép mười lăm"
+        "máy bay ép mười lăm",
+        "máy bay ép một năm",
+        "máy bay ép gạch ngang mười lăm",
+        "máy bay ép gạch ngang một năm",
+        "máy bay ếch mười lăm",
+        "máy bay ếch một năm",
+        "máy bay ếch gạch ngang mười lăm",
+        "máy bay ếch gạch ngang một năm"
       ]
     },
     {
       "canonical": "máy bay F-16",
       "spoken": [
-        "máy bay ép mười sáu"
+        "máy bay ép mười sáu",
+        "máy bay ép một sáu",
+        "máy bay ép gạch ngang mười sáu",
+        "máy bay ép gạch ngang một sáu",
+        "máy bay ếch mười sáu",
+        "máy bay ếch một sáu",
+        "máy bay ếch gạch ngang mười sáu",
+        "máy bay ếch gạch ngang một sáu"
       ]
     },
     {
       "canonical": "máy bay F-18",
       "spoken": [
-        "máy bay ép mười tám"
+        "máy bay ép mười tám",
+        "máy bay ép một tám",
+        "máy bay ép gạch ngang mười tám",
+        "máy bay ép gạch ngang một tám"
       ]
     },
     {
       "canonical": "máy bay F-22",
       "spoken": [
-        "máy bay ép hai mươi hai"
+        "máy bay ép hai mươi hai",
+        "máy bay ép hai hai",
+        "máy bay ép gạch ngang hai hai",
+        "máy bay ép gạch ngang hai mươi hai"
       ]
     },
     {
       "canonical": "máy bay F-35",
       "spoken": [
-        "máy bay ép ba mươi lăm"
+        "máy bay ép ba mươi lăm",
+        "máy bay ép ba lăm",
+        "máy bay ép gạch ngang ba lăm",
+        "máy bay ép gạch ngang ba mươi lăm",
+        "máy bay ép ba năm"
       ]
     },
     {
       "canonical": "máy bay An-2",
       "spoken": [
-        "máy bay an hai"
+        "máy bay an hai",
+        "máy bay an gạch ngang hai",
+        "máy bay an gạch hai"
       ]
     },
     {
       "canonical": "máy bay An-12",
       "spoken": [
-        "máy bay an mười hai"
+        "máy bay an mười hai",
+        "máy bay an một hai",
+        "máy bay an gạch ngang mười hai",
+        "máy bay an gạch một hai",
+        "máy bay an gạch mười hai"
       ]
     },
     {
       "canonical": "máy bay An-24",
       "spoken": [
-        "máy bay an hai mươi bốn"
+        "máy bay an hai mươi bốn",
+        "máy bay an hai mươi tư",
+        "máy bay an hai bốn",
+        "máy bay an gạch ngang hai mươi tư",
+        "máy bay an gạch hai mươi bốn",
+        "máy bay an gạch hai bốn"
       ]
     },
     {
       "canonical": "máy bay An-26",
       "spoken": [
-        "máy bay an hai mươi sáu"
+        "máy bay an hai mươi sáu",
+        "máy bay an hai sáu",
+        "máy bay an gạch ngang hai sáu",
+        "máy bay an gạch ngang hai mươi sáu",
+        "máy bay a nờ hai sáu",
+        "máy bay a nờ hai mươi sáu",
+        "máy bay a nờ gạch ngang hai sáu"
       ]
     },
     {
       "canonical": "máy bay An-30",
       "spoken": [
-        "máy bay an ba mươi"
+        "máy bay an ba mươi",
+        "máy bay an ba không",
+        "máy bay an gạch ngang ba mươi",
+        "máy bay an gạch ngang ba không",
+        "máy bay a nờ ba mươi",
+        "máy bay a nờ ba không",
+        "máy bay a nờ gạch ngang ba mươi",
+        "máy bay a nờ gạch ngang ba không"
       ]
     },
     {
       "canonical": "máy bay An-32",
       "spoken": [
-        "máy bay an ba mươi hai"
+        "máy bay an ba mươi hai",
+        "máy bay an ba hai",
+        "máy bay an gạch ngang ba hai",
+        "máy bay an gạch ngang ba mươi hai",
+        "máy bay a nờ ba hai",
+        "máy bay a nờ ba mươi hai",
+        "máy bay a nờ gạch ngang ba hai"
       ]
     }
   ]
