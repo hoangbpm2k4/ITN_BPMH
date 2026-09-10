@@ -334,6 +334,10 @@ class AddressParser(Normalizer):
     BLOCK_LEADS = {"lô": "Lô", "block": "Block", "khu": "Khu"}
     BLOCK_SEPARATORS = ("dấu gạch ngang", "gạch ngang", "gạch nối", "dấu gạch",
                         "gạch", "trừ")
+    # Số nhà có ngách đọc là "mười tám trên năm" -> "18/5". "trên" là từ rất
+    # thường gặp nên chỉ nhận khi đang ở NGAY SAU số nhà và ngay TRƯỚC một số
+    # nữa; ngoài khung đó nó vẫn là giới từ bình thường.
+    SLASH_WORDS_ADDR = {"trên", "xẹt", "xẹc", "phần"}
 
     def _parse_block(self, lead, words):
         parts, buf = [], []
@@ -363,12 +367,18 @@ class AddressParser(Normalizer):
         out, buf = [], []
         naming = False           # đang ở trong một tên riêng?
         after_house_number = False
+        pending_slash = False
 
         def flush():
-            nonlocal naming
+            nonlocal naming, pending_slash
             if buf:
-                out.append(str(read_number_auto(buf)))
+                value = str(read_number_auto(buf))
                 buf.clear()
+                if pending_slash and out:
+                    out[-1] = f"{out[-1]}/{value}"
+                    pending_slash = False
+                else:
+                    out.append(value)
                 if after_house_number:
                     naming = True     # từ kế tiếp là tên đường
 
@@ -382,6 +392,12 @@ class AddressParser(Normalizer):
                 continue
             if w in self.NUMBER_WORDS:
                 buf.append(w)
+                continue
+            if (w in self.SLASH_WORDS_ADDR and buf and after_house_number
+                    and nxt in self.NUMBER_WORDS):
+                flush()
+                pending_slash = True
+                naming = False
                 continue
             flush()
             if w in self.KEEP:

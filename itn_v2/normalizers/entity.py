@@ -77,6 +77,18 @@ class RankFormatter(Normalizer):
     được phép hạ xuống về sau (spec §17) — đúng lỗi V1 'Đại tá' -> 'đại tá'."""
 
     name = "RankFormatter"
+    # Quân hàm tiếng Việt hoa MỘT chữ đầu ("Đại tá"), chức danh tiếng Anh hoa
+    # MỌI chữ ("Chief Officer"). Một quy tắc chung không phủ được cả hai, nên
+    # tách theo ngôn ngữ: chỉ khi mọi tiếng đều là từ tiếng Anh mới hoa hết.
+    ENGLISH_WORDS = {
+        "chief", "second", "third", "first", "master", "captain", "officer",
+        "engineer", "mate", "cadet", "bosun", "boatswain", "able", "seaman",
+        "deck", "duty", "watch", "electrician", "fitter", "oiler", "pilot",
+        "superintendent", "cook", "steward", "trainee", "junior", "senior",
+    }
 
     def parse(self, raw_text, context=None):
+        words = raw_text.replace("_", " ").split()
+        if words and all(w.lower() in self.ENGLISH_WORDS for w in words):
+            return _title_words(raw_text, all_words=True)
         return _title_words(raw_text, all_words=False)

@@ -92,16 +92,26 @@ class FrequencyParser(_UnitConstrained):
 
 class ChannelParser(Normalizer):
     name = "ChannelParser"
-    PREFIXES = ("kênh", "channel", "ch")
+    # Từ dẫn được GIỮ NGUYÊN theo người nói, không dịch. Bản trước quy mọi
+    # từ dẫn về "kênh" nên "channel mười sáu" ra "kênh 16" trong khi bản gốc
+    # viết "Channel 16" — sai 11/12 span CHANNEL chỉ vì một phép dịch.
+    PREFIXES = {"kênh": "Kênh", "channel": "Channel", "ch": "Ch."}
 
     def parse(self, raw_text, context=None):
         from .number import read_number_auto
         words = raw_text.split()
         prefix = ""
         if words and words[0] in self.PREFIXES:
-            prefix, words = "kênh", words[1:]
+            prefix, words = self.PREFIXES[words[0]], words[1:]
         if not words:
             raise ParseError("thiếu số hiệu kênh")
+        # "channel không sáu" là số hiệu hai chữ số có số 0 dẫn đầu, không
+        # phải số đếm 6: đọc thành chuỗi chữ số thì mới ra "Channel 06".
+        if len(words) > 1 and words[0] == "không":
+            from .number import UNIT_DIGITS as DIGIT_WORDS
+            if all(w in DIGIT_WORDS for w in words):
+                value = "".join(str(DIGIT_WORDS[w]) for w in words)
+                return f"{prefix} {value}".strip()
         value = read_number_auto(words)
         return f"{prefix} {value}".strip()
 

@@ -209,11 +209,17 @@ class GemmaClient:
         self.retries = 0
         self.tokens = 0
 
-    def generate(self, prompt, temperature=1.0, max_tokens=2048, response_schema=None):
+    def generate(self, prompt, temperature=1.0, max_tokens=2048, response_schema=None,
+                 thinking_level=None):
         body = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
             "generationConfig": {"temperature": temperature, "maxOutputTokens": max_tokens},
         }
+        if thinking_level is not None:
+            # Dòng Gemini 3 mặc định suy nghĩ trước khi trả lời, và token suy
+            # nghĩ ăn CHUNG hạn mức maxOutputTokens — không tắt thì câu trả
+            # lời bị cắt giữa chừng mà không báo lỗi gì.
+            body["generationConfig"]["thinkingConfig"] = {"thinkingLevel": thinking_level}
         if response_schema is not None:
             # Gemini hỗ trợ JSON có lược đồ -> không phải thu hoạch phòng thủ
             # như với Gemma nữa.
